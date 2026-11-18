@@ -892,3 +892,27 @@ body.home-page-v2{--vline:rgba(198,210,232,.14);--vcyan:#86d8d0;--vorange:#e9a77
  .mc-quote{padding:72px 7%}
  .mc-footer-top,.mc-footer-bottom{align-items:flex-start;flex-direction:column}
 }
+
+/* FULL-WIDTH HOMEPAGE — remove narrow centered content frame */
+.home-modern .mc-hero,
+.home-modern .mc-intro-section,
+.home-modern .mc-discover,
+.home-modern .mc-end{
+  width:100%;
+  max-width:none!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  padding-left:clamp(24px,5vw,88px)!important;
+  padding-right:clamp(24px,5vw,88px)!important;
+}
+.home-modern .mc-hero{min-height: min(760px, calc(100vh - 82px));}
+.home-modern .mc-footer{width:100%;padding-left:clamp(24px,5vw,88px);padding-right:clamp(24px,5vw,88px)}
+.home-modern .mc-footer-top,.home-modern .mc-footer-bottom{max-width:none;width:100%}
+.home-modern .mc-hero-bottom{left:clamp(24px,5vw,88px);right:clamp(24px,5vw,88px)}
+@media(max-width:600px){
+ .home-modern .mc-hero,.home-modern .mc-intro-section,.home-modern .mc-discover,.home-modern .mc-end{
+  padding-left:22px!important;padding-right:22px!important;
+ }
+ .home-modern .mc-hero{min-height:0}
+ .home-modern .mc-hero-bottom{left:22px;right:22px}
+}
