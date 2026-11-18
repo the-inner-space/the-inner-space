@@ -594,3 +594,12 @@ body.home-page-v2{--vline:rgba(198,210,232,.14);--vcyan:#86d8d0;--vorange:#e9a77
 .inner-page .v2-footer{position:relative;z-index:1}
 @media(max-width:800px){.inner-grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}.about-feature,.contact-layout{grid-template-columns:1fr}.about-photo{max-width:430px}.inner-hero{min-height:440px;padding-top:125px}.inner-index{bottom:24px}.memory-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.inner-main{padding:0 20px}.inner-hero{min-height:420px;padding:115px 0 85px}.inner-hero h1{font-size:3.25rem}.inner-block{padding:70px 0}.inner-grid.three,.inner-grid.two,.writing-list,.fragment-row,.process-steps{grid-template-columns:1fr}.memory-grid{grid-auto-rows:155px;gap:9px}.memory-tile{padding:16px}.memory-tile b{font-size:1.3rem}.creation-feature{grid-template-columns:1fr;padding:24px}.creation-mark{height:100px}.about-photo{height:390px}.inner-quote{padding:70px 5%}}
+
+/* About page: softly floating code rain */
+.inner-page:has(.code-rain){isolation:isolate}
+.code-rain{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;opacity:.34;mask-image:linear-gradient(to bottom,transparent 0%,#000 12%,#000 88%,transparent 100%)}
+.code-rain span{position:absolute;top:-14vh;left:var(--x);color:var(--accent);font:500 var(--size)/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.035em;white-space:nowrap;text-shadow:0 0 12px color-mix(in srgb,var(--accent) 42%,transparent);opacity:var(--opacity);animation:codeDrift var(--duration) linear var(--delay) infinite}
+@keyframes codeDrift{0%{transform:translate3d(0,-8vh,0) rotate(var(--tilt));opacity:0}10%{opacity:var(--opacity)}88%{opacity:var(--opacity)}100%{transform:translate3d(var(--drift),115vh,0) rotate(var(--tilt));opacity:0}}
+.inner-page:has(.code-rain) .inner-main,.inner-page:has(.code-rain) .v2-header,.inner-page:has(.code-rain) .v2-footer{position:relative;z-index:1}
+@media(max-width:700px){.code-rain{opacity:.22}.code-rain span{font-size:calc(var(--size)*.82)}}
+@media(prefers-reduced-motion:reduce){.code-rain span{animation:none;top:var(--y);opacity:calc(var(--opacity)*.5)}}
