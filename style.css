@@ -1069,3 +1069,35 @@ body.home-page-v2{--vline:rgba(198,210,232,.14);--vcyan:#86d8d0;--vorange:#e9a77
 .scrap-footer>small{width:100%;border-top:1px solid #cfc2ae;padding-top:14px;color:#756b5e;font-size:8px;letter-spacing:.12em}
 @media(max-width:900px){.scrapbook-home .v2-header{align-items:flex-start;flex-direction:column;gap:8px}.scrapbook-home .v2-nav{width:100%}.scrap-hero{padding-top:55px;grid-template-columns:1fr .9fr;gap:15px}.scrap-hero h1{font-size:clamp(3.5rem,8vw,5.8rem)}.scrap-hero-art{height:440px}.scrap-note-section{padding-top:85px;padding-bottom:85px}.scrap-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.scrapbook-home .v2-header{padding:14px 18px}.scrap-hero{grid-template-columns:1fr;padding:55px 22px 85px;gap:20px}.scrap-hero h1{font-size:clamp(3.6rem,16vw,5.8rem)}.scrap-hero-art{height:430px;width:100%;max-width:440px}.scrap-photo{width:58%;height:77%;left:21%}.scrap-cutout{right:1%;font-size:23px}.scrap-polaroid{width:125px;height:120px;font-size:14px}.scrap-stamp{left:auto;right:8%;bottom:0;width:75px;height:75px;font-size:8px}.scrap-bottom-note{left:22px;right:22px;font-size:7px}.scrap-ticker{justify-content:flex-start}.scrap-note-section{grid-template-columns:1fr;padding:75px 22px;gap:22px}.scrap-note-label{writing-mode:initial}.scrap-note-paper{padding:42px 27px}.scrap-doodle{display:none}.scrap-pages{padding:75px 22px 85px}.scrap-pages-heading{align-items:flex-start;flex-direction:column;margin-bottom:32px}.scrap-pages-heading>p{text-align:left}.scrap-card-grid{grid-template-columns:1fr 1fr;gap:15px}.scrap-card{min-height:220px;padding:14px}.scrap-card-art{min-height:105px;font-size:2rem}.scrap-card-name{font-size:16px}.scrap-card>small{font-size:9px}.scrap-quote{padding:75px 25px}.scrap-quote-flower{right:3%;font-size:40px}.scrap-ending{padding:85px 22px 105px}.scrap-end-doodle{left:3%;font-size:40px}.scrap-footer{align-items:flex-start;flex-direction:column;gap:10px}.scrap-footer>div{gap:13px}}
+
+
+/* FULL SCREEN PORTRAIT HOMEPAGE — completely replaces previous home layouts */
+.fullphoto-home{margin:0!important;padding:0!important;background:#080808!important;color:#f6f1e9!important;font-family:'DM Sans',sans-serif;overflow:hidden}
+.fullphoto-home .fp-stage{position:relative;width:100%;height:100svh;min-height:650px;overflow:hidden;background:#090909}
+.fullphoto-home .fp-background{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;display:block}
+.fullphoto-home .fp-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.88) 29%,rgba(0,0,0,.62) 46%,rgba(0,0,0,.12) 73%,rgba(0,0,0,.08) 100%),linear-gradient(0deg,rgba(0,0,0,.5),transparent 25%,transparent 75%,rgba(0,0,0,.24))}
+.fullphoto-home .fp-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;padding:28px clamp(24px,6vw,90px) 22px}
+.fullphoto-home .fp-topline{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.fullphoto-home .fp-topline>a{color:#fff;text-decoration:none;font-size:12px;font-weight:800;letter-spacing:.2em}
+.fullphoto-home .fp-topline>span{font-size:8px;letter-spacing:.18em;color:#ffffff9c}
+.fullphoto-home .fp-menu{width:min(560px,54vw);margin:auto 0;max-height:calc(100% - 115px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:#ffffff45 transparent;padding:18px 18px 18px 0}
+.fullphoto-home .fp-eyebrow{font-size:9px;letter-spacing:.22em;color:#d2b18b;font-weight:700;margin:0 0 14px}
+.fullphoto-home .fp-menu h1{font:500 clamp(3.2rem,6.4vw,6.5rem)/.88 'Playfair Display',Georgia,serif;letter-spacing:-.055em;margin:0;color:#fff}
+.fullphoto-home .fp-menu h1 em{font-weight:500;color:#d8b68f}
+.fullphoto-home .fp-intro{max-width:400px;color:#ffffffb8;font-size:12px;line-height:1.8;margin:17px 0 20px}
+.fullphoto-home .fp-links{display:grid;grid-template-columns:1fr 1fr;column-gap:26px;border-top:1px solid #ffffff45}
+.fullphoto-home .fp-links a{display:grid;grid-template-columns:25px 1fr 16px;align-items:center;gap:7px;padding:8px 0;border-bottom:1px solid #ffffff2b;color:#f5f0e9;text-decoration:none;font-size:11px;transition:color .2s,padding .2s}
+.fullphoto-home .fp-links a:hover{color:#e6c49d;padding-left:5px}
+.fullphoto-home .fp-links a span{font-size:8px;color:#d4b28d;letter-spacing:.1em}
+.fullphoto-home .fp-links a b{font-size:12px;font-weight:400;color:#d4b28d;text-align:right}
+.fullphoto-home .fp-bottom{display:flex;justify-content:space-between;gap:15px;color:#ffffff88;font-size:7px;letter-spacing:.16em}
+@media(max-width:700px){
+ .fullphoto-home .fp-stage{min-height:720px;height:100svh}.fullphoto-home .fp-background{object-position:62% center}
+ .fullphoto-home .fp-shade{background:linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.76) 62%,rgba(0,0,0,.4)),linear-gradient(0deg,rgba(0,0,0,.45),transparent 30%)}
+ .fullphoto-home .fp-content{padding:20px 20px 17px}.fullphoto-home .fp-topline>span{font-size:7px}
+ .fullphoto-home .fp-menu{width:100%;max-height:calc(100% - 100px);margin:auto 0;padding-right:2px}
+ .fullphoto-home .fp-menu h1{font-size:clamp(3.4rem,14vw,5rem)}.fullphoto-home .fp-intro{max-width:330px;margin:13px 0 15px}
+ .fullphoto-home .fp-links{column-gap:16px}.fullphoto-home .fp-links a{font-size:10px;padding:8px 0;grid-template-columns:21px 1fr 12px}
+ .fullphoto-home .fp-bottom{font-size:6px;letter-spacing:.1em}
+}
+@media(max-width:390px){.fullphoto-home .fp-links{grid-template-columns:1fr}.fullphoto-home .fp-menu{max-height:calc(100% - 95px)}}
