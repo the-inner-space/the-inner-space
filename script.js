@@ -61,51 +61,46 @@ const progress=document.createElement('div');progress.id='scroll-light-progress'
 let scrollTick=false;const updateProgress=()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';scrollTick=false};window.addEventListener('scroll',()=>{if(!scrollTick){requestAnimationFrame(updateProgress);scrollTick=true}},{passive:true});updateProgress();
 if(!reduce){
  const canvas=document.createElement('canvas');canvas.id='space-canvas';document.body.prepend(canvas);
- const ctx=canvas.getContext('2d');let w=0,h=0,particles=[],raf=0,clock=0,last=0;
+ const ctx=canvas.getContext('2d');let w=0,h=0,particles=[],raf=0,last=0,clock=0;
  const resize=()=>{
   const d=Math.min(devicePixelRatio||1,1.6);w=innerWidth;h=innerHeight;
   canvas.width=w*d;canvas.height=h*d;ctx.setTransform(d,0,0,d,0,0);
-  particles=Array.from({length:Math.min(75,Math.max(32,Math.floor(w/22)))},()=>({
-   x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.7+.45,
-   speed:Math.random()*.55+.22,phase:Math.random()*Math.PI*2,
-   lane:Math.random()
+  particles=Array.from({length:Math.min(95,Math.max(42,Math.floor(w/16)))},()=>({
+   x:Math.random()*w,y:Math.random()*h,
+   r:Math.random()*1.45+.35,
+   vx:(Math.random()-.5)*.34,
+   vy:-(Math.random()*.28+.06),
+   phase:Math.random()*Math.PI*2,
+   twinkle:Math.random()*.7+.3
   }));
  };
- const draw=(now)=>{
+ const draw=now=>{
   if(last)clock+=Math.min(40,now-last);last=now;
   ctx.clearRect(0,0,w,h);
-  // A luminous current travels across the screen, then gently reverses.
-  const cycle=(clock*.00012)%(Math.PI*2);
-  const direction=Math.cos(cycle)>=0?1:-1;
-  const travel=Math.sin(cycle);
-  for(let band=0;band<5;band++){
-   const base=h*(.16+band*.17);
-   const phase=travel*2.8+band*.9;
-   const grad=ctx.createLinearGradient(0,base-90,w,base+90);
-   grad.addColorStop(0,'rgba('+palette.rgb+',0)');
-   grad.addColorStop(.25,'rgba('+palette.rgb+',.025)');
-   grad.addColorStop(.52,'rgba('+palette.rgb+',.13)');
-   grad.addColorStop(.78,'rgba('+palette.rgb+',.035)');
-   grad.addColorStop(1,'rgba('+palette.rgb+',0)');
-   ctx.beginPath();
-   for(let x=-20;x<=w+20;x+=18){
-    const y=base+Math.sin(x*.0045-phase)*48+Math.sin(x*.0018-phase*1.4)*26;
-    if(x===-20)ctx.moveTo(x,y);else ctx.lineTo(x,y);
-   }
-   ctx.strokeStyle=grad;ctx.lineWidth=18+band*5;ctx.lineCap='round';
-   ctx.shadowBlur=30;ctx.shadowColor=palette.accent;ctx.stroke();ctx.shadowBlur=0;
-  }
-  // Tiny glowing particles follow the same left-right, right-left movement.
+  // Quiet, drifting specks like dust in a sunlit room — no waves or connecting lines.
   for(const p of particles){
-   const wave=(Math.sin(cycle+p.phase)*.5+.5);
-   p.x+=direction*p.speed;
-   if(p.x>w+10)p.x=-10;if(p.x<-10)p.x=w+10;
-   const y=p.y+Math.sin(clock*.0007+p.phase)*13;
-   const alpha=.28+.52*wave;
-   const glow=ctx.createRadialGradient(p.x,y,0,p.x,y,p.r*8);
-   glow.addColorStop(0,'rgba('+palette.rgb+','+alpha+')');
+   p.x+=p.vx+Math.sin(clock*.00022+p.phase)*.08;
+   p.y+=p.vy;
+   if(p.y<-8){p.y=h+8;p.x=Math.random()*w}
+   if(p.x<-8)p.x=w+8;if(p.x>w+8)p.x=-8;
+   const pulse=.22+.42*(.5+.5*Math.sin(clock*.0011+p.phase))*p.twinkle;
+   const radius=p.r*(2.2+Math.sin(clock*.0008+p.phase)*.45);
+   const glow=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,radius*5);
+   glow.addColorStop(0,'rgba('+palette.rgb+','+pulse+')');
    glow.addColorStop(1,'rgba('+palette.rgb+',0)');
-   ctx.fillStyle=glow;ctx.beginPath();ctx.arc(p.x,y,p.r*8,0,Math.PI*2);ctx.fill();
+   ctx.fillStyle=glow;ctx.beginPath();ctx.arc(p.x,p.y,radius*5,0,Math.PI*2);ctx.fill();
+   ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+   ctx.fillStyle='rgba('+palette.rgb+','+(pulse+.12)+')';ctx.fill();
+  }
+  // A few softly blurred, warm lights add depth without competing with the page.
+  for(let i=0;i<3;i++){
+   const x=w*(.18+i*.32)+Math.sin(clock*.00012+i*2.1)*w*.035;
+   const y=h*(.24+i*.23)+Math.cos(clock*.00015+i*1.7)*h*.045;
+   const radius=95+i*28;
+   const haze=ctx.createRadialGradient(x,y,0,x,y,radius);
+   haze.addColorStop(0,'rgba('+palette.rgb+',.045)');
+   haze.addColorStop(1,'rgba('+palette.rgb+',0)');
+   ctx.fillStyle=haze;ctx.fillRect(x-radius,y-radius,radius*2,radius*2);
   }
   raf=requestAnimationFrame(draw);
  };
