@@ -603,3 +603,6 @@ body.home-page-v2{--vline:rgba(198,210,232,.14);--vcyan:#86d8d0;--vorange:#e9a77
 .inner-page:has(.code-rain) .inner-main,.inner-page:has(.code-rain) .v2-header,.inner-page:has(.code-rain) .v2-footer{position:relative;z-index:1}
 @media(max-width:700px){.code-rain{opacity:.22}.code-rain span{font-size:calc(var(--size)*.82)}}
 @media(prefers-reduced-motion:reduce){.code-rain span{animation:none;top:var(--y);opacity:calc(var(--opacity)*.5)}}
+
+/* Expanded navigation and FAQ */
+.v2-nav{gap:clamp(6px,.8vw,12px)}.v2-nav a{font-size:clamp(7px,.62vw,9px);white-space:nowrap}.footer-nav{display:flex;flex-wrap:wrap;gap:14px 22px;max-width:650px}.footer-nav a{font-size:10px;color:#aab3c1;text-decoration:none}.footer-nav a:hover{color:#86d8d0}.faq-list{display:grid;gap:13px}.faq-item{padding:22px 25px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,var(--panel),transparent)}.faq-item summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;color:var(--text);font:500 1.25rem 'Playfair Display',serif}.faq-item summary::-webkit-details-marker{display:none}.faq-item summary span{color:var(--accent);font:400 1.4rem 'DM Sans',sans-serif}.faq-item p{color:var(--muted);line-height:1.85;margin:18px 0 0}@media(max-width:760px){.v2-header .v2-nav{gap:0}.v2-header .v2-nav a{font-size:12px}}
