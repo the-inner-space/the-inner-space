@@ -172,7 +172,7 @@ body.home-page-v2{--vline:rgba(198,210,232,.14);--vcyan:#86d8d0;--vorange:#e9a77
 .home-page-v2:after{inset:0;opacity:.12;background-image:linear-gradient(#9adbd40b 1px,transparent 1px),linear-gradient(90deg,#9adbd40b 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,transparent,#000 15%,#000 80%,transparent);animation:gridBreath 8s ease-in-out infinite alternate}
 .ambient{z-index:-1!important;opacity:.2!important;filter:blur(90px)!important;animation:ambientFloat 19s ease-in-out infinite alternate}
 .ambient-two{animation-delay:-8s}
-#space-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.7}
+#space-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;opacity:1}
 .home-page-v2 main,.home-page-v2 header,.home-page-v2 footer{position:relative;z-index:1}
 .home-page-v2 .v2-header{border-bottom-color:#8ee9df2b;box-shadow:0 8px 35px #0003}
 .home-page-v2 .v2-header:after{content:"";position:absolute;bottom:-1px;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,#86d8d0,#9c8cff,#86d8d0,transparent);background-size:200% 100%;animation:lightTravel 5s linear infinite}
