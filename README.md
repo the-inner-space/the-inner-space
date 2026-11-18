@@ -1,16 +1,15 @@
-## Hi there 👋
+# The Inner Space
 
-<!--
-**the-inner-space/the-inner-space** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Personal portfolio website of Nayeem Evan.
 
-Here are some ideas to get you started:
+## Files
+- `index.html`: Home
+- `about.html`: About
+- `writings.html`: Writings
+- `posts.html`: Posts
+- `world.html`: My World
+- `gallery.html`: Gallery
+- `projects.html`: Projects
+- `contact.html`: Contact
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+This is an initial static website starter. Replace sample text, placeholders and contact details with your own content before publishing.
