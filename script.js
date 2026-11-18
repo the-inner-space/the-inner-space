@@ -61,7 +61,7 @@ const progress=document.createElement('div');progress.id='scroll-light-progress'
 let scrollTick=false;const updateProgress=()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';scrollTick=false};window.addEventListener('scroll',()=>{if(!scrollTick){requestAnimationFrame(updateProgress);scrollTick=true}},{passive:true});updateProgress();
 if(!reduce){
  const canvas=document.createElement('canvas');canvas.id='space-canvas';document.body.prepend(canvas);
- const ctx=canvas.getContext('2d');let w=0,h=0,particles=[],raf=0,last=0,clock=0;
+ const ctx=canvas.getContext('2d');let w=0,h=0,particles=[],launches=[],raf=0,last=0,clock=0,nextLaunch=900;
  const resize=()=>{
   const d=Math.min(devicePixelRatio||1,1.6);w=innerWidth;h=innerHeight;
   canvas.width=w*d;canvas.height=h*d;ctx.setTransform(d,0,0,d,0,0);
@@ -101,6 +101,28 @@ if(!reduce){
    haze.addColorStop(0,'rgba('+palette.rgb+',.045)');
    haze.addColorStop(1,'rgba('+palette.rgb+',0)');
    ctx.fillStyle=haze;ctx.fillRect(x-radius,y-radius,radius*2,radius*2);
+  }
+  // Tiny rockets, planes and spacecraft set off from just below the portrait.
+  if(clock>nextLaunch){
+   const photo=document.querySelector('.hero-portrait');
+   const frame=photo?.getBoundingClientRect();
+   if(frame&&frame.bottom>-30&&frame.top<h+30){
+    const kinds=['🚀','✈','🛸','🛰'];const angle=[-2.45,-2.05,-1.72,-1.28,-.82,-.48][Math.floor(Math.random()*6)];
+    const speed=1.15+Math.random()*.65;
+    launches.push({x:frame.left+frame.width*.5+(Math.random()-.5)*frame.width*.22,y:frame.bottom-4,
+     vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,age:0,life:420+Math.random()*170,
+     icon:kinds[Math.floor(Math.random()*kinds.length)],size:15+Math.random()*8,angle:angle+Math.PI/2});
+   }
+   nextLaunch=clock+1250+Math.random()*1450;
+  }
+  for(let i=launches.length-1;i>=0;i--){
+   const s=launches[i];s.age+=1;s.x+=s.vx;s.y+=s.vy;
+   s.vx+=Math.sin(s.age*.012)*.0015;s.vy-=.001;
+   const fade=Math.min(1,s.age/24,(s.life-s.age)/55);
+   ctx.save();ctx.globalAlpha=Math.max(0,fade)*.88;ctx.translate(s.x,s.y);
+   ctx.rotate(s.angle);ctx.font=s.size+'px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+   ctx.shadowColor='rgba('+palette.rgb+',.65)';ctx.shadowBlur=13;ctx.fillText(s.icon,0,0);ctx.restore();
+   if(s.age>s.life||s.x<-80||s.x>w+80||s.y<-100)launches.splice(i,1);
   }
   raf=requestAnimationFrame(draw);
  };
