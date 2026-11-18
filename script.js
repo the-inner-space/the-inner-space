@@ -107,13 +107,13 @@ if(!reduce){
    const photo=document.querySelector('.hero-portrait');
    const frame=photo?.getBoundingClientRect();
    if(frame&&frame.bottom>-30&&frame.top<h+30){
-    const kinds=['🚀','✈','🛸','🛰'];const angle=[-2.45,-2.05,-1.72,-1.28,-.82,-.48][Math.floor(Math.random()*6)];
+    const kinds=['🚀','✈','🛸','🛰'];const angle=[-2.75,-2.25,-1.85,-1.3,-.85,-.38][Math.floor(Math.random()*6)];
     const speed=1.15+Math.random()*.65;
-    launches.push({x:frame.left+frame.width*.5+(Math.random()-.5)*frame.width*.22,y:frame.bottom-4,
-     vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,age:0,life:420+Math.random()*170,
-     icon:kinds[Math.floor(Math.random()*kinds.length)],size:15+Math.random()*8,angle:angle+Math.PI/2});
+    launches.push({x:frame.left+frame.width*.5+(Math.random()-.5)*frame.width*.22,y:frame.bottom+18,
+     vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,age:0,life:300+Math.random()*130,
+     icon:kinds[Math.floor(Math.random()*kinds.length)],size:22+Math.random()*10,angle:angle+Math.PI/2});
    }
-   nextLaunch=clock+1250+Math.random()*1450;
+   nextLaunch=clock+700+Math.random()*900;
   }
   for(let i=launches.length-1;i>=0;i--){
    const s=launches[i];s.age+=1;s.x+=s.vx;s.y+=s.vy;
