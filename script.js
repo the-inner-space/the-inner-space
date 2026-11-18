@@ -2,12 +2,20 @@
 
 // Random colour system: choose a different palette on each page load.
 const palettes=[
+{name:'Pure Black',bg:'#000000',panel:'#111111',panel2:'#080808',text:'#ffffff',muted:'#c2c2c2',line:'#333333',accent:'#ffffff',glow:'#bdbdbd',rgb:'255,255,255'},
+{name:'Pure White',bg:'#ffffff',panel:'#f2f2f2',panel2:'#e8e8e8',text:'#111111',muted:'#555555',line:'#d0d0d0',accent:'#171717',glow:'#777777',rgb:'23,23,23'},
+{name:'Graphite',bg:'#101114',panel:'#202228',panel2:'#17191e',text:'#f7f7f8',muted:'#b8bbc3',line:'#383b44',accent:'#aeb4c2',glow:'#ffffff',rgb:'174,180,194'},
 {name:'Midnight Blue',bg:'#090e1c',panel:'#151f38',panel2:'#10182d',text:'#f4f2ec',muted:'#b2b8cb',line:'#293653',accent:'#a5b4ff',glow:'#f0c98e',rgb:'165,180,255'},
+{name:'Royal Blue',bg:'#07142b',panel:'#102b50',panel2:'#0b1e39',text:'#f2f7ff',muted:'#b4c8e5',line:'#25466d',accent:'#5ca8ff',glow:'#d6eaff',rgb:'92,168,255'},
 {name:'Emerald',bg:'#071711',panel:'#10291e',panel2:'#0b2118',text:'#f1fff6',muted:'#a9c8b5',line:'#244735',accent:'#63f5b0',glow:'#d8ffea',rgb:'99,245,176'},
 {name:'Violet',bg:'#10091c',panel:'#291b3d',panel2:'#1a1128',text:'#fbf5ff',muted:'#c4b4d5',line:'#49345f',accent:'#c78bff',glow:'#f0d9ff',rgb:'199,139,255'},
-{name:'Ruby',bg:'#1b0b13',panel:'#3a1927',panel2:'#25111b',text:'#fff4f1',muted:'#d9bcc5',line:'#573044',accent:'#f08aa8',glow:'#f6d8b5',rgb:'240,138,168'},
+{name:'Ruby Red',bg:'#19070b',panel:'#35121b',panel2:'#230b12',text:'#fff4f4',muted:'#d9b8bf',line:'#572631',accent:'#ff536b',glow:'#ffd1d8',rgb:'255,83,107'},
+{name:'Rose Pink',bg:'#1b0c16',panel:'#351b2b',panel2:'#25121e',text:'#fff5fa',muted:'#d8bdcc',line:'#58344a',accent:'#ff8fc7',glow:'#ffe0f0',rgb:'255,143,199'},
 {name:'Ocean Teal',bg:'#07191d',panel:'#103039',panel2:'#0b2229',text:'#effcff',muted:'#a9c8ce',line:'#28505a',accent:'#5de1dc',glow:'#c4fff4',rgb:'93,225,220'},
-{name:'Amber Noir',bg:'#17120a',panel:'#302516',panel2:'#21190f',text:'#fff8eb',muted:'#d0c0a5',line:'#55432a',accent:'#f2bd67',glow:'#ffe6b8',rgb:'242,189,103'}
+{name:'Amber Gold',bg:'#17120a',panel:'#302516',panel2:'#21190f',text:'#fff8eb',muted:'#d0c0a5',line:'#55432a',accent:'#f2bd67',glow:'#ffe6b8',rgb:'242,189,103'},
+{name:'Silver Ice',bg:'#111820',panel:'#202d38',panel2:'#17232c',text:'#f3f8fc',muted:'#b9c8d3',line:'#3a4b59',accent:'#b9e4ff',glow:'#ffffff',rgb:'185,228,255'},
+{name:'Forest Green',bg:'#0b160d',panel:'#1a2d1d',panel2:'#112016',text:'#f2fff1',muted:'#b6cbb3',line:'#344d37',accent:'#a2d977',glow:'#e5ffc9',rgb:'162,217,119'},
+{name:'Copper',bg:'#1a100c',panel:'#35231a',panel2:'#24170f',text:'#fff6ef',muted:'#d1b8a7',line:'#5a3b2b',accent:'#e69a68',glow:'#ffddc2',rgb:'230,154,104'}
 ];
 let previous=-1;try{previous=Number(localStorage.getItem('tis-colour-index'))}catch(e){}
 let chosen=Math.floor(Math.random()*(palettes.length-1));if(chosen>=previous)chosen++;
