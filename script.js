@@ -61,49 +61,56 @@ const progress=document.createElement('div');progress.id='scroll-light-progress'
 let scrollTick=false;const updateProgress=()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';scrollTick=false};window.addEventListener('scroll',()=>{if(!scrollTick){requestAnimationFrame(updateProgress);scrollTick=true}},{passive:true});updateProgress();
 if(!reduce){
  const canvas=document.createElement('canvas');canvas.id='space-canvas';document.body.prepend(canvas);
- const ctx=canvas.getContext('2d');let w=0,h=0,particles=[],raf=0;
+ const ctx=canvas.getContext('2d');let w=0,h=0,particles=[],raf=0,clock=0,last=0;
  const resize=()=>{
   const d=Math.min(devicePixelRatio||1,1.6);w=innerWidth;h=innerHeight;
   canvas.width=w*d;canvas.height=h*d;ctx.setTransform(d,0,0,d,0,0);
-  particles=Array.from({length:Math.min(90,Math.max(38,Math.floor(w/17)))},()=>({
-   x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.8+.45,
-   speed:Math.random()*.32+.08,phase:Math.random()*Math.PI*2,
-   drift:(Math.random()-.5)*.35
+  particles=Array.from({length:Math.min(75,Math.max(32,Math.floor(w/22)))},()=>({
+   x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.7+.45,
+   speed:Math.random()*.55+.22,phase:Math.random()*Math.PI*2,
+   lane:Math.random()
   }));
  };
- const draw=()=>{
+ const draw=(now)=>{
+  if(last)clock+=Math.min(40,now-last);last=now;
   ctx.clearRect(0,0,w,h);
-  // Slow, flowing aurora ribbons replace the old connected-star network.
-  for(let band=0;band<4;band++){
-   const base=h*(.22+band*.19);
-   const shift=performance.now()*.00012*(band%2? -1:1);
-   const grad=ctx.createLinearGradient(0,base-100,w,base+130);
+  // A luminous current travels across the screen, then gently reverses.
+  const cycle=(clock*.00012)%(Math.PI*2);
+  const direction=Math.cos(cycle)>=0?1:-1;
+  const travel=Math.sin(cycle);
+  for(let band=0;band<5;band++){
+   const base=h*(.16+band*.17);
+   const phase=travel*2.8+band*.9;
+   const grad=ctx.createLinearGradient(0,base-90,w,base+90);
    grad.addColorStop(0,'rgba('+palette.rgb+',0)');
-   grad.addColorStop(.48,'rgba('+palette.rgb+',.10)');
+   grad.addColorStop(.25,'rgba('+palette.rgb+',.025)');
+   grad.addColorStop(.52,'rgba('+palette.rgb+',.13)');
+   grad.addColorStop(.78,'rgba('+palette.rgb+',.035)');
    grad.addColorStop(1,'rgba('+palette.rgb+',0)');
    ctx.beginPath();
-   for(let x=0;x<=w+24;x+=24){
-    const y=base+Math.sin(x*.004+shift+band)*34+Math.sin(x*.0018-shift*1.7)*25;
-    if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+   for(let x=-20;x<=w+20;x+=18){
+    const y=base+Math.sin(x*.0045-phase)*48+Math.sin(x*.0018-phase*1.4)*26;
+    if(x===-20)ctx.moveTo(x,y);else ctx.lineTo(x,y);
    }
-   ctx.strokeStyle=grad;ctx.lineWidth=22+band*8;ctx.lineCap='round';
-   ctx.shadowBlur=34;ctx.shadowColor=palette.accent;ctx.stroke();ctx.shadowBlur=0;
+   ctx.strokeStyle=grad;ctx.lineWidth=18+band*5;ctx.lineCap='round';
+   ctx.shadowBlur=30;ctx.shadowColor=palette.accent;ctx.stroke();ctx.shadowBlur=0;
   }
-  // Soft firefly-like particles drift independently through the background.
+  // Tiny glowing particles follow the same left-right, right-left movement.
   for(const p of particles){
-   p.y-=p.speed;p.x+=Math.sin(performance.now()*.00035+p.phase)*.22+p.drift;
-   if(p.y<-12){p.y=h+12;p.x=Math.random()*w}
-   if(p.x<-12)p.x=w+12;if(p.x>w+12)p.x=-12;
-   const pulse=.35+.45*(.5+.5*Math.sin(performance.now()*.001+p.phase));
-   const glow=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*7);
-   glow.addColorStop(0,'rgba('+palette.rgb+','+pulse+')');
+   const wave=(Math.sin(cycle+p.phase)*.5+.5);
+   p.x+=direction*p.speed;
+   if(p.x>w+10)p.x=-10;if(p.x<-10)p.x=w+10;
+   const y=p.y+Math.sin(clock*.0007+p.phase)*13;
+   const alpha=.28+.52*wave;
+   const glow=ctx.createRadialGradient(p.x,y,0,p.x,y,p.r*8);
+   glow.addColorStop(0,'rgba('+palette.rgb+','+alpha+')');
    glow.addColorStop(1,'rgba('+palette.rgb+',0)');
-   ctx.fillStyle=glow;ctx.beginPath();ctx.arc(p.x,p.y,p.r*7,0,Math.PI*2);ctx.fill();
+   ctx.fillStyle=glow;ctx.beginPath();ctx.arc(p.x,y,p.r*8,0,Math.PI*2);ctx.fill();
   }
   raf=requestAnimationFrame(draw);
  };
- resize();draw();window.addEventListener('resize',resize,{passive:true});
- document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else draw()});
+ resize();draw(0);window.addEventListener('resize',resize,{passive:true});
+ document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(raf);last=0}else raf=requestAnimationFrame(draw)});
 }
 const portrait=document.querySelector('.hero-right');if(portrait&&!reduce&&matchMedia('(pointer:fine)').matches){portrait.addEventListener('pointermove',e=>{const r=portrait.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;portrait.style.transform='perspective(900px) rotateY('+(x*7)+'deg) rotateX('+(-y*6)+'deg)'});portrait.addEventListener('pointerleave',()=>portrait.style.transform='')}
 })();
