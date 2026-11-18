@@ -138,4 +138,24 @@ if(!reduce){
  document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(raf);last=0}else raf=requestAnimationFrame(draw)});
 }
 const portrait=document.querySelector('.hero-right');if(portrait&&!reduce&&matchMedia('(pointer:fine)').matches){portrait.addEventListener('pointermove',e=>{const r=portrait.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;portrait.style.transform='perspective(900px) rotateY('+(x*7)+'deg) rotateX('+(-y*6)+'deg)'});portrait.addEventListener('pointerleave',()=>portrait.style.transform='')}
+
+/* Floating programming symbols on the About page only */
+const codeRain=document.querySelector('.code-rain');
+if(codeRain&&!reduce){
+ const codeBits=['</>','{ }','[ ]','( )','const','let','function','return','=>','async','await','import','export','HTML','CSS','JavaScript','Python','React','Node.js','git commit','npm install','console.log()','<div>','</div>','class','while(true)','0101','1010','0xFF','API','JSON','null','true','false','&&','||','===','!==','#include','printf()','def main()','try { }','// create','/* idea */'];
+ const count=window.innerWidth<700?24:42;
+ for(let i=0;i<count;i++){
+  const bit=document.createElement('span');
+  bit.textContent=codeBits[Math.floor(Math.random()*codeBits.length)];
+  bit.style.setProperty('--x',(Math.random()*96)+'%');
+  bit.style.setProperty('--size',(11+Math.random()*12)+'px');
+  bit.style.setProperty('--opacity',(0.28+Math.random()*.42).toFixed(2));
+  bit.style.setProperty('--duration',(19+Math.random()*29)+'s');
+  bit.style.setProperty('--delay',(-Math.random()*42)+'s');
+  bit.style.setProperty('--drift',((Math.random()-.5)*150)+'px');
+  bit.style.setProperty('--tilt',((Math.random()-.5)*12)+'deg');
+  codeRain.appendChild(bit);
+ }
+}
+
 })();
