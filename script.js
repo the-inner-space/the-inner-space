@@ -53,7 +53,20 @@ document.head.appendChild(themeStyle);
 
 const y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
 const l=document.querySelector('.page-loader');const done=()=>{document.body.classList.add('site-ready');if(l)setTimeout(()=>l.remove(),900)};if(document.readyState==='complete')done();else window.addEventListener('load',done,{once:true});
-const m=document.querySelector('.v2-menu'),n=document.querySelector('.v2-nav');if(m&&n)m.addEventListener('click',()=>{const o=n.classList.toggle('open');m.setAttribute('aria-expanded',String(o));m.textContent=o?'×':'☰'});if(n)n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');if(m){m.setAttribute('aria-expanded','false');m.textContent='☰'}}));
+const m=document.querySelector('.v2-menu'),n=document.querySelector('.v2-nav');
+if(n){
+ const current=location.pathname.split('/').pop()||'index.html';
+ n.querySelectorAll('a').forEach(a=>{
+  const target=(a.getAttribute('href')||'').split('/').pop();
+  if(target===current){a.classList.add('active');a.setAttribute('aria-current','page')}
+  a.addEventListener('click',()=>{n.classList.remove('open');if(m){m.setAttribute('aria-expanded','false');m.textContent='☰'}});
+ });
+}
+if(m&&n){
+ m.addEventListener('click',e=>{e.stopPropagation();const opened=n.classList.toggle('open');m.setAttribute('aria-expanded',String(opened));m.textContent=opened?'×':'☰'});
+ document.addEventListener('click',e=>{if(!n.contains(e.target)&&!m.contains(e.target)){n.classList.remove('open');m.setAttribute('aria-expanded','false');m.textContent='☰'}});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){n.classList.remove('open');m.setAttribute('aria-expanded','false');m.textContent='☰'}});
+}
 const back=document.getElementById('back-top');if(back)back.addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
 const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const items=document.querySelectorAll('.reveal-v2');if(!('IntersectionObserver'in window)||reduce)items.forEach(x=>x.classList.add('in-view'));else{const ob=new IntersectionObserver((es,obs)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');obs.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -35px 0px'});items.forEach(x=>ob.observe(x))}
