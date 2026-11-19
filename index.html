@@ -122,6 +122,38 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
 .brand,.footer-brand{font-family:var(--serif)}
 @media(max-width:760px){.hero-name{font-size:clamp(25px,7.2vw,38px);letter-spacing:.35px;margin-bottom:23px}.hero-name .hero-prefix{font-size:14px;letter-spacing:4px;margin-bottom:6px}.hero-name .hero-name-main{font-size:clamp(39px,9vw,58px);letter-spacing:.5px;white-space:nowrap}.subtitle{font-size:27px}.description{font-size:11px;line-height:1.85}}
 
+
+/* Reimagined animated footer */
+.home-footer{position:relative;isolation:isolate;overflow:hidden;padding:76px max(7vw,calc((100vw - 1160px)/2)) 24px;background:radial-gradient(ellipse at 82% 18%,rgba(255,255,255,.09),transparent 34%),linear-gradient(135deg,#111 0%,#070707 55%,#101010 100%);border-top:1px solid rgba(255,255,255,.15);color:#aaa}
+.home-footer:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.2;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+.footer-orbit{position:absolute;right:10%;top:-118px;width:290px;height:290px;border:1px solid rgba(255,255,255,.13);border-radius:50%;animation:footerOrbit 22s linear infinite;pointer-events:none}
+.footer-orbit:before,.footer-orbit:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.1);border-radius:50%;inset:24px}
+.footer-orbit:after{inset:56px}
+.footer-orbit span{position:absolute;width:6px;height:6px;border-radius:50%;background:#eee;box-shadow:0 0 18px rgba(255,255,255,.8);top:40px;left:42px}
+.footer-orbit span:nth-child(2){top:auto;left:auto;right:38px;bottom:54px;width:4px;height:4px}
+.footer-orbit span:nth-child(3){top:50%;left:50%;width:3px;height:3px}
+.footer-main{position:relative;display:grid;grid-template-columns:1.4fr 1fr auto;align-items:center;gap:40px;padding-bottom:58px}
+.footer-identity{animation:footerRise .8s ease both}
+.footer-brand{display:inline-block;font:600 clamp(25px,3vw,38px) var(--serif);letter-spacing:1px;color:#f5f5f3;text-decoration:none;transition:letter-spacing .35s ease,text-shadow .35s ease}
+.footer-brand:hover{letter-spacing:3px;text-shadow:0 0 24px rgba(255,255,255,.2)}
+.footer-dot{color:#aaa}
+.footer-tagline{margin:10px 0 0;font-size:11px;letter-spacing:1.1px;color:#888}
+.footer-links{display:flex;flex-direction:column;gap:13px}
+.footer-links a{display:flex;align-items:center;justify-content:space-between;gap:24px;color:#aaa;text-decoration:none;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;transition:color .25s ease,transform .25s ease}
+.footer-links a span{opacity:0;transform:translate(-5px,5px);transition:opacity .25s ease,transform .25s ease}
+.footer-links a:hover{color:#fff;transform:translateX(5px)}
+.footer-links a:hover span{opacity:1;transform:translate(0,0)}
+.back-to-top{display:flex;align-items:center;gap:13px;color:#aaa;text-decoration:none;font-size:9px;letter-spacing:1.5px;writing-mode:vertical-rl;transition:color .25s ease,transform .25s ease}
+.back-to-top span{font-size:19px}
+.back-to-top:hover{color:#fff;transform:translateY(-5px)}
+.footer-bottom{position:relative;display:flex;justify-content:space-between;gap:20px;padding-top:19px;border-top:1px solid rgba(255,255,255,.13);font-size:9px;letter-spacing:1.2px;color:#666}
+.footer-bottom i{font-style:normal;color:#ddd;margin-left:5px;display:inline-block;animation:footerSpin 12s linear infinite}
+@keyframes footerRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes footerOrbit{to{transform:rotate(360deg)}}
+@keyframes footerSpin{to{transform:rotate(360deg)}}
+@media(max-width:760px){.home-footer{padding:58px 23px 22px}.footer-main{grid-template-columns:1fr auto;gap:30px;padding-bottom:38px}.footer-identity{grid-column:1/-1}.footer-links{grid-column:1;grid-row:2;align-items:flex-start}.back-to-top{grid-column:2;grid-row:2}.footer-orbit{right:-120px;top:-100px;width:240px;height:240px}.footer-bottom{font-size:8px;letter-spacing:.7px;flex-wrap:wrap;gap:10px}}
+@media(prefers-reduced-motion:reduce){.footer-orbit,.footer-bottom i{animation:none}.footer-identity{animation:none}.footer-brand,.footer-links a,.footer-links a span,.back-to-top{transition:none}}
+
 </style>
 </head>
 <body>
@@ -196,9 +228,23 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
   </div>
 </section>
 <footer class="home-footer">
-  <a class="footer-brand" href="index.html">THE INNER SPACE</a>
-  <span>© 2026 Nayeem. A personal space on the internet.</span>
-  <nav class="footer-links" aria-label="Footer navigation"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></nav>
+  <div class="footer-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="footer-main">
+    <div class="footer-identity">
+      <a class="footer-brand" href="index.html">THE INNER SPACE<span class="footer-dot">.</span></a>
+      <p class="footer-tagline">A quiet universe of thoughts, words &amp; imagination.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="about.html">About <span>↗</span></a>
+      <a href="contact.html">Contact <span>↗</span></a>
+      <a href="privacy.html">Privacy <span>↗</span></a>
+    </nav>
+    <a class="back-to-top" href="#home" aria-label="Back to top">BACK TO TOP <span>↑</span></a>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nayeem. All thoughts reserved.</span>
+    <span>MADE OF THOUGHTS <i>✳</i></span>
+  </div>
 </footer>
 
 <script>
