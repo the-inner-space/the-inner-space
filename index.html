@@ -35,11 +35,11 @@ h1{font-family:var(--serif);font-weight:500;font-size:clamp(48px,6vw,82px);line-
 
 /* Portrait stays visible; diagonal smoke rises behind it */
 .portrait{z-index:1;width:min(56vw,760px);height:94%;right:5%;bottom:0;opacity:1;object-fit:contain;object-position:center bottom;display:block}
-.portrait-smoke{z-index:1;right:-2%;bottom:-12%;width:min(76vw,1000px);height:112%;opacity:.58;filter:blur(19px);overflow:visible;mix-blend-mode:screen}
+.portrait-smoke{position:absolute;z-index:1;right:-2%;bottom:-12%;width:min(76vw,1000px);height:112%;opacity:.82;filter:blur(19px);overflow:visible;mix-blend-mode:screen;pointer-events:none}
 .portrait-smoke:before,.portrait-smoke:after{content:"";position:absolute;inset:8% 2% 0 0;border-radius:50%;background:
-radial-gradient(ellipse at 18% 88%,rgba(235,235,235,.34) 0,rgba(205,205,205,.18) 13%,transparent 33%),
-radial-gradient(ellipse at 34% 70%,rgba(220,220,220,.29) 0,rgba(190,190,190,.13) 14%,transparent 34%),
-radial-gradient(ellipse at 51% 52%,rgba(235,235,235,.25) 0,rgba(190,190,190,.12) 13%,transparent 34%),
+radial-gradient(ellipse at 18% 88%,rgba(235,235,235,.48) 0,rgba(205,205,205,.25) 13%,transparent 33%),
+radial-gradient(ellipse at 34% 70%,rgba(220,220,220,.42) 0,rgba(190,190,190,.2) 14%,transparent 34%),
+radial-gradient(ellipse at 51% 52%,rgba(235,235,235,.36) 0,rgba(190,190,190,.18) 13%,transparent 34%),
 radial-gradient(ellipse at 68% 31%,rgba(220,220,220,.22) 0,rgba(190,190,190,.1) 12%,transparent 31%);
 transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 12s ease-in-out infinite alternate}
 .portrait-smoke:after{inset:18% -8% -8% 12%;opacity:.72;transform:rotate(-32deg) scale(1.02);filter:blur(30px);animation-duration:17s;animation-direction:alternate-reverse}
@@ -51,7 +51,7 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
 <body>
 <main class="hero" id="home">
 <div class="portrait-smoke" aria-hidden="true"></div>
-<img class="portrait" src="nayeem-portrait.webp" alt="Nayeem's black and white portrait">
+<img class="portrait" src="nayeem-portrait.webp?v=2" alt="Nayeem's black and white portrait">
 <span class="spark one">✦</span><span class="spark two">✧</span>
 <header class="topbar">
 <a class="brand" href="index.html"><span class="brand-mark">△</span><span>THE INNER SPACE</span></a>
