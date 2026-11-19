@@ -279,6 +279,20 @@ nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{nav.c
 @media(max-width:760px){.home-footer{padding:30px 23px 16px}.footer-main{gap:18px;padding-bottom:20px}.footer-identity{grid-column:1/-1}.footer-links{gap:8px}.footer-orbit{right:-75px;top:-85px;width:170px;height:170px}.footer-bottom{padding-top:11px;font-size:7px;gap:8px}}
 @media(prefers-reduced-motion:reduce){.home-footer:after{animation:none}}
 
+
+/* Animated dark quote atmosphere — replaces the former white quote panel */
+.quote-section{position:relative;isolation:isolate;overflow:hidden;min-height:310px;padding:100px 24px 104px;background:linear-gradient(115deg,#080b16 0%,#101027 35%,#0a2025 68%,#090b16 100%);color:#f5f4ff}
+.quote-section:before,.quote-section:after{content:"";position:absolute;z-index:-1;pointer-events:none;border-radius:50%;filter:blur(2px)}
+.quote-section:before{width:580px;height:360px;left:-12%;top:-48%;background:radial-gradient(ellipse,rgba(111,91,232,.34),rgba(111,91,232,.08) 48%,transparent 72%);animation:quoteAura 12s ease-in-out infinite alternate}
+.quote-section:after{width:620px;height:390px;right:-12%;bottom:-55%;background:radial-gradient(ellipse,rgba(40,205,190,.25),rgba(40,205,190,.06) 50%,transparent 72%);animation:quoteAura 15s ease-in-out infinite alternate-reverse}
+.quote-section .quote-mark{position:relative;color:#8c83e8;font-size:64px;margin-bottom:19px;text-shadow:0 0 28px rgba(139,126,255,.4);animation:quoteMarkFloat 5s ease-in-out infinite}
+.quote-section .home-quote{position:relative;max-width:850px;color:#f4f2ff;text-shadow:0 2px 24px rgba(147,135,255,.13)}
+.quote-section .quote-caption{position:relative;color:#a9a6c9;letter-spacing:2.5px}
+@keyframes quoteAura{0%{transform:translate3d(-4%,2%,0) scale(.9);opacity:.65}50%{transform:translate3d(4%,-3%,0) scale(1.08);opacity:1}100%{transform:translate3d(-1%,4%,0) scale(1);opacity:.72}}
+@keyframes quoteMarkFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@media(max-width:760px){.quote-section{min-height:280px;padding:78px 24px 82px}.quote-section .home-quote{font-size:clamp(25px,7vw,36px)}}
+@media(prefers-reduced-motion:reduce){.quote-section:before,.quote-section:after,.quote-section .quote-mark{animation:none!important}}
+
 /* Keep each part of the hero introduction on its own line. */
 .hero-content .description{display:flex;flex-direction:column;align-items:flex-start;gap:7px;width:min(900px,78vw);max-width:78vw;line-height:1.8}
 .hero-content .description span{display:block;width:100%}
