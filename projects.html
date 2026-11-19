@@ -13,7 +13,7 @@
 .project-intro:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,255,255,.08),transparent 58%);z-index:4;pointer-events:none}
 .intro-topline{position:absolute;z-index:8;top:7%;left:6%;font:10px var(--sans);letter-spacing:.28em;color:rgba(255,255,255,.7);opacity:0;animation:toplineIn .6s .15s forwards}
 .intro-bottomline{position:absolute;z-index:8;bottom:7%;left:6%;font:italic clamp(17px,2.4vw,27px) var(--serif);color:#eee;opacity:0;animation:toplineIn .7s 1.5s forwards}
-.work-mosaic{position:absolute;inset:0;overflow:hidden}
+.work-mosaic{position:absolute;inset:0;overflow:hidden;animation:mosaicMerge 1.05s 3.55s cubic-bezier(.7,0,.2,1) forwards}
 .work-tile{position:absolute;width:50vw;height:50vh;overflow:hidden;background:#151515;opacity:0;filter:grayscale(1) contrast(1.08);border:1px solid rgba(255,255,255,.12);will-change:transform,opacity,width,height}
 .work-tile video{width:100%;height:100%;object-fit:cover;display:block;opacity:.83}
 .work-tile:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.3),transparent 60%,rgba(0,0,0,.25))}
@@ -32,7 +32,8 @@
 .intro-center-title div{text-align:center;padding:18px 30px;background:rgba(0,0,0,.62);backdrop-filter:blur(7px);border:1px solid rgba(255,255,255,.3)}
 .intro-center-title strong{display:block;font:400 clamp(28px,6vw,76px)/1 var(--serif);letter-spacing:-.04em}
 .intro-center-title small{display:block;margin-top:12px;font:9px var(--sans);letter-spacing:.32em;color:#d0d0d0}
-@keyframes titleReveal{to{opacity:1}}
+@keyframes mosaicMerge{0%{transform:scale(1);opacity:1;filter:blur(0)}55%{transform:scale(.72);opacity:.9;filter:blur(2px)}100%{transform:scale(.08);opacity:0;filter:blur(12px)}}
+@keyframes titleReveal{0%{opacity:0;transform:scale(.82);filter:blur(8px)}65%{opacity:1;transform:scale(1.04);filter:blur(0)}100%{opacity:1;transform:scale(1);filter:blur(0)}}
 .intro-skip{position:absolute;z-index:10;right:6%;bottom:6%;border:1px solid rgba(255,255,255,.55);background:rgba(0,0,0,.35);color:#fff;padding:10px 16px;font:10px var(--sans);letter-spacing:.16em;cursor:pointer}
 .intro-skip:hover{background:#fff;color:#111}
 .project-intro.is-done{display:none}
@@ -53,6 +54,21 @@
  .tile-creator{left:50%;top:50%;transform:translate(-50%,-50%)!important}
  .intro-topline,.intro-bottomline,.intro-center-title{animation:none;opacity:1}
 }
+.project-process,.project-directions,.project-roadmap{padding-top:clamp(54px,8vw,100px);padding-bottom:clamp(54px,8vw,100px);border-top:1px solid rgba(127,127,127,.25)}
+.process-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(127,127,127,.3);border:1px solid rgba(127,127,127,.3);margin-top:36px}
+.process-step{background:var(--paper,#f3f1eb);padding:clamp(20px,3vw,34px);min-height:220px}
+.process-step>span,.direction-row>span{font:11px var(--sans);letter-spacing:.18em;opacity:.55}
+.process-step h3,.direction-row h3{font:400 clamp(21px,2.4vw,30px) var(--serif);margin:28px 0 12px}
+.process-step p,.direction-row p,.roadmap-panel>p{font:14px/1.9 var(--sans);opacity:.72;max-width:52ch}
+.direction-list{margin-top:26px;border-top:1px solid rgba(127,127,127,.3)}
+.direction-row{display:grid;grid-template-columns:55px 1fr auto;align-items:start;gap:20px;padding:25px 0;border-bottom:1px solid rgba(127,127,127,.3)}
+.direction-row h3{margin:0 0 7px}.direction-row p{margin:0}.direction-row small{font:9px var(--sans);letter-spacing:.16em;opacity:.55;padding-top:8px}
+.roadmap-panel{padding:clamp(28px,5vw,60px);border:1px solid rgba(127,127,127,.35);background:rgba(127,127,127,.045)}
+.roadmap-panel .section-title{max-width:700px}.roadmap-panel>p{max-width:68ch;margin:18px 0 25px}
+.roadmap-tags{display:flex;flex-wrap:wrap;gap:9px}.roadmap-tags span{border:1px solid rgba(127,127,127,.45);padding:9px 13px;font:10px var(--sans);letter-spacing:.08em}
+@media(max-width:760px){.process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.direction-row{grid-template-columns:30px 1fr}.direction-row small{grid-column:2}}
+@media(max-width:440px){.process-grid{grid-template-columns:1fr}.process-step{min-height:0}}
+@media(prefers-reduced-motion:reduce){.work-mosaic{animation:none!important}.intro-center-title{animation:none;opacity:1}}
 </style>
 </head>
 <body>
@@ -91,6 +107,27 @@
 <article class="project-small"><div><span class="index">03 / IN PROGRESS</span><h3>Future Projects</h3><p>New ideas are always finding their way into notebooks and sketches. This space will grow as those ideas become real and ready to share.</p></div><span class="status">More to come</span></article>
 </div>
 <div class="project-note"><div class="kicker">A THOUGHT BEHIND THE WORK</div><blockquote>“The point is not to make something perfect. It is to make something that did not exist before.”</blockquote></div>
+</section>
+<section class="wrap project-section project-process">
+<div class="project-section-head"><div><div class="kicker">HOW AN IDEA TAKES SHAPE</div><h2 class="section-title">From a passing thought to a finished piece.</h2></div><span class="project-count">THE PROCESS</span></div>
+<div class="process-grid">
+<article class="process-step"><span>01</span><h3>Notice</h3><p>It often begins with something small: a question, a problem, a line I read, or a design that makes me curious. I collect those little sparks before deciding what they could become.</p></article>
+<article class="process-step"><span>02</span><h3>Imagine</h3><p>I explore different directions, sketch the structure and think about how the final experience should feel. The first idea is only a starting point, not a rule.</p></article>
+<article class="process-step"><span>03</span><h3>Build</h3><p>I turn the plan into something real, test the details, make mistakes and keep adjusting. This is where patience and curiosity matter most.</p></article>
+<article class="process-step"><span>04</span><h3>Refine</h3><p>I return to the work with fresh eyes, simplify what feels unnecessary and improve the parts that deserve more care. Then I share what is ready.</p></article>
+</div>
+</section>
+<section class="wrap project-section project-directions">
+<div class="project-section-head"><div><div class="kicker">FIELDS I LIKE TO EXPLORE</div><h2 class="section-title">Different interests. One curious mind.</h2></div></div>
+<div class="direction-list">
+<div class="direction-row"><span>01</span><div><h3>Web &amp; Interface Design</h3><p>Building thoughtful digital spaces, experimenting with layouts, typography and interactions.</p></div><small>DESIGN / DEVELOPMENT</small></div>
+<div class="direction-row"><span>02</span><div><h3>Creative Technology</h3><p>Learning how tools, code and new ideas can work together to create useful experiences.</p></div><small>EXPERIMENT / LEARNING</small></div>
+<div class="direction-row"><span>03</span><div><h3>Writing &amp; Content</h3><p>Exploring ways to turn thoughts, stories and observations into clear, meaningful content.</p></div><small>WORDS / STORYTELLING</small></div>
+<div class="direction-row"><span>04</span><div><h3>Digital Business &amp; Markets</h3><p>Understanding online work, independent creation and the changing world of digital markets.</p></div><small>RESEARCH / DISCOVERY</small></div>
+</div>
+</section>
+<section class="wrap project-section project-roadmap">
+<div class="roadmap-panel"><div class="kicker">WHAT COMES NEXT</div><h2 class="section-title">An unfinished list, by design.</h2><p>Not every idea is ready to become a project today. Some need more learning, some need time, and some may change completely. I want this page to grow honestly—with real work, real progress and lessons from the process.</p><div class="roadmap-tags"><span>More experiments</span><span>Useful web tools</span><span>Creative projects</span><span>Better ideas</span></div></div>
 </section>
 <section class="wrap project-end"><div><div class="kicker">THE NEXT IDEA</div><h2>There is always more to make.</h2><p>Every finished project leaves behind another question, another possibility, another beginning.</p></div><a class="btn" href="contact.html">GET IN TOUCH ↗</a></section>
 </main>
