@@ -1,1 +1,123 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A shelf for books I have read, books I want to read and words that deserve to be revisited."><meta name="theme-color" content="#f3f1eb"><title>Bookshelf | The Inner Space</title><link rel="stylesheet" href="style-new.css"></head><body><header class="site-header"><div class="wrap head-inner"><a class="brand" href="index.html">THE INNER SPACE<small>A PERSONAL COLLECTION</small></a><nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills & Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html" class="active">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></header><section class="page-intro"><div class="wrap"><span class="page-no">06 / 12</span><div class="kicker">READING NOTES</div><h1>A shelf for stories and ideas.</h1><p>A place for books waiting to be explored, poems worth returning to and pages that leave something behind.</p></div></section><main class="wrap content"><div class="book-layout"><aside class="book-aside"><div class="kicker">THE READING ROOM</div><div class="big-num">06</div><p class="muted">Read slowly. Keep what matters. Return whenever you like.</p></aside><div><h2 class="section-title">What's on this shelf</h2><div class="book-list"><article class="book-item"><b>01</b><div><h3>BOOKS TO EXPLORE</h3><p class="muted">A growing list of books waiting for a quiet afternoon and a little attention.</p></div></article><article class="book-item"><b>02</b><div><h3>POEMS & POETS</h3><p class="muted">Collections and individual poems that make familiar feelings feel new.</p></div></article><article class="book-item"><b>03</b><div><h3>FAVOURITE PAGES</h3><p class="muted">A place to keep memorable passages and ideas that remain after a book is closed.</p></div></article></div></div></div></main><footer class="site-footer"><div class="wrap foot-inner"><div><b>THE INNER SPACE</b><br><small>A little universe, still unfolding. · © 2026</small></div><nav class="foot-nav"><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills & Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="A quiet digital bookshelf for literature, poetry, ideas and words worth keeping.">
+<title>Bookshelf — THE INNER SPACE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090909;--panel:#111;--text:#f5f5f3;--muted:#aaa;--line:rgba(255,255,255,.13);--serif:"Cormorant Garamond",Georgia,serif;--sans:"Manrope",Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden}a{color:inherit;text-decoration:none}
+.topbar{width:min(1160px,calc(100% - 9vw));margin:auto;min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07);position:relative;z-index:5}
+.brand{display:flex;align-items:center;gap:9px;white-space:nowrap;font:600 17px var(--serif);letter-spacing:.2px}.brand-mark{font:24px var(--sans)}
+.nav{display:flex;flex:1;justify-content:flex-end;flex-wrap:wrap;gap:9px 17px;max-width:850px}.nav a{color:#c7c7c7;font-size:10px;white-space:nowrap;transition:color .2s}.nav a:hover,.nav a.active{color:#fff}.nav a.active:after{content:"";display:block;height:1px;background:#ddd;margin-top:4px}
+.hire{border:1px solid rgba(255,255,255,.45);border-radius:30px;padding:10px 19px;font-size:10px;white-space:nowrap;transition:.25s}.hire:hover{background:#fff;color:#111}
+.menu-toggle{display:none;border:1px solid var(--line);color:#fff;background:transparent;border-radius:50%;width:38px;height:38px;font-size:18px;cursor:pointer}
+.books-hero{min-height:550px;position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;background:radial-gradient(ellipse at 78% 48%,rgba(170,160,140,.14),transparent 34%),linear-gradient(112deg,#090909,#111 58%,#080808)}
+.books-hero:before{content:"";position:absolute;z-index:-1;right:9%;top:50%;transform:translateY(-50%) rotate(-8deg);width:300px;height:390px;border:1px solid rgba(255,255,255,.12);box-shadow:18px 18px 0 -1px rgba(255,255,255,.025),36px 36px 0 -1px rgba(255,255,255,.018);border-radius:3px;opacity:.7}
+.hero-inner{width:min(1060px,calc(100% - 12vw));margin:auto;padding:100px 0 112px;position:relative;z-index:1}
+.page-count{display:inline-flex;align-items:center;gap:12px;color:#888;font-size:9px;letter-spacing:2px;margin-bottom:30px}.page-count:after{content:"";height:1px;width:38px;background:#777}
+.eyebrow,.kicker{font-size:10px;letter-spacing:2.7px;text-transform:uppercase;color:#aaa;font-weight:700}
+.hero-title{font:600 clamp(64px,9vw,112px)/.88 var(--serif);letter-spacing:-3px;max-width:730px;margin:23px 0 25px}.hero-title em{font-weight:600;color:#e4e2dc}
+.hero-copy{max-width:455px;color:#aaa;font-size:13px;line-height:2}
+.hero-bottom{display:flex;align-items:center;gap:15px;margin-top:34px}.hero-link{display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,.5);border-radius:30px;padding:12px 19px;font-size:11px;transition:.25s}.hero-link:hover{background:#f5f5f3;color:#111}.hero-note{color:#777;font-size:10px;letter-spacing:.7px}
+.scroll-indicator{position:absolute;bottom:30px;left:max(6vw,calc((100vw - 1160px)/2));writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;letter-spacing:2px;color:#888;display:flex;align-items:center;gap:11px}.scroll-indicator:before{content:"";height:35px;width:1px;background:#777}
+.section{padding:96px max(7vw,calc((100vw - 1060px)/2))}
+.section-head{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:end;margin-bottom:48px}
+.section-title{font:600 clamp(36px,5vw,58px)/1.02 var(--serif);letter-spacing:-1px;margin-top:15px;max-width:540px}.section-title em{font-weight:600}
+.section-intro{color:#999;font-size:12px;line-height:2;max-width:410px}
+.shelves-section{background:linear-gradient(180deg,#0a0a0a,#101010 50%,#090909)}
+.shelf-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.shelf-card{position:relative;min-height:245px;padding:23px;border:1px solid rgba(255,255,255,.12);border-radius:5px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;transition:transform .3s,border-color .3s,background .3s}
+.shelf-card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.32);background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.02))}
+.shelf-top{display:flex;justify-content:space-between;align-items:center;color:#858585;font-size:9px;letter-spacing:1.8px}
+.book-stack{height:92px;display:flex;align-items:flex-end;gap:7px;padding:0 3px 3px}
+.book{height:76px;width:25px;border:1px solid rgba(255,255,255,.24);border-radius:2px 3px 1px 1px;background:linear-gradient(90deg,rgba(255,255,255,.09),rgba(255,255,255,.025));position:relative;box-shadow:3px 3px 8px rgba(0,0,0,.25)}
+.book:before{content:"";position:absolute;top:8px;bottom:8px;left:5px;width:1px;background:rgba(255,255,255,.2)}
+.book:nth-child(2){height:88px;width:29px;background:linear-gradient(90deg,rgba(210,205,190,.16),rgba(255,255,255,.025))}
+.book:nth-child(3){height:68px;width:23px}
+.book:nth-child(4){height:82px;width:27px;background:linear-gradient(90deg,rgba(255,255,255,.13),rgba(255,255,255,.025))}
+.shelf-card h3{font:600 29px/1 var(--serif);margin:18px 0 9px}
+.shelf-card p{color:#999;font-size:11px;line-height:1.8;max-width:270px}
+.shelf-foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;color:#777;font-size:9px;letter-spacing:1.2px;text-transform:uppercase}.shelf-foot span:last-child{font-size:17px;color:#ddd}
+.reading-note{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}
+.note-panel{border:1px solid var(--line);padding:30px;background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.012));border-radius:5px}
+.note-panel h3{font:600 31px/1.1 var(--serif);margin:12px 0}
+.note-panel p{color:#999;font-size:12px;line-height:2}
+.note-list{display:grid;gap:0}
+.note-row{display:grid;grid-template-columns:50px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.note-row:first-child{padding-top:0}.note-row:last-child{border-bottom:0}
+.note-number{font-size:9px;letter-spacing:1.5px;color:#777;padding-top:5px}
+.note-row h4{font:600 25px/1.1 var(--serif);margin-bottom:7px}
+.note-row p{color:#999;font-size:11px;line-height:1.8}
+.quote-section{padding:100px 24px;text-align:center;background:#e9e9e6;color:#111}
+.quote-mark{font:italic 75px/.8 var(--serif);color:#999;margin-bottom:18px}
+.quote-section blockquote{font:italic 600 clamp(29px,4vw,46px)/1.3 var(--serif);max-width:820px;margin:0 auto 22px}
+.quote-section p{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#666}
+.footer{padding:32px max(7vw,calc((100vw - 1160px)/2));border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;align-items:center;gap:20px;color:#858585;font-size:10px}
+.footer-brand{font:600 17px var(--serif);color:#eee}.footer-links{display:flex;flex-wrap:wrap;gap:17px}.footer-links a:hover{color:#fff}
+@media(max-width:1050px) and (min-width:761px){.topbar{width:calc(100% - 40px);flex-wrap:wrap}.nav{max-width:none;flex-basis:100%;justify-content:center;padding:8px 0 4px;gap:12px 20px}}
+@media(max-width:760px){.topbar{width:calc(100% - 36px);height:68px;min-height:68px;padding:0}.menu-toggle{display:block}.hire{margin-left:auto;margin-right:12px;padding:9px 14px}.nav{display:none;position:absolute;top:60px;right:0;width:min(300px,calc(100vw - 36px));max-height:70vh;overflow-y:auto;padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(12,12,12,.98);flex-direction:column;align-items:flex-start;justify-content:flex-start;flex-wrap:nowrap;gap:16px}.nav.open{display:flex}.nav a{font-size:12px}.books-hero{min-height:520px}.books-hero:before{right:-18%;width:230px;height:310px}.hero-inner{width:calc(100% - 46px);padding:92px 0 105px}.hero-title{font-size:clamp(65px,17vw,90px);letter-spacing:-2px}.hero-copy{font-size:12px;max-width:330px}.hero-bottom{align-items:flex-start;flex-direction:column}.scroll-indicator{left:22px;bottom:25px}.section{padding:74px 23px}.section-head{grid-template-columns:1fr;gap:18px;margin-bottom:35px}.section-title{font-size:43px}.shelf-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.shelf-card{min-height:225px;padding:17px}.shelf-card h3{font-size:25px}.reading-note{grid-template-columns:1fr;gap:35px}.note-panel{padding:23px}.quote-section{padding:80px 24px}.footer{padding:28px 23px;align-items:flex-start;flex-direction:column}}
+@media(max-width:430px){.shelf-grid{grid-template-columns:1fr}.shelf-card{min-height:205px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+<a class="brand" href="index.html"><span class="brand-mark">△</span><span>THE INNER SPACE</span></a>
+<a class="hire" href="contact.html">Hire Me ↗</a>
+<button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+<nav class="nav" aria-label="Main navigation">
+<a href="index.html">Home</a><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills &amp; Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html" class="active">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a>
+</nav>
+</header>
+<main>
+<section class="books-hero">
+<div class="hero-inner">
+<div class="page-count">06 / 12 · THE READING ROOM</div>
+<p class="eyebrow">A quiet place for curious minds</p>
+<h1 class="hero-title">Between the<br><em>pages.</em></h1>
+<p class="hero-copy">Some books leave us with stories. Others leave us with questions, new perspectives and words we carry for years. This is a little space for all of them.</p>
+<div class="hero-bottom"><a class="hero-link" href="#shelves">Explore the shelves <span>↓</span></a><span class="hero-note">Read. Reflect. Remember.</span></div>
+</div>
+<div class="scroll-indicator">SCROLL TO EXPLORE</div>
+</section>
+<section class="section shelves-section" id="shelves">
+<div class="section-head">
+<div><p class="kicker">THE COLLECTION</p><h2 class="section-title">A place for every<br>kind of <em>curiosity.</em></h2></div>
+<p class="section-intro">A bookshelf is more than a row of titles. It is a map of the things that make us wonder. Explore the different corners of this reading space.</p>
+</div>
+<div class="shelf-grid">
+<article class="shelf-card"><div class="shelf-top"><span>01 / STORIES</span><span>✦</span></div><div class="book-stack"><i class="book"></i><i class="book"></i><i class="book"></i><i class="book"></i></div><div><h3>Fiction &amp; Literature</h3><p>Worlds imagined, lives explored and stories that stay long after the last page.</p></div><div class="shelf-foot"><span>Stories to get lost in</span><span>↗</span></div></article>
+<article class="shelf-card"><div class="shelf-top"><span>02 / VERSE</span><span>✧</span></div><div class="book-stack"><i class="book"></i><i class="book"></i><i class="book"></i><i class="book"></i></div><div><h3>Poetry &amp; Prose</h3><p>Carefully chosen words, quiet emotions and lines that feel like they understand.</p></div><div class="shelf-foot"><span>Words that linger</span><span>↗</span></div></article>
+<article class="shelf-card"><div class="shelf-top"><span>03 / IDEAS</span><span>✦</span></div><div class="book-stack"><i class="book"></i><i class="book"></i><i class="book"></i><i class="book"></i></div><div><h3>Ideas &amp; Philosophy</h3><p>Questions about life, meaning, people and the world we are trying to understand.</p></div><div class="shelf-foot"><span>Room to think</span><span>↗</span></div></article>
+<article class="shelf-card"><div class="shelf-top"><span>04 / KNOWLEDGE</span><span>✧</span></div><div class="book-stack"><i class="book"></i><i class="book"></i><i class="book"></i><i class="book"></i></div><div><h3>Learning &amp; Growth</h3><p>New skills, useful knowledge and perspectives that help us keep moving forward.</p></div><div class="shelf-foot"><span>Always learning</span><span>↗</span></div></article>
+<article class="shelf-card"><div class="shelf-top"><span>05 / FAVOURITES</span><span>✦</span></div><div class="book-stack"><i class="book"></i><i class="book"></i><i class="book"></i><i class="book"></i></div><div><h3>Personal Favourites</h3><p>Books and collections worth revisiting, recommending and keeping close.</p></div><div class="shelf-foot"><span>Worth returning to</span><span>↗</span></div></article>
+<article class="shelf-card"><div class="shelf-top"><span>06 / TO READ</span><span>✧</span></div><div class="book-stack"><i class="book"></i><i class="book"></i><i class="book"></i><i class="book"></i></div><div><h3>On My Reading List</h3><p>A little reminder of the books waiting for their turn on a quiet afternoon.</p></div><div class="shelf-foot"><span>Next pages to discover</span><span>↗</span></div></article>
+</div>
+</section>
+<section class="section">
+<div class="reading-note">
+<div><p class="kicker">MORE THAN READING</p><h2 class="section-title">What stays after<br>the <em>last page.</em></h2></div>
+<div class="note-panel"><p class="kicker">A READING NOTE</p><h3>Keep the words that move you.</h3><p>Sometimes a single sentence can change the way we see something. This space is also for favourite passages, thoughtful observations and little notes worth keeping — because reading does not end when a book closes.</p></div>
+</div>
+<div class="note-list" style="max-width:760px;margin:58px auto 0">
+<div class="note-row"><span class="note-number">01</span><div><h4>Passages to remember</h4><p>Lines and paragraphs that deserve another visit.</p></div></div>
+<div class="note-row"><span class="note-number">02</span><div><h4>Thoughts from the pages</h4><p>Personal reflections and ideas sparked by reading.</p></div></div>
+<div class="note-row"><span class="note-number">03</span><div><h4>Books to share</h4><p>Recommendations for anyone looking for their next good read.</p></div></div>
+</div>
+</section>
+<section class="quote-section"><div class="quote-mark">“</div><blockquote>A room without books is like a body without a soul.</blockquote><p>A thought for every reader</p></section>
+</main>
+<footer class="footer"><a class="footer-brand" href="index.html">THE INNER SPACE</a><span>© 2026 Nayeem. A personal space on the internet.</span><nav class="footer-links"><a href="index.html">Home</a><a href="journey.html">My Journey</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></nav></footer>
+<script>
+const menuButton=document.querySelector(".menu-toggle");const nav=document.querySelector(".nav");
+menuButton.addEventListener("click",()=>{const isOpen=nav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen));});
+nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{nav.classList.remove("open");menuButton.setAttribute("aria-expanded","false");}));
+</script>
+</body>
+</html>
