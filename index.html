@@ -155,6 +155,30 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
 @media(prefers-reduced-motion:reduce){.footer-orbit,.footer-bottom i{animation:none}.footer-identity{animation:none}.footer-brand,.footer-links a,.footer-links a span,.back-to-top{transition:none}}
 
 </style>
+<style>
+/* Warm golden glow for the homepage social links */
+.side-social a{
+  color:#f2d38a;
+  opacity:1;
+  filter:drop-shadow(0 0 3px rgba(232,190,100,.55)) drop-shadow(0 0 8px rgba(232,190,100,.22));
+  animation:socialGoldGlow 3s ease-in-out infinite;
+}
+.side-social a:nth-child(2){animation-delay:.35s}
+.side-social a:nth-child(3){animation-delay:.7s}
+.side-social a:nth-child(4){animation-delay:1.05s}
+.side-social a:hover{
+  color:#fff0bd;
+  opacity:1;
+  transform:translateY(-3px) scale(1.2);
+  filter:drop-shadow(0 0 5px rgba(255,218,135,.95)) drop-shadow(0 0 15px rgba(255,196,80,.72));
+}
+.side-social svg{fill:currentColor}
+@keyframes socialGoldGlow{
+  0%,100%{filter:drop-shadow(0 0 2px rgba(232,190,100,.35)) drop-shadow(0 0 6px rgba(232,190,100,.15))}
+  50%{filter:drop-shadow(0 0 5px rgba(255,218,135,.9)) drop-shadow(0 0 13px rgba(255,196,80,.48))}
+}
+@media(prefers-reduced-motion:reduce){.side-social a{animation:none}}
+</style>
 </head>
 <body>
 <main class="hero" id="home">
