@@ -22,3 +22,57 @@
 
 /* Homepage motion and extended editorial sections */
 .home-page{overflow-x:hidden}.home-hero-new{min-height:650px;padding-top:74px;padding-bottom:88px;gap:7vw}.home-copy{position:relative;z-index:2}.home-copy h1 i{font-style:normal;color:#777970}.hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:28px}.hero-caption{font-size:9px;letter-spacing:.2em;color:#92938b;margin-top:60px}.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#777970;margin-right:8px;box-shadow:0 0 0 5px rgba(119,121,112,.13);animation:softPulse 2.2s infinite}.hero-visual{position:relative;padding:0 18px 22px 0}.photo-frame{overflow:hidden;position:relative;background:#dedbd2}.photo-frame:after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.35);pointer-events:none}.home-hero-new .home-photo{height:550px;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter 1s;animation:photoArrive 1.3s both}.hero-visual:hover .home-photo{transform:scale(1.035);filter:grayscale(55%)}.photo-index{position:absolute;left:0;bottom:0;background:var(--paper);padding:9px 14px;font-size:9px;letter-spacing:.14em}.photo-side-note{position:absolute;right:-2px;top:20px;writing-mode:vertical-rl;font-size:9px;letter-spacing:.16em;color:#85877e}.ticker{overflow:hidden;border-block:1px solid var(--line);padding:17px 0;background:#e9e6de}.ticker-track{width:max-content;display:flex;align-items:center;gap:34px;animation:tickerMove 32s linear infinite}.ticker-track span{font-size:10px;letter-spacing:.22em;font-weight:600}.ticker-track i{font-style:normal;color:#8b8d83}.home-manifesto{display:grid;grid-template-columns:.55fr 1.4fr .25fr;gap:35px;align-items:start;padding-top:110px;padding-bottom:110px}.home-manifesto .section-title{font-size:clamp(30px,4.5vw,52px)}.home-manifesto em{font-style:normal;color:#777970}.home-manifesto p{max-width:620px}.manifesto-mark{font:150px/.7 var(--serif);color:#d0cec5}.discover-section{background:#e9e6de;padding:100px 0 110px}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:42px}.section-heading .section-title{font-size:clamp(34px,5vw,58px)}.section-heading>p{max-width:330px}.discover-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.discover-card{min-height:235px;padding:24px;background:var(--paper);border:1px solid #d8d5cc;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1),background .35s,box-shadow .45s}.discover-card:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.55),transparent 70%);transform:translateX(-120%);transition:transform .8s}.discover-card:hover{transform:translateY(-7px);background:#fffefa;box-shadow:0 18px 35px rgba(40,40,35,.07)}.discover-card:hover:before{transform:translateX(120%)}.discover-card .card-number{font-size:10px;color:#8c8e85;letter-spacing:.14em}.discover-card small{font-size:9px;letter-spacing:.15em;color:#85877e}.discover-card h3{font:400 24px var(--serif);margin:9px 0}.discover-card p{font-size:12px;line-height:1.7;color:var(--muted);max-width:280px;margin:0}.discover-card>b{position:absolute;right:23px;bottom:20px;font-size:20px;font-weight:400;transition:transform .3s}.discover-card:hover>b{transform:translate(4px,-4px)}.discover-card.wide{grid-column:span 2;min-height:210px}.home-quote{background:var(--dark);color:#f2f0e9;padding:105px 0;text-align:center}.quote-inner{max-width:850px}.home-quote .kicker{color:#b8b9b0}.home-quote blockquote{font:400 clamp(28px,5vw,58px)/1.4 var(--serif);letter-spacing:-.04em;margin:30px 0}.home-quote span{font-size:9px;letter-spacing:.2em;color:#b8b9b0}.home-last{padding-top:105px;padding-bottom:110px;display:flex;align-items:center;justify-content:space-between;gap:40px}.home-last .section-title{font-size:clamp(38px,5vw,62px)}.home-last p{max-width:470px}.round-link{width:150px;height:150px;border:1px solid #9b9d93;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:9px;letter-spacing:.12em;line-height:1.8;transition:background .35s,color .35s,transform .5s;flex-shrink:0}.round-link b{font-size:20px;font-weight:400}.round-link:hover{background:var(--dark);color:white;transform:rotate(-10deg)}.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}.reveal.is-visible{opacity:1;transform:translateY(0)}.discover-card:nth-child(3n+2){transition-delay:.08s}.discover-card:nth-child(3n){transition-delay:.16s}@keyframes tickerMove{to{transform:translateX(-50%)}}@keyframes softPulse{0%,100%{box-shadow:0 0 0 5px rgba(119,121,112,.13)}50%{box-shadow:0 0 0 9px rgba(119,121,112,.04)}}@keyframes photoArrive{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}@media(max-width:900px){.discover-grid{grid-template-columns:1fr 1fr}.home-manifesto{grid-template-columns:.4fr 1.6fr}.manifesto-mark{display:none}.home-hero-new{gap:35px}.home-hero-new .home-photo{height:460px}}@media(max-width:650px){.home-hero-new{min-height:0;padding-top:48px;padding-bottom:65px}.home-hero-new .home-photo{height:390px}.hero-caption{margin-top:35px}.hero-visual{padding-right:10px}.photo-side-note{right:-8px}.home-manifesto{display:block;padding-top:70px;padding-bottom:70px}.home-manifesto>div:first-child{margin-bottom:22px}.discover-section{padding:70px 0}.section-heading{display:block}.section-heading>p{margin-top:20px}.discover-grid{grid-template-columns:1fr}.discover-card.wide{grid-column:auto}.discover-card{min-height:195px}.home-quote{padding:75px 0}.home-last{padding-top:70px;padding-bottom:75px}.round-link{width:120px;height:120px}.ticker-track{gap:24px}}
+
+
+/* Extra portrait motion + staggered text reveal on scroll */
+.home-hero-new .photo-frame{
+  box-shadow:0 18px 45px rgba(38,39,34,.08);
+  transform:perspective(1000px) rotateY(-2deg);
+  transition:transform .8s cubic-bezier(.2,.7,.2,1),box-shadow .8s;
+}
+.home-hero-new .photo-frame:before{
+  content:"";
+  position:absolute;
+  z-index:2;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(115deg,transparent 25%,rgba(255,255,255,.28) 48%,transparent 68%);
+  transform:translateX(-130%);
+  animation:portraitSheen 5.5s ease-in-out 1.4s infinite;
+}
+.home-hero-new .hero-visual:hover .photo-frame{
+  transform:perspective(1000px) rotateY(0) translateY(-5px);
+  box-shadow:0 28px 55px rgba(38,39,34,.13);
+}
+.home-hero-new .home-photo{
+  animation:photoArrive 1.3s both,portraitTone 7s ease-in-out 1.3s infinite alternate;
+}
+@keyframes portraitSheen{
+  0%,35%{transform:translateX(-130%)}
+  75%,100%{transform:translateX(130%)}
+}
+@keyframes portraitTone{
+  from{filter:grayscale(100%) brightness(.96)}
+  to{filter:grayscale(78%) brightness(1.04)}
+}
+/* Each line of copy follows the section as it enters the viewport */
+.home-page .reveal.is-visible > *{
+  animation:copyRise .72s cubic-bezier(.2,.7,.2,1) both;
+}
+.home-page .reveal.is-visible > *:nth-child(1){animation-delay:.06s}
+.home-page .reveal.is-visible > *:nth-child(2){animation-delay:.16s}
+.home-page .reveal.is-visible > *:nth-child(3){animation-delay:.26s}
+.home-page .reveal.is-visible > *:nth-child(4){animation-delay:.36s}
+.home-page .reveal.is-visible > *:nth-child(5){animation-delay:.46s}
+.discover-card.reveal.is-visible > *{animation:copyRise .65s cubic-bezier(.2,.7,.2,1) both}
+.discover-card.reveal.is-visible > *:nth-child(1){animation-delay:.04s}
+.discover-card.reveal.is-visible > *:nth-child(2){animation-delay:.16s}
+.discover-card.reveal.is-visible > *:nth-child(3){animation-delay:.28s}
+@keyframes copyRise{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .home-hero-new .photo-frame,.home-hero-new .home-photo{animation:none;transform:none}
+  .home-page .reveal.is-visible > *, .discover-card.reveal.is-visible > *{animation:none}
+}
