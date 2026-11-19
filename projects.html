@@ -69,6 +69,76 @@
 @media(max-width:760px){.process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.direction-row{grid-template-columns:30px 1fr}.direction-row small{grid-column:2}}
 @media(max-width:440px){.process-grid{grid-template-columns:1fr}.process-step{min-height:0}}
 @media(prefers-reduced-motion:reduce){.work-mosaic{animation:none!important}.intro-center-title{animation:none;opacity:1}}
+
+/* Homepage-matched monochrome editorial direction */
+:root{--home-bg:#090909;--home-text:#f5f5f3;--home-muted:#aaa;--home-line:rgba(255,255,255,.16);--home-serif:"Cormorant Garamond",Georgia,serif;--home-sans:"Manrope",Arial,sans-serif}
+html{background:var(--home-bg);scroll-behavior:smooth}
+body{background:var(--home-bg)!important;color:var(--home-text)!important;font-family:var(--home-sans)!important}
+.project-page{background:var(--home-bg);color:var(--home-text)}
+.project-page .site-header{background:rgba(9,9,9,.92)!important;border-bottom:1px solid rgba(255,255,255,.1)}
+.project-page .brand,.project-page .nav a,.project-page .foot-nav a{color:#eee!important}
+.project-page .nav a:hover,.project-page .nav a.active{color:#fff!important}
+.project-page .projects-hero{min-height:570px;padding-top:clamp(90px,13vw,170px);padding-bottom:90px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(180px,.5fr);align-items:end;gap:50px}
+.project-page .projects-hero h1{font:600 clamp(58px,9vw,116px)/.9 var(--home-serif);letter-spacing:-.045em;max-width:850px;color:#f5f5f3}
+.project-page .projects-hero p{font:14px/2 var(--home-sans);color:#aaa;max-width:570px;margin-top:30px}
+.project-page .page-no,.project-page .kicker,.project-page .index,.project-page .project-count,.project-page .art-index{font-family:var(--home-sans);color:#999;letter-spacing:.2em}
+.project-page .hero-side-note{font:12px/1.9 var(--home-sans);color:#999;border-left:1px solid var(--home-line);padding:15px 0 15px 22px}
+.project-page .hero-side-note b{display:block;font:500 34px var(--home-serif);color:#f5f5f3;margin-bottom:8px}
+.project-page .project-section,.project-page .project-process,.project-page .project-directions,.project-page .project-roadmap,.project-page .project-ideas,.project-page .project-lab{padding-top:clamp(60px,8vw,108px);padding-bottom:clamp(60px,8vw,108px);border-top:1px solid var(--home-line)}
+.project-page .section-title{font:500 clamp(36px,5vw,62px)/1.05 var(--home-serif);letter-spacing:-.025em;color:#f5f5f3;max-width:780px}
+.project-page .project-section-head{align-items:end;margin-bottom:36px}
+.project-page .project-feature,.project-page .project-small,.project-page .process-step,.project-page .roadmap-panel{background:#101010!important;color:#f4f4f2!important;border:1px solid var(--home-line)!important}
+.project-page .project-art{background:radial-gradient(circle at 50% 45%,#303030 0,#171717 34%,#0c0c0c 75%)!important}
+.project-page .art-orbit{border-color:rgba(255,255,255,.28)!important}
+.project-page .art-orbit:before,.project-page .art-orbit:after{border-color:rgba(255,255,255,.16)!important}
+.project-page .art-mark{color:#f5f5f3!important}
+.project-page .project-detail h3,.project-page .project-small h3,.project-page .process-step h3,.project-page .direction-row h3{font-family:var(--home-serif);color:#f5f5f3}
+.project-page .project-detail p,.project-page .project-small p,.project-page .process-step p,.project-page .direction-row p,.project-page .roadmap-panel>p{color:#aaa}
+.project-page .project-meta span,.project-page .status,.project-page .roadmap-tags span{color:#ccc;border-color:var(--home-line)}
+.project-page .project-note{border-color:var(--home-line)}
+.project-page .project-note blockquote{font:italic clamp(28px,4vw,48px)/1.25 var(--home-serif);color:#eee}
+.project-page .direction-row{border-color:var(--home-line)}
+.project-page .project-end{padding-top:75px;padding-bottom:90px}
+.project-page .project-end h2{font:500 clamp(40px,6vw,72px)/1 var(--home-serif);color:#f5f5f3}
+.project-page .project-end p{color:#aaa}
+.project-page .btn{border:1px solid #eee;color:#fff;background:transparent}
+.project-page .btn:hover{background:#fff;color:#111}
+.project-page .site-footer{background:#080808!important;border-top:1px solid var(--home-line)}
+.project-page .foot-inner,.project-page .foot-inner small{color:#aaa}
+.project-page .section-intro,.project-page .lab-heading>p{font:13px/1.9 var(--home-sans);color:#999;max-width:570px;margin-top:18px}
+.idea-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:38px}
+.idea-card{min-width:0;border:1px solid var(--home-line);background:#0e0e0e;display:grid;grid-template-rows:220px 1fr;transition:transform .35s ease,border-color .35s ease,background .35s ease}
+.idea-card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.45);background:#131313}
+.idea-card-wide{grid-column:span 2;grid-template-columns:1.05fr 1fr;grid-template-rows:1fr;min-height:280px}
+.idea-visual{position:relative;overflow:hidden;min-height:220px;background:radial-gradient(ellipse at 50% 50%,#292929,#101010 70%);padding:22px;color:#eee;display:flex;align-items:center;justify-content:center}
+.idea-visual:after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.12);pointer-events:none}
+.visual-label,.visual-foot{position:absolute;z-index:2;left:25px;font:8px var(--home-sans);letter-spacing:.2em;color:#aaa}
+.visual-label{top:25px}.visual-foot{bottom:24px}
+.visual-glyph{font:italic 110px/.8 var(--home-serif);color:#ddd;text-shadow:0 0 35px rgba(255,255,255,.12)}
+.library-shapes{display:flex;align-items:end;gap:7px;height:95px}
+.library-shapes i{display:block;width:28px;height:76px;border:1px solid #aaa;background:linear-gradient(145deg,#333,#111);transform:rotate(-5deg)}
+.library-shapes i:nth-child(2){height:92px;transform:rotate(4deg)}.library-shapes i:nth-child(3){height:65px}.library-shapes i:nth-child(4){height:84px;transform:rotate(3deg)}.library-shapes i:nth-child(5){height:72px}
+.dash-lines{width:68%;display:grid;gap:12px}.dash-lines i{height:13px;border:1px solid #666;background:linear-gradient(90deg,#aaa 0 38%,#292929 38%)}.dash-lines i:nth-child(2){background:linear-gradient(90deg,#777 0 64%,#292929 64%)}.dash-lines i:nth-child(3){background:linear-gradient(90deg,#999 0 48%,#292929 48%)}.dash-lines i:nth-child(4){background:linear-gradient(90deg,#666 0 76%,#292929 76%)}
+.visual-market svg{width:82%;color:#d5d5d5;overflow:visible}
+.creator-frame{width:58%;height:115px;border:1px solid #777;display:flex;align-items:center;justify-content:space-around;font:9px var(--home-sans);letter-spacing:.18em;color:#aaa;transform:rotate(-4deg);box-shadow:12px 12px 0 rgba(255,255,255,.05)}
+.idea-copy{padding:25px 28px 23px;display:flex;flex-direction:column;min-height:220px}
+.idea-top,.idea-bottom{display:flex;justify-content:space-between;gap:15px;align-items:center;font:8px var(--home-sans);letter-spacing:.15em;color:#888}
+.idea-top span:last-child{border:1px solid var(--home-line);padding:6px 8px;color:#bbb}
+.idea-copy h3{font:500 clamp(29px,3vw,39px)/1 var(--home-serif);margin:24px 0 10px;color:#f4f4f2}
+.idea-copy p{font:12px/1.9 var(--home-sans);color:#aaa;max-width:54ch}
+.idea-bottom{margin-top:auto;padding-top:22px;border-top:1px solid var(--home-line);color:#999;letter-spacing:.04em}
+.idea-bottom b{font-size:17px;color:#eee;font-weight:400}
+.project-lab{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.lab-heading .section-title{margin-top:12px}
+.lab-list{border-top:1px solid var(--home-line)}
+.lab-list>div{display:grid;grid-template-columns:32px 1fr auto;gap:16px;align-items:start;padding:23px 0;border-bottom:1px solid var(--home-line)}
+.lab-list>div>span{font:9px var(--home-sans);color:#777;padding-top:6px}
+.lab-list h3{font:500 25px var(--home-serif);color:#eee}
+.lab-list p{grid-column:2;font:11px/1.8 var(--home-sans);color:#999;max-width:48ch}
+.lab-list em{font:8px var(--home-sans);font-style:normal;letter-spacing:.13em;color:#777;white-space:nowrap;padding-top:7px}
+@media(max-width:760px){.project-page .projects-hero{min-height:0;padding-top:100px;grid-template-columns:1fr;gap:28px}.project-page .hero-side-note{max-width:280px}.idea-grid{grid-template-columns:1fr}.idea-card-wide{grid-column:auto;grid-template-columns:1fr;grid-template-rows:200px auto}.project-lab{grid-template-columns:1fr;gap:30px}.lab-list>div{grid-template-columns:25px 1fr}.lab-list em{grid-column:2;grid-row:3}.lab-list p{grid-column:2}}
+@media(prefers-reduced-motion:reduce){.idea-card{transition:none}}
+
 </style>
 </head>
 <body>
@@ -107,6 +177,25 @@
 <article class="project-small"><div><span class="index">03 / IN PROGRESS</span><h3>Future Projects</h3><p>New ideas are always finding their way into notebooks and sketches. This space will grow as those ideas become real and ready to share.</p></div><span class="status">More to come</span></article>
 </div>
 <div class="project-note"><div class="kicker">A THOUGHT BEHIND THE WORK</div><blockquote>“The point is not to make something perfect. It is to make something that did not exist before.”</blockquote></div>
+</section>
+
+<section class="wrap project-ideas" id="project-ideas">
+  <div class="project-section-head"><div><div class="kicker">THE IDEA ARCHIVE</div><h2 class="section-title">Ideas waiting for their moment.</h2><p class="section-intro">Not every project starts with a finished product. Some begin as a small thought, a sketch or a possibility worth exploring.</p></div><span class="project-count">IDEA INDEX / 004—008</span></div>
+  <div class="idea-grid">
+    <article class="idea-card idea-card-wide"><div class="idea-visual visual-writing"><span class="visual-label">A PLACE FOR WORDS</span><span class="visual-glyph">Aa</span><span class="visual-foot">WRITE / SAVE / RETURN</span></div><div class="idea-copy"><div class="idea-top"><span>004 / WRITING SPACE</span><span>CONCEPT</span></div><h3>Open Pages</h3><p>A quiet digital room for stories, personal notes and unfinished writing — with a simple way to collect words and return to them later.</p><div class="idea-bottom"><span>Writing · Journaling · Stories</span><b>↗</b></div></div></article>
+    <article class="idea-card"><div class="idea-visual visual-library"><span class="visual-label">YOUR PERSONAL COLLECTION</span><div class="library-shapes"><i></i><i></i><i></i><i></i><i></i></div><span class="visual-foot">COLLECT / ORGANISE / PLAY</span></div><div class="idea-copy"><div class="idea-top"><span>005 / MEDIA LIBRARY</span><span>CONCEPT</span></div><h3>Private Library</h3><p>A personal space to organise favourite music, albums and media in one private collection.</p><div class="idea-bottom"><span>Media · Organisation</span><b>↗</b></div></div></article>
+    <article class="idea-card"><div class="idea-visual visual-dashboard"><span class="visual-label">A CLEARER VIEW</span><div class="dash-lines"><i></i><i></i><i></i><i></i></div><span class="visual-foot">PLAN / TRACK / IMPROVE</span></div><div class="idea-copy"><div class="idea-top"><span>006 / PERSONAL TOOL</span><span>EXPLORATION</span></div><h3>Daily Dashboard</h3><p>A focused dashboard for keeping track of goals, routines, tasks and the little things that move a day forward.</p><div class="idea-bottom"><span>Productivity · Interface</span><b>↗</b></div></div></article>
+    <article class="idea-card"><div class="idea-visual visual-market"><span class="visual-label">LEARN THE MOVEMENT</span><svg viewBox="0 0 360 150" role="img" aria-label="Abstract market chart"><path d="M0 118 L45 98 L78 108 L112 64 L148 82 L185 45 L220 63 L255 27 L292 42 L330 12 L360 20" fill="none" stroke="currentColor" stroke-width="2"/><path d="M0 118 L45 98 L78 108 L112 64 L148 82 L185 45 L220 63 L255 27 L292 42 L330 12 L360 20 L360 150 L0 150Z" fill="currentColor" opacity=".08"/></svg><span class="visual-foot">OBSERVE / LEARN / RECORD</span></div><div class="idea-copy"><div class="idea-top"><span>007 / MARKET JOURNAL</span><span>LEARNING</span></div><h3>Market Notes</h3><p>A learning journal for recording market observations, ideas and research without treating guesses as financial advice.</p><div class="idea-bottom"><span>Research · Learning</span><b>↗</b></div></div></article>
+    <article class="idea-card idea-card-wide"><div class="idea-visual visual-creator"><span class="visual-label">MAKE SOMETHING MEANINGFUL</span><div class="creator-frame"><span>FRAME</span><span>01</span><span>STORY</span></div><span class="visual-foot">IDEA / CREATE / SHARE</span></div><div class="idea-copy"><div class="idea-top"><span>008 / CREATIVE STUDIO</span><span>FUTURE IDEA</span></div><h3>Creator's Desk</h3><p>A small creative workspace for collecting references, planning content and shaping ideas into finished posts and visual stories.</p><div class="idea-bottom"><span>Content · Creative tools</span><b>↗</b></div></div></article>
+  </div>
+</section>
+<section class="wrap project-lab">
+  <div class="lab-heading"><div class="kicker">THE PROJECT LAB</div><h2 class="section-title">Small experiments. New directions.</h2><p>Some work is too early to call a project. This is where I keep the experiments that teach me something new.</p></div>
+  <div class="lab-list">
+    <div><span>01</span><h3>Motion & Interaction</h3><p>Exploring how small movements can make a digital page feel more alive.</p><em>INTERFACE STUDIES</em></div>
+    <div><span>02</span><h3>Typography & Layout</h3><p>Testing the balance between readable content, expressive type and open space.</p><em>DESIGN STUDIES</em></div>
+    <div><span>03</span><h3>Useful Little Tools</h3><p>Thinking about simple browser-based tools that solve one small problem well.</p><em>WEB EXPERIMENTS</em></div>
+  </div>
 </section>
 <section class="wrap project-section project-process">
 <div class="project-section-head"><div><div class="kicker">HOW AN IDEA TAKES SHAPE</div><h2 class="section-title">From a passing thought to a finished piece.</h2></div><span class="project-count">THE PROCESS</span></div>
