@@ -40,7 +40,25 @@
 .learning-note p{max-width:680px;line-height:1.9;opacity:.76;margin:0}
 @media(max-width:700px){.skill-card-grid{grid-template-columns:1fr}.approach-grid{grid-template-columns:1fr;gap:25px}.skills-extra{padding:48px 0}.skill-card{min-height:0}}
 
-</style></head><body><header class="site-header"><div class="wrap head-inner"><a class="brand" href="index.html">THE INNER SPACE<small>A PERSONAL COLLECTION</small></a><nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html" class="active">Skills & Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></header><section class="page-intro"><div class="wrap"><span class="page-no">04 / 12</span><div class="kicker">PRACTICE & PROGRESS</div><h1>Things I know, things I'm learning.</h1><p>A practical record of skills built through curiosity, experimentation and making things. This list can change as I learn more.</p></div></section><main class="wrap content">
+
+/* Real-time 3D entry experience */
+body.skills-boot{overflow:hidden}
+.skills-world{position:fixed;inset:0;z-index:9999;background:#050505;color:#f3f1eb;display:grid;place-items:center;overflow:hidden;opacity:1;visibility:visible;transition:opacity 1s ease,visibility 1s ease}
+.skills-world.is-leaving{opacity:0;visibility:hidden;pointer-events:none}
+.skills-world canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.skills-world:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 12%,rgba(0,0,0,.22) 58%,#050505 100%);pointer-events:none}
+.world-copy{position:relative;z-index:2;text-align:center;padding:24px;pointer-events:none}
+.world-copy .world-kicker{font-size:9px;letter-spacing:.38em;opacity:.66;margin-bottom:20px}
+.world-copy h2{font-family:Georgia,serif;font-size:clamp(34px,7vw,76px);font-weight:400;letter-spacing:-.055em;line-height:1;margin:0;text-shadow:0 2px 28px #000}
+.world-copy p{font-size:9px;letter-spacing:.26em;text-transform:uppercase;opacity:.62;margin-top:22px}
+.world-progress{width:110px;height:1px;background:rgba(255,255,255,.2);margin:26px auto 0;overflow:hidden}
+.world-progress:after{content:"";display:block;height:100%;width:40%;background:#fff;animation:worldLoad 2.6s ease-in-out forwards}
+@keyframes worldLoad{from{transform:translateX(-110%)}to{transform:translateX(280%)}}
+body.skills-ready .site-header,body.skills-ready .page-intro,body.skills-ready main,body.skills-ready .site-footer{animation:skillsReveal 1.15s cubic-bezier(.2,.7,.2,1) both}
+@keyframes skillsReveal{from{opacity:0;transform:translateY(18px);filter:blur(5px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@media(prefers-reduced-motion:reduce){.skills-world{display:none!important}body.skills-boot{overflow:auto}body.skills-ready .site-header,body.skills-ready .page-intro,body.skills-ready main,body.skills-ready .site-footer{animation:none}}
+
+</style></head><body class="skills-boot"><div class="skills-world" id="skillsWorld" aria-hidden="true"><canvas id="skills3D"></canvas><div class="world-copy"><div class="world-kicker">THE INNER SPACE · INTERACTIVE EXPERIENCE</div><h2>Entering<br>the skill space.</h2><p>Real-time rendering · WebGL</p><div class="world-progress"></div></div></div><header class="site-header"><div class="wrap head-inner"><a class="brand" href="index.html">THE INNER SPACE<small>A PERSONAL COLLECTION</small></a><nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html" class="active">Skills & Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></header><section class="page-intro"><div class="wrap"><span class="page-no">04 / 12</span><div class="kicker">PRACTICE & PROGRESS</div><h1>Things I know, things I'm learning.</h1><p>A practical record of skills built through curiosity, experimentation and making things. This list can change as I learn more.</p></div></section><main class="wrap content">
 <div class="skill-list">
 <article class="skill-row"><div><div class="tag">WEB FOUNDATIONS</div><h3>HTML & CSS</h3></div><p>Building page structures, styling layouts and creating responsive web experiences.</p></article>
 <article class="skill-row"><div><div class="tag">INTERACTION</div><h3>JavaScript</h3></div><p>Learning the logic behind interactive interfaces and useful browser experiences.</p></article>
@@ -61,4 +79,37 @@
 <article class="approach-item"><span>STEP 02</span><h3>Experiment</h3><p>Try different approaches, test ideas in the browser and learn from the parts that do not work the first time.</p></article>
 <article class="approach-item"><span>STEP 03</span><h3>Improve</h3><p>Refine the structure, fix small issues and make the experience clearer with every new version.</p></article>
 </div><div class="learning-note"><div class="section-kicker">STILL IN PROGRESS</div><h2>I'm not trying to know everything. I'm trying to keep getting better.</h2><p>This page is a living record, not a final scorecard. As I build more, learn new tools and take on different challenges, these skills will continue to grow.</p></div></section>
-</main><footer class="site-footer"><div class="wrap foot-inner"><div><b>THE INNER SPACE</b><br><small>A little universe, still unfolding. · © 2026</small></div><nav class="foot-nav"><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills & Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></footer></body></html>
+</main><footer class="site-footer"><div class="wrap foot-inner"><div><b>THE INNER SPACE</b><br><small>A little universe, still unfolding. · © 2026</small></div><nav class="foot-nav"><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills & Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></footer>
+<script>
+(()=>{
+ const body=document.body, overlay=document.getElementById('skillsWorld'), canvas=document.getElementById('skills3D');
+ if(!overlay||!canvas)return;
+ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(reduce){overlay.remove();body.classList.add('skills-ready');return;}
+ body.classList.add('skills-boot');
+ const gl=canvas.getContext('webgl',{alpha:false,antialias:true,powerPreference:'high-performance'});
+ if(gl){
+  const vs='attribute vec3 p; uniform float t; uniform vec2 pointer; varying float shade; void main(){float a=t*.24+pointer.x*.28; float b=pointer.y*.18; float x=p.x*cos(a)-p.z*sin(a); float z=p.x*sin(a)+p.z*cos(a); float y=p.y*cos(b)-z*sin(b); z=p.y*sin(b)+z*cos(b); vec3 q=vec3(x,y,z); float depth=3.2-z*.7; gl_Position=vec4(q.x*1.45/depth,q.y*1.45/depth,0.0,1.0); gl_PointSize=(1.5+2.0*(p.y*.5+.5))*min(1.0,1.0/depth); shade=.45+.55*(p.z*.5+.5);}';
+  const fs='precision mediump float; varying float shade; void main(){vec2 d=gl_PointCoord-.5; if(length(d)>.5)discard; gl_FragColor=vec4(vec3(.82,.84,.83)*shade,1.0);}';
+  function shader(type,src){const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);return gl.getShaderParameter(s,gl.COMPILE_STATUS)?s:null;}
+  const v=shader(gl.VERTEX_SHADER,vs), f=shader(gl.FRAGMENT_SHADER,fs);
+  if(v&&f){
+   const program=gl.createProgram();gl.attachShader(program,v);gl.attachShader(program,f);gl.linkProgram(program);
+   if(gl.getProgramParameter(program,gl.LINK_STATUS)){
+    const pts=[];const n=1900;const golden=Math.PI*(3-Math.sqrt(5));
+    for(let i=0;i<n;i++){const y=1-(i/(n-1))*2;const r=Math.sqrt(1-y*y);const a=golden*i;pts.push(Math.cos(a)*r,y,Math.sin(a)*r);}
+    const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(pts),gl.STATIC_DRAW);
+    gl.useProgram(program);const loc=gl.getAttribLocation(program,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,3,gl.FLOAT,false,0,0);
+    const timeLoc=gl.getUniformLocation(program,'t'),pointerLoc=gl.getUniformLocation(program,'pointer');
+    let mx=0,my=0;overlay.addEventListener('pointermove',e=>{mx=(e.clientX/innerWidth-.5)*2;my=(e.clientY/innerHeight-.5)*2;},{passive:true});
+    function resize(){const d=Math.min(devicePixelRatio||1,1.7);canvas.width=Math.floor(innerWidth*d);canvas.height=Math.floor(innerHeight*d);gl.viewport(0,0,canvas.width,canvas.height);}
+    resize();window.addEventListener('resize',resize,{passive:true});
+    const start=performance.now();
+    function draw(now){if(overlay.classList.contains('is-leaving'))return;gl.clearColor(.02,.02,.02,1);gl.clear(gl.COLOR_BUFFER_BIT);gl.uniform1f(timeLoc,(now-start)/1000);gl.uniform2f(pointerLoc,mx,my);gl.drawArrays(gl.POINTS,0,n);requestAnimationFrame(draw);}
+    requestAnimationFrame(draw);
+   }
+  }
+ }
+ window.setTimeout(()=>{overlay.classList.add('is-leaving');body.classList.remove('skills-boot');body.classList.add('skills-ready');window.setTimeout(()=>overlay.remove(),1100);},3300);
+})();
+</script></body></html>
