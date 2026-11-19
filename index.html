@@ -10,6 +10,10 @@
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{min-height:100vh;background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden}a{color:inherit;text-decoration:none}
 .hero{position:relative;min-height:100vh;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 75% 45%,rgba(140,140,140,.17),transparent 38%),linear-gradient(110deg,#090909 0%,#101010 56%,#080808 100%)}
 .portrait{position:absolute;z-index:1;right:7%;bottom:0;width:min(47vw,610px);height:87%;background-image:url("nayeem-portrait.webp");background-size:contain;background-repeat:no-repeat;background-position:center bottom;filter:none;opacity:1}
+.portrait-smoke{position:absolute;z-index:0;right:1%;bottom:-7%;width:min(62vw,790px);height:100%;pointer-events:none;overflow:hidden;opacity:.34;filter:blur(24px);mix-blend-mode:screen}
+.portrait-smoke:before,.portrait-smoke:after{content:"";position:absolute;inset:12% 0 0;background:radial-gradient(ellipse at 52% 92%,rgba(210,210,210,.28) 0,transparent 31%),radial-gradient(ellipse at 70% 76%,rgba(185,185,185,.24) 0,transparent 29%),radial-gradient(ellipse at 37% 62%,rgba(220,220,220,.19) 0,transparent 30%),radial-gradient(ellipse at 62% 43%,rgba(170,170,170,.17) 0,transparent 28%);animation:smokeRise 13s ease-in-out infinite alternate}
+.portrait-smoke:after{inset:24% -8% -8% 8%;opacity:.65;filter:blur(17px);transform:scaleX(-1);animation-duration:17s;animation-direction:alternate-reverse}
+@keyframes smokeRise{0%{transform:translate3d(-2%,7%,0) scale(.94);opacity:.45}50%{transform:translate3d(2%,-2%,0) scale(1.06);opacity:.9}100%{transform:translate3d(-1%,-10%,0) scale(1.12);opacity:.55}}
 .topbar{width:min(1160px,calc(100% - 9vw));margin:auto;height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.06);position:relative;z-index:5}
 .brand{display:flex;align-items:center;gap:9px;font-family:var(--serif);font-size:17px;letter-spacing:.2px}.brand-mark{font-family:var(--sans);font-size:24px}
 .nav{display:flex;align-items:center;gap:28px}.nav a{color:#d1d1d1;font-size:11px;transition:color .25s}.nav a:hover{color:#fff}
@@ -25,13 +29,14 @@ h1{font-family:var(--serif);font-weight:500;font-size:clamp(48px,6vw,82px);line-
 .scroll-note{position:absolute;bottom:34px;left:max(4.5vw,calc((100vw - 1160px)/2));writing-mode:vertical-rl;transform:rotate(180deg);color:#bdbdbd;font-size:9px;letter-spacing:2px;display:flex;align-items:center;gap:12px}.scroll-note:before{content:"";height:34px;width:1px;background:#aaa}
 .spark{position:absolute;color:rgba(255,255,255,.8);font-size:18px;z-index:1}.spark.one{right:17%;top:17%}.spark.two{right:43%;top:31%;font-size:11px}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}@keyframes portraitIn{from{opacity:0;transform:translateX(28px)}to{opacity:.94;transform:translateX(0)}}.portrait{animation:portraitIn 1.2s ease both}
-@media(max-width:760px){.topbar{width:calc(100% - 36px);height:68px}.menu-toggle{display:block}.nav{display:none;position:absolute;top:60px;right:0;width:210px;padding:20px;border:1px solid var(--line);border-radius:14px;background:rgba(12,12,12,.97);flex-direction:column;align-items:flex-start;gap:18px}.nav.open{display:flex}.hire{margin-left:auto;margin-right:12px}.hero-content{width:calc(100% - 44px);min-height:calc(100vh - 68px);align-items:flex-start;padding-top:17vh}.intro{max-width:390px}.portrait{width:78vw;height:66%;right:-15%;opacity:1;background-position:center bottom}h1{font-size:clamp(47px,12vw,68px)}.subtitle{font-size:21px}.description{font-size:12px;max-width:280px}.side-social{right:20px;top:auto;bottom:78px;transform:none;gap:15px}.scroll-note{left:22px;bottom:27px}}
+@media(max-width:760px){.topbar{width:calc(100% - 36px);height:68px}.menu-toggle{display:block}.nav{display:none;position:absolute;top:60px;right:0;width:210px;padding:20px;border:1px solid var(--line);border-radius:14px;background:rgba(12,12,12,.97);flex-direction:column;align-items:flex-start;gap:18px}.nav.open{display:flex}.hire{margin-left:auto;margin-right:12px}.hero-content{width:calc(100% - 44px);min-height:calc(100vh - 68px);align-items:flex-start;padding-top:17vh}.intro{max-width:390px}.portrait{width:78vw;height:66%;right:-15%;opacity:1;background-position:center bottom}.portrait-smoke{width:100vw;height:75%;right:-20%;bottom:-5%;opacity:.3}h1{font-size:clamp(47px,12vw,68px)}.subtitle{font-size:21px}.description{font-size:12px;max-width:280px}.side-social{right:20px;top:auto;bottom:78px;transform:none;gap:15px}.scroll-note{left:22px;bottom:27px}}
 @media(max-width:420px){.brand{font-size:15px}.hire{padding:9px 13px;font-size:9px}.actions{flex-wrap:wrap}.btn{padding:11px 14px}.side-social{right:15px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.portrait-smoke:before,.portrait-smoke:after{animation:none!important}}
 </style>
 </head>
 <body>
 <main class="hero" id="home">
+<div class="portrait-smoke" aria-hidden="true"></div>
 <div class="portrait" role="img" aria-label="Nayeem's black and white portrait"></div>
 <span class="spark one">✦</span><span class="spark two">✧</span>
 <header class="topbar">
