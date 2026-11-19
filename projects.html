@@ -1,1 +1,158 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A home for websites, digital experiments, personal projects and the things I build while learning."><meta name="theme-color" content="#f3f1eb"><title>My Projects | The Inner Space</title><link rel="stylesheet" href="style-new.css"></head><body><header class="site-header"><div class="wrap head-inner"><a class="brand" href="index.html">THE INNER SPACE<small>A PERSONAL COLLECTION</small></a><nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills & Expertise</a><a href="projects.html" class="active">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></header><section class="page-intro"><div class="wrap"><span class="page-no">05 / 12</span><div class="kicker">THINGS MADE & IN PROGRESS</div><h1>Ideas become something real.</h1><p>A record of personal projects, experiments and ideas that are taking shape. Some are works in progress; others are starting points for what comes next.</p></div></section><main class="wrap content"><div class="project-grid"><article class="project-card"><div class="index">01 / PERSONAL WEBSITE</div><div><h3>THE INNER SPACE</h3><p>A personal website built as a digital home for thoughts, memories, interests and creative work.</p></div></article><article class="project-card"><div class="index">02 / EXPERIMENTS</div><div><h3>SMALL WEB EXPERIMENTS</h3><p>Interface ideas, page layouts and browser experiments created to practise and explore.</p></div></article><article class="project-card"><div class="index">03 / IN PROGRESS</div><div><h3>FUTURE PROJECTS</h3><p>New projects will find their place here as ideas become real and ready to share.</p></div></article></div></main><footer class="site-footer"><div class="wrap foot-inner"><div><b>THE INNER SPACE</b><br><small>A little universe, still unfolding. · © 2026</small></div><nav class="foot-nav"><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills & Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A collection of projects, digital experiments and ideas taking shape inside The Inner Space.">
+<meta name="theme-color" content="#f3f1eb">
+<title>My Projects | The Inner Space</title>
+<link rel="stylesheet" href="style-new.css">
+<style>
+/* Cinematic 3D opening */
+.project-intro{position:fixed;inset:0;z-index:1000;background:#10110f;color:#f3f1eb;display:grid;place-items:center;overflow:hidden;perspective:1100px;animation:introBackground 7.8s ease forwards}
+.project-intro:before{content:"";position:absolute;width:70vw;height:70vw;border:1px solid rgba(255,255,255,.07);border-radius:50%;box-shadow:0 0 0 90px rgba(255,255,255,.018),0 0 0 180px rgba(255,255,255,.012);animation:ambientOrbit 8s linear infinite}
+.intro-grain{position:absolute;inset:0;opacity:.12;pointer-events:none;background-image:radial-gradient(#fff .55px,transparent .7px);background-size:5px 5px;mask-image:linear-gradient(transparent,#000,transparent)}
+.intro-label{position:absolute;top:9%;left:7%;font-size:10px;letter-spacing:.28em;color:#a7a89e;animation:labelFade 1s both}
+.intro-caption{position:absolute;bottom:9%;left:7%;font:italic clamp(19px,3vw,30px) var(--serif);color:#d8d7d0;animation:labelFade 1s .5s both}
+.intro-scene{position:relative;width:min(900px,100vw);height:min(600px,72vh);transform-style:preserve-3d}
+.floor{position:absolute;left:5%;right:5%;bottom:4%;height:25%;background:linear-gradient(180deg,transparent,rgba(255,255,255,.055));transform:rotateX(76deg);transform-origin:bottom;border-top:1px solid rgba(255,255,255,.12)}
+.person{position:absolute;left:9%;bottom:18%;width:150px;height:330px;transform-style:preserve-3d;animation:personWalk 2.25s cubic-bezier(.25,.7,.25,1) .4s forwards,personSettle .5s 2.65s forwards}
+.person-shadow{position:absolute;bottom:-14px;left:0;width:160px;height:28px;background:rgba(0,0,0,.5);filter:blur(12px);border-radius:50%}
+.head{position:absolute;top:0;left:48px;width:58px;height:69px;border-radius:46% 46% 43% 43%;background:linear-gradient(110deg,#b5b2a9,#66665f 70%,#393a36);box-shadow:inset -8px -3px 12px rgba(0,0,0,.35);transform:rotate(-3deg);z-index:4}
+.hair{position:absolute;top:-5px;left:45px;width:63px;height:27px;border-radius:60% 55% 20% 20%;background:#242521;z-index:5;transform:rotate(-4deg)}
+.neck{position:absolute;top:57px;left:68px;width:20px;height:28px;background:#8e8c83}
+.torso{position:absolute;top:75px;left:30px;width:95px;height:145px;border-radius:25px 25px 13px 13px;background:linear-gradient(100deg,#282a27,#555750 48%,#20211f);transform:rotate(-3deg);box-shadow:inset 8px 0 12px rgba(255,255,255,.08),inset -10px 0 12px rgba(0,0,0,.3)}
+.jacket-line{position:absolute;top:0;left:47px;width:1px;height:130px;background:rgba(255,255,255,.16);transform:rotate(3deg)}
+.arm{position:absolute;top:91px;width:23px;height:130px;border-radius:18px;background:linear-gradient(90deg,#242522,#66675f,#242522);transform-origin:top center}
+.arm.left{left:26px;transform:rotate(15deg);animation:armReach 1.1s 2.8s forwards}
+.arm.right{left:111px;transform:rotate(-12deg);animation:armReachRight 1.1s 2.8s forwards}
+.hand{position:absolute;bottom:-12px;left:1px;width:22px;height:27px;border-radius:45% 45% 55% 55%;background:linear-gradient(90deg,#77756d,#b5b1a6)}
+.leg{position:absolute;top:204px;width:34px;height:112px;border-radius:12px 12px 9px 9px;background:linear-gradient(90deg,#171815,#484a43,#20211e);transform-origin:top center}
+.leg.left{left:43px;animation:legWalkA .55s .5s 3}
+.leg.right{left:82px;animation:legWalkB .55s .5s 3}
+.shoe{position:absolute;bottom:-5px;left:-8px;width:47px;height:17px;border-radius:12px 18px 6px 6px;background:#11120f;box-shadow:inset 0 3px 0 rgba(255,255,255,.14)}
+.laptop{position:absolute;left:48%;bottom:20%;width:300px;height:205px;transform-style:preserve-3d;transform:translateX(35px) rotateY(-17deg) rotateX(5deg);opacity:0;animation:laptopAppear .7s 2.9s forwards}
+.laptop-screen{position:absolute;left:35px;top:0;width:230px;height:158px;border:7px solid #777970;border-bottom-width:10px;border-radius:10px 10px 4px 4px;background:#080908;transform-origin:bottom center;transform:rotateX(-92deg);box-shadow:0 0 0 1px #aaa99f,0 0 28px rgba(255,255,255,.08);animation:screenOpen 1s 3.65s cubic-bezier(.2,.7,.2,1) forwards;overflow:hidden}
+.screen-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,rgba(235,233,222,.45),transparent 65%);opacity:0;animation:screenWake .9s 4.55s forwards}
+.screen-word{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font:italic 22px var(--serif);letter-spacing:.04em;color:#f3f1eb;opacity:0;animation:screenText 1s 4.8s forwards}
+.screen-word small{display:block;font:8px var(--sans);letter-spacing:.3em;color:#bdbdb3;margin-top:9px}
+.laptop-base{position:absolute;left:0;bottom:25px;width:300px;height:18px;background:linear-gradient(#c6c5bb,#66675f 55%,#252622);clip-path:polygon(12% 0,88% 0,100% 100%,0 100%);transform:rotateX(65deg);transform-origin:top;box-shadow:0 10px 20px rgba(0,0,0,.5)}
+.laptop-base:after{content:"";position:absolute;left:43%;top:2px;width:14%;height:4px;background:#777970;border-radius:0 0 5px 5px}
+.intro-progress{position:absolute;bottom:0;left:0;width:100%;height:2px;background:rgba(255,255,255,.12);z-index:3}
+.intro-progress:after{content:"";display:block;width:0;height:100%;background:#e9e7de;animation:progress 6.3s linear forwards}
+.intro-skip{position:absolute;right:7%;bottom:8%;z-index:5;border:1px solid rgba(255,255,255,.35);background:transparent;color:#f3f1eb;padding:10px 17px;font:10px var(--sans);letter-spacing:.16em;cursor:pointer;transition:background .25s,color .25s}
+.intro-skip:hover{background:#f3f1eb;color:#171815}
+.project-intro.is-done{display:none}
+@keyframes introBackground{0%,75%{opacity:1}100%{opacity:0;visibility:hidden}}
+@keyframes progress{to{width:100%}}
+@keyframes ambientOrbit{to{transform:rotate(360deg)}}
+@keyframes labelFade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes personWalk{0%{transform:translate3d(-260px,0,0) rotateY(16deg)}70%{transform:translate3d(110px,0,0) rotateY(0)}100%{transform:translate3d(160px,0,0) rotateY(0)}}
+@keyframes personSettle{to{transform:translate3d(160px,0,0) rotateY(-5deg)}}
+@keyframes legWalkA{0%,100%{transform:rotate(0)}50%{transform:rotate(25deg)}}
+@keyframes legWalkB{0%,100%{transform:rotate(0)}50%{transform:rotate(-25deg)}}
+@keyframes armReach{to{transform:rotate(-48deg) translateY(5px)}}
+@keyframes armReachRight{to{transform:rotate(40deg) translateY(8px)}}
+@keyframes laptopAppear{to{opacity:1;transform:translateX(0) rotateY(-10deg) rotateX(0)}}
+@keyframes screenOpen{to{transform:rotateX(0)}}
+@keyframes screenWake{to{opacity:1}}
+@keyframes screenText{to{opacity:1}}
+@media(max-width:650px){.intro-scene{transform:scale(.68);transform-origin:center}.person{left:1%}.laptop{left:39%;transform:scale(.86)}.intro-caption{bottom:14%;max-width:65%}.intro-skip{bottom:5%}}
+@media(prefers-reduced-motion:reduce){.project-intro{animation-duration:1s}.person,.leg,.arm,.laptop,.laptop-screen,.screen-glow,.screen-word,.intro-progress:after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important}.person{transform:translateX(160px)}.laptop{opacity:1}.laptop-screen{transform:rotateX(0)}}
+.project-page{opacity:0;animation:pageReveal 1.1s 6.25s ease forwards}
+@keyframes pageReveal{to{opacity:1}}
+.projects-hero{padding:90px 0 75px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr .55fr;gap:50px;align-items:end}
+.projects-hero h1{font:400 clamp(48px,8vw,96px)/1.05 var(--serif);letter-spacing:-.07em;margin:18px 0 22px;max-width:800px}
+.projects-hero p{max-width:560px;color:var(--muted);margin:0}
+.hero-side-note{border-left:1px solid var(--line);padding:5px 0 5px 25px;color:var(--muted);font-size:11px}
+.hero-side-note b{display:block;font:400 42px var(--serif);color:var(--ink);margin-bottom:8px}
+.project-section{padding:75px 0 100px}
+.project-section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:34px}
+.project-section-head .section-title{margin:0}
+.project-count{font-size:10px;letter-spacing:.18em;color:var(--muted)}
+.project-feature{display:grid;grid-template-columns:1.05fr .95fr;min-height:380px;background:#e7e4db;border:1px solid var(--line);margin-bottom:18px}
+.project-art{min-height:340px;display:grid;place-items:center;position:relative;overflow:hidden;background:linear-gradient(145deg,#d9d6cd,#f5f3ec)}
+.art-orbit{width:240px;height:240px;border:1px solid #a5a59b;border-radius:50%;display:grid;place-items:center;position:relative}
+.art-orbit:before,.art-orbit:after{content:"";position:absolute;border:1px solid #b8b6ad;border-radius:50%;inset:25px;transform:rotateX(68deg) rotate(-25deg)}
+.art-orbit:after{inset:48px;transform:rotateY(68deg) rotate(25deg)}
+.art-mark{font:italic 110px/.8 var(--serif);color:#454740}
+.art-index{position:absolute;left:22px;top:20px;font-size:9px;letter-spacing:.18em;color:#777970}
+.project-detail{padding:clamp(28px,5vw,58px);display:flex;flex-direction:column;justify-content:space-between}
+.project-detail .index{font-size:10px;letter-spacing:.17em;color:var(--muted)}
+.project-detail h3{font:400 clamp(28px,4vw,42px)/1.2 var(--serif);margin:18px 0}
+.project-detail p{color:var(--muted);max-width:480px}
+.project-meta{display:flex;gap:25px;flex-wrap:wrap;margin-top:25px;padding-top:20px;border-top:1px solid #d1cfc6}
+.project-meta span{font-size:9px;letter-spacing:.13em;color:#777970;text-transform:uppercase}
+.project-small-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.project-small{background:var(--white);border:1px solid var(--line);padding:30px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between}
+.project-small .index{font-size:10px;color:var(--muted);letter-spacing:.16em}
+.project-small h3{font:400 27px var(--serif);margin:12px 0}
+.project-small p{color:var(--muted);max-width:480px}
+.project-small .status{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#777970}
+.project-note{background:var(--dark);color:#f3f1eb;padding:70px 8%;margin-top:75px;text-align:center}
+.project-note .kicker{color:#b8b9b0}
+.project-note blockquote{font:400 clamp(25px,4vw,43px)/1.5 var(--serif);max-width:800px;margin:24px auto 0}
+.project-end{padding:75px 0 100px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.project-end h2{font:400 clamp(32px,5vw,55px)/1.2 var(--serif);margin:0 0 12px}
+.project-end p{color:var(--muted);max-width:520px}
+@media(max-width:800px){.projects-hero{grid-template-columns:1fr}.hero-side-note{max-width:350px}.project-feature{grid-template-columns:1fr}.project-art{min-height:280px}}
+@media(max-width:600px){.project-small-grid{grid-template-columns:1fr}.project-section{padding:55px 0 70px}.project-section-head{display:block}.project-count{display:block;margin-top:10px}.project-end{display:block;padding:55px 0 70px}.project-end .btn{margin-top:12px}}
+@media(prefers-reduced-motion:reduce){.project-page{animation:none;opacity:1}}
+</style>
+</head>
+<body>
+<div class="project-intro" id="projectIntro" aria-label="Cinematic introduction">
+  <div class="intro-grain"></div><div class="intro-label">THE INNER SPACE &nbsp; / &nbsp; A DIGITAL WORLD</div>
+  <div class="intro-scene" aria-hidden="true">
+    <div class="floor"></div>
+    <div class="person">
+      <div class="person-shadow"></div><div class="hair"></div><div class="head"></div><div class="neck"></div>
+      <div class="torso"><div class="jacket-line"></div></div>
+      <div class="arm left"><div class="hand"></div></div><div class="arm right"><div class="hand"></div></div>
+      <div class="leg left"><div class="shoe"></div></div><div class="leg right"><div class="shoe"></div></div>
+    </div>
+    <div class="laptop"><div class="laptop-screen"><div class="screen-glow"></div><div class="screen-word">The Inner Space<small>MY PROJECTS · 2026</small></div></div><div class="laptop-base"></div></div>
+  </div>
+  <div class="intro-caption">Every idea begins somewhere.</div>
+  <button class="intro-skip" id="skipIntro" type="button">SKIP INTRO ↗</button>
+  <div class="intro-progress"></div>
+</div>
+<div class="project-page" id="projectPage">
+<header class="site-header"><div class="wrap head-inner">
+<a class="brand" href="index.html">THE INNER SPACE<small>A PERSONAL COLLECTION</small></a>
+<nav class="nav" aria-label="Main navigation">
+<a href="index.html">Home</a><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills & Expertise</a><a href="projects.html" class="active">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a>
+</nav></div></header>
+<main>
+<section class="wrap projects-hero">
+<div><span class="page-no">05 / 12</span><div class="kicker">THINGS MADE & IN PROGRESS</div><h1>Ideas become something real.</h1><p>A collection of things I have imagined, designed, built and explored. Every project is a small attempt to turn a thought into something people can experience.</p></div>
+<div class="hero-side-note"><b>01—∞</b>Personal work, experiments and ideas still finding their shape.</div>
+</section>
+<section class="wrap project-section">
+<div class="project-section-head"><div><div class="kicker">SELECTED WORK</div><h2 class="section-title">A few things taking shape.</h2></div><span class="project-count">PROJECT INDEX &nbsp; / &nbsp; 001—003</span></div>
+<article class="project-feature">
+<div class="project-art"><span class="art-index">PROJECT 001 / DIGITAL HOME</span><div class="art-orbit"><div class="art-mark">IS.</div></div></div>
+<div class="project-detail"><div><span class="index">01 / PERSONAL WEBSITE</span><h3>The Inner Space</h3><p>A personal website built as a digital home for thoughts, memories, interests, writing and creative work. A space that keeps growing as I do.</p></div><div class="project-meta"><span>Web design</span><span>HTML · CSS · JavaScript</span><span>Ongoing</span></div></div>
+</article>
+<div class="project-small-grid">
+<article class="project-small"><div><span class="index">02 / EXPERIMENTS</span><h3>Small Web Experiments</h3><p>Interface ideas, page layouts and browser experiments created to practise, learn and explore what can be made on the web.</p></div><span class="status">A collection in progress</span></article>
+<article class="project-small"><div><span class="index">03 / IN PROGRESS</span><h3>Future Projects</h3><p>New ideas are always finding their way into notebooks and sketches. This space will grow as those ideas become real and ready to share.</p></div><span class="status">More to come</span></article>
+</div>
+<div class="project-note"><div class="kicker">A THOUGHT BEHIND THE WORK</div><blockquote>“The point is not to make something perfect. It is to make something that did not exist before.”</blockquote></div>
+</section>
+<section class="wrap project-end"><div><div class="kicker">THE NEXT IDEA</div><h2>There is always more to make.</h2><p>Every finished project leaves behind another question, another possibility, another beginning.</p></div><a class="btn" href="contact.html">GET IN TOUCH ↗</a></section>
+</main>
+<footer class="site-footer"><div class="wrap foot-inner"><div><b>THE INNER SPACE</b><br><small>A little universe, still unfolding. · © 2026</small></div><nav class="foot-nav"><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills & Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></footer>
+</div>
+<script>
+(function(){
+ const intro=document.getElementById('projectIntro');
+ const page=document.getElementById('projectPage');
+ const skip=document.getElementById('skipIntro');
+ function finish(){intro.classList.add('is-done');page.style.animation='none';page.style.opacity='1';}
+ skip.addEventListener('click',finish);
+ window.setTimeout(finish,7900);
+})();
+</script>
+</body>
+</html>
