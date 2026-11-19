@@ -46,6 +46,34 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
 @keyframes diagonalSmoke{0%{translate:-2% 5%;scale:.94;opacity:.42}50%{translate:2% 0;scale:1.04;opacity:.78}100%{translate:-1% -6%;scale:1.1;opacity:.52}}
 @media(max-width:760px){.portrait{width:88vw;height:73%;right:-10%;bottom:0;object-fit:contain}.portrait-smoke{width:115vw;height:84%;right:-18%;bottom:-8%;opacity:.48}}
 
+
+/* Additional homepage sections */
+.home-section{position:relative;background:#090909;color:#f5f5f3;padding:112px max(7vw,calc((100vw - 1160px)/2));}
+.section-kicker{font-size:10px;letter-spacing:2.8px;text-transform:uppercase;color:#aaa;margin-bottom:20px}
+.section-heading{font:500 clamp(34px,4.5vw,58px)/1.12 var(--serif);letter-spacing:-1.2px;max-width:720px}
+.section-heading em{font-weight:500}
+.space-intro{display:grid;grid-template-columns:1fr 1fr;gap:9vw;align-items:end;border-bottom:1px solid rgba(255,255,255,.13);padding-bottom:82px}
+.space-copy{color:#aaa;font-size:14px;line-height:2;max-width:420px}
+.explore-section{padding-top:90px;padding-bottom:115px;background:linear-gradient(180deg,#090909,#101010)}
+.explore-top{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:42px}
+.explore-top p{max-width:300px;color:#999;font-size:12px;line-height:1.8}
+.explore-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.explore-card{min-height:190px;padding:27px 25px;border:1px solid rgba(255,255,255,.13);border-radius:3px;background:rgba(255,255,255,.018);display:flex;flex-direction:column;justify-content:space-between;transition:transform .3s,border-color .3s,background .3s}
+.explore-card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.42);background:rgba(255,255,255,.045)}
+.card-number{font-size:10px;letter-spacing:2px;color:#777}
+.card-title{font:500 25px var(--serif);margin-top:22px}
+.card-bottom{display:flex;justify-content:space-between;align-items:center;color:#aaa;font-size:11px;margin-top:18px}
+.card-arrow{font-size:19px;color:#eee;transition:transform .25s}.explore-card:hover .card-arrow{transform:translate(3px,-3px)}
+.quote-section{padding:105px 24px 112px;text-align:center;background:#e9e9e6;color:#111}
+.quote-mark{font:italic 56px var(--serif);line-height:.8;color:#777;margin-bottom:24px}
+.home-quote{font:italic 500 clamp(27px,4vw,46px)/1.35 var(--serif);max-width:850px;margin:0 auto 22px}
+.quote-caption{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#666}
+.home-footer{padding:35px max(7vw,calc((100vw - 1160px)/2));background:#080808;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;align-items:center;gap:20px;color:#888;font-size:10px;letter-spacing:.6px}
+.footer-brand{font:500 17px var(--serif);color:#eee;letter-spacing:0}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a:hover{color:#fff}
+@media(max-width:760px){.home-section{padding:76px 23px}.space-intro{grid-template-columns:1fr;gap:28px;padding-bottom:55px}.explore-section{padding-top:72px;padding-bottom:78px}.explore-top{display:block}.explore-top p{margin-top:18px}.explore-grid{grid-template-columns:1fr 1fr;gap:10px}.explore-card{min-height:165px;padding:20px 17px}.card-title{font-size:21px}.quote-section{padding:80px 25px}.home-footer{padding:28px 23px;align-items:flex-start;flex-direction:column}.footer-links{gap:14px}}
+@media(max-width:430px){.explore-grid{grid-template-columns:1fr}.explore-card{min-height:145px}}
+
 </style>
 </head>
 <body>
@@ -78,6 +106,41 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
 </aside>
 <div class="scroll-note">Scroll</div>
 </main>
+
+<section class="home-section">
+  <div class="space-intro">
+    <div>
+      <p class="section-kicker">A little about this place</p>
+      <h2 class="section-heading">A space for thoughts, <em>ideas</em> and everything in between.</h2>
+    </div>
+    <p class="space-copy">The Inner Space is my personal corner of the internet — a place to collect what inspires me, share what I am learning, and keep the things I do not want to forget. Take your time and explore what lives within these pages.</p>
+  </div>
+</section>
+<section class="home-section explore-section">
+  <div class="explore-top">
+    <div><p class="section-kicker">Find your way around</p><h2 class="section-heading">Explore the <em>space.</em></h2></div>
+    <p>Different corners, different thoughts. Choose a page and stay a while.</p>
+  </div>
+  <div class="explore-grid">
+    <a class="explore-card" href="journey.html"><span class="card-number">01 / THE STORY</span><span class="card-title">My Journey</span><span class="card-bottom">The path so far <span class="card-arrow">↗</span></span></a>
+    <a class="explore-card" href="thoughts.html"><span class="card-number">02 / THE MIND</span><span class="card-title">Personal Thoughts</span><span class="card-bottom">Notes from within <span class="card-arrow">↗</span></span></a>
+    <a class="explore-card" href="projects.html"><span class="card-number">03 / THE WORK</span><span class="card-title">Projects</span><span class="card-bottom">Things I create <span class="card-arrow">↗</span></span></a>
+    <a class="explore-card" href="bookshelf.html"><span class="card-number">04 / THE SHELF</span><span class="card-title">Bookshelf</span><span class="card-bottom">Words worth keeping <span class="card-arrow">↗</span></span></a>
+    <a class="explore-card" href="quotes.html"><span class="card-number">05 / THE WORDS</span><span class="card-title">Quotes</span><span class="card-bottom">Lines that stay <span class="card-arrow">↗</span></span></a>
+    <a class="explore-card" href="about.html"><span class="card-number">06 / THE PERSON</span><span class="card-title">About Me</span><span class="card-bottom">A little more about me <span class="card-arrow">↗</span></span></a>
+  </div>
+</section>
+<section class="quote-section">
+  <div class="quote-mark">“</div>
+  <p class="home-quote">Somewhere between what we think and what we create, we discover who we are.</p>
+  <p class="quote-caption">A thought from The Inner Space</p>
+</section>
+<footer class="home-footer">
+  <a class="footer-brand" href="index.html">THE INNER SPACE</a>
+  <span>© 2026 Nayeem. A personal space on the internet.</span>
+  <nav class="footer-links" aria-label="Footer navigation"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></nav>
+</footer>
+
 <script>
 const menuButton=document.querySelector(".menu-toggle");const nav=document.querySelector(".nav");
 menuButton.addEventListener("click",()=>{const isOpen=nav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen));});
