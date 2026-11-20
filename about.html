@@ -212,5 +212,13 @@ body{background:var(--about-black);color:var(--about-white)}
 <script>
 (function(){const items=document.querySelectorAll('.about-reveal');if(!('IntersectionObserver'in window)){items.forEach(el=>el.classList.add('visible'));return;}const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}})},{threshold:.12});items.forEach(el=>observer.observe(el));})();
 </script>
+
+<style>
+/* Lower the portrait noticeably in the About hero */
+.about-person-img{top:170px!important}
+@media(max-width:1024px){.about-person-img{top:135px!important}}
+@media(max-width:700px){.about-person-img{top:100px!important}}
+@media(max-width:430px){.about-person-img{top:80px!important}}
+</style>
 </body>
 </html>
