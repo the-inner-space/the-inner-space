@@ -153,6 +153,32 @@
 @media(max-width:430px){.library-art{transform:perspective(900px) rotateY(-10deg) scale(.78);right:calc(50% - 155px);bottom:22px}.hero-inner{padding-bottom:285px}}
 @media(prefers-reduced-motion:reduce){.library-book.falling{animation:none;opacity:0}.library-art,.library-book{transition:none}}
 
+
+/* Make every volume visibly read as a separate book */
+.library-art{background:linear-gradient(135deg,#3a3024 0%,#211b15 48%,#100e0b 100%);padding:25px 25px 28px}
+.library-shelf{align-items:flex-end;justify-content:center;gap:6px;padding:0 9px 11px;background:linear-gradient(180deg,transparent 75%,rgba(0,0,0,.24));}
+.library-book{
+ display:block!important;flex:0 0 27px;width:27px;min-width:0;height:82%;
+ position:relative;isolation:isolate;border:1px solid rgba(238,220,184,.55)!important;
+ border-radius:3px 3px 1px 1px!important;
+ background:linear-gradient(90deg,var(--book-dark,#4b3024) 0%,var(--book-mid,#98724b) 18%,var(--book-light,#c5a77a) 24%,var(--book-mid,#98724b) 35%,var(--book-dark,#4b3024) 100%)!important;
+ box-shadow:4px 1px 4px rgba(0,0,0,.8),inset 1px 0 2px rgba(255,255,255,.3),inset -2px 0 3px rgba(0,0,0,.45)!important;
+}
+.library-book:before{content:"";position:absolute;z-index:2;left:4px;right:4px;top:6px;bottom:6px;width:auto;border-left:1px solid rgba(255,239,205,.48);border-right:1px solid rgba(0,0,0,.2);background:transparent}
+.library-book:after{
+ content:attr(data-title)!important;position:absolute;z-index:3;left:50%;right:auto;top:17px;bottom:auto;
+ width:auto;height:auto;transform:translateX(-50%);writing-mode:vertical-rl;
+ color:rgba(255,244,220,.95);font:600 7px/1 "Noto Serif Bengali",serif;
+ letter-spacing:0;background:none!important;box-shadow:none!important;white-space:nowrap;
+ text-shadow:0 1px 2px rgba(0,0,0,.65)
+}
+.library-book:nth-child(4n+1){--book-dark:#39251e;--book-mid:#86513b;--book-light:#c28a65}
+.library-book:nth-child(4n+2){--book-dark:#27352d;--book-mid:#526d55;--book-light:#9eae83}
+.library-book:nth-child(4n+3){--book-dark:#393027;--book-mid:#9a7847;--book-light:#d3b77e}
+.library-book:nth-child(4n){--book-dark:#292c39;--book-mid:#59627b;--book-light:#a5a9bd}
+.library-book:hover,.library-book:focus-visible{filter:brightness(1.4);transform:translateY(-11px) rotateZ(-3deg)}
+@media(max-width:760px){.library-book{flex-basis:19px;width:19px}.library-book:after{font-size:6px;top:12px}}
+
 </style>
 </head>
 <body>
@@ -229,6 +255,8 @@ nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{nav.c
 const library=document.querySelector(".library-art");
 if(library){
   const books=[...library.querySelectorAll(".library-book")];
+  const spineTitles=["কবিতা","গল্প","স্বপ্ন","জীবন","প্রেম","সময়","আলো","পথ","স্মৃতি","নীরবতা","ভাবনা","চিঠি"];
+  books.forEach((book,index)=>book.setAttribute("data-title",spineTitles[index%spineTitles.length]));
   books.forEach((book,index)=>{
     book.setAttribute("role","button");
     book.setAttribute("tabindex","0");
