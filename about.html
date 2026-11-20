@@ -371,5 +371,33 @@ body{background:var(--about-black);color:var(--about-white)}
   requestAnimationFrame(frame);
 })();
 </script>
+
+<style>
+/* Compact, slim About footer */
+.site-footer.about-footer{padding:10px 0 0!important}
+.site-footer.about-footer .foot-inner{gap:8px!important;min-height:0;padding-top:5px;padding-bottom:8px}
+.site-footer.about-footer .foot-inner b{font-size:11px;letter-spacing:.12em}
+.site-footer.about-footer .foot-inner small{font-size:9px}
+.site-footer.about-footer .foot-nav{gap:7px 11px;margin-top:0}
+.site-footer.about-footer .foot-nav a{font-size:9px}
+.about-footer-scenes{padding:12px 0 10px!important;border-top:1px solid #c9c7c1}
+.about-footer-scenes-inner{width:min(1180px,calc(100% - 40px))}
+.footer-scene-heading{font-size:7px;padding-bottom:6px;margin-bottom:8px}
+.footer-scene-grid{gap:10px}
+.footer-scene-canvas{height:92px!important}
+.footer-scene-caption{padding:5px 8px;font-size:7px}
+@media(max-width:700px){
+ .site-footer.about-footer .foot-inner{padding-bottom:8px}
+ .site-footer.about-footer .foot-nav{margin-top:7px;gap:6px 10px}
+ .about-footer-scenes{padding:10px 0 8px!important}
+ .about-footer-scenes-inner{width:calc(100% - 28px)}
+ .footer-scene-grid{grid-template-columns:1fr 1fr;gap:7px}
+ .footer-scene-canvas{height:72px!important}
+ .footer-scene-caption{padding:5px 6px;font-size:6px;letter-spacing:.1em}
+ .footer-scene-heading{font-size:6px;letter-spacing:.12em}
+}
+@media(max-width:390px){.footer-scene-grid{grid-template-columns:1fr}.footer-scene-canvas{height:82px!important}}
+</style>
+
 </body>
 </html>
