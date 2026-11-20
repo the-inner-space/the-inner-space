@@ -219,7 +219,7 @@ body{background:var(--about-black);color:var(--about-white)}
 </section>
 </main>
 
-<footer class="site-footer about-footer"><canvas class="footer-motion-canvas" id="footer-motion-canvas" aria-hidden="true"></canvas><div class="wrap foot-inner"><div><b>THE INNER SPACE</b><br><small>A little universe, still unfolding. · © 2026</small></div><nav class="foot-nav"><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills &amp; Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></footer>
+<footer class="site-footer about-footer"><div class="wrap foot-inner"><div><b>THE INNER SPACE</b><br><small>A little universe, still unfolding. · © 2026</small></div><nav class="foot-nav"><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills &amp; Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></footer>
 <script>
 (function(){const items=document.querySelectorAll('.about-reveal');if(!('IntersectionObserver'in window)){items.forEach(el=>el.classList.add('visible'));return;}const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}})},{threshold:.12});items.forEach(el=>observer.observe(el));})();
 </script>
@@ -273,80 +273,16 @@ body{background:var(--about-black);color:var(--about-white)}
 
 
 <style>
-/* A very slim white footer with subtle motion across its full surface */
-.site-footer.about-footer{
-  position:relative!important;isolation:isolate;overflow:hidden;
-  background:#f3f1eb!important;color:#171717!important;
-  padding:5px 0 3px!important;min-height:0!important;
-  border-top:1px solid #d8d6cf;
-}
-.site-footer.about-footer .footer-motion-canvas{
-  position:absolute;inset:0;width:100%;height:100%;z-index:-1;
-  display:block;pointer-events:none;opacity:.72;
-}
-.site-footer.about-footer .foot-inner{
-  position:relative;z-index:1;gap:5px!important;min-height:0;
-  padding-top:2px!important;padding-bottom:3px!important;
-}
+/* Keep the footer slim, clean and white; remove the unsuccessful motion effect */
+.site-footer.about-footer{background:#f3f1eb!important;color:#171717!important;padding:5px 0 3px!important;min-height:0!important;border-top:1px solid #d8d6cf}
+.site-footer.about-footer .foot-inner{gap:5px!important;min-height:0;padding-top:2px!important;padding-bottom:3px!important}
 .site-footer.about-footer .foot-inner b{font-size:9px;letter-spacing:.1em}
 .site-footer.about-footer .foot-inner small{font-size:7px;color:#777!important}
-.site-footer.about-footer .foot-nav{
-  display:flex;gap:4px 9px!important;margin-top:0!important;
-}
-.site-footer.about-footer .foot-nav a{
-  font-size:8px!important;color:#555!important;line-height:1.4;
-}
+.site-footer.about-footer .foot-nav{display:flex;gap:4px 9px!important;margin-top:0!important}
+.site-footer.about-footer .foot-nav a{font-size:8px!important;color:#555!important;line-height:1.4}
 .site-footer.about-footer .foot-nav a:hover{color:#111!important}
-@media(max-width:650px){
-  .site-footer.about-footer{padding:5px 0 4px!important}
-  .site-footer.about-footer .foot-inner{padding-bottom:2px!important}
-  .site-footer.about-footer .foot-nav{margin-top:4px!important;gap:4px 8px!important}
-  .site-footer.about-footer .foot-nav a{font-size:7px!important}
-  .site-footer.about-footer .foot-inner b{font-size:8px}
-  .site-footer.about-footer .foot-inner small{font-size:6px}
-}
-@media(prefers-reduced-motion:reduce){.site-footer.about-footer .footer-motion-canvas{opacity:.35}}
+@media(max-width:650px){.site-footer.about-footer{padding:5px 0 4px!important}.site-footer.about-footer .foot-inner{padding-bottom:2px!important}.site-footer.about-footer .foot-nav{margin-top:4px!important;gap:4px 8px!important}.site-footer.about-footer .foot-nav a{font-size:7px!important}.site-footer.about-footer .foot-inner b{font-size:8px}.site-footer.about-footer .foot-inner small{font-size:6px}}
 </style>
-<script>
-(function(){
-  const canvas=document.getElementById('footer-motion-canvas');
-  if(!canvas)return;
-  const ctx=canvas.getContext('2d');
-  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let width=1,height=1,dpr=1,raf=0;
-  function resize(){
-    const rect=canvas.parentElement.getBoundingClientRect();
-    width=Math.max(1,rect.width);height=Math.max(1,rect.height);
-    dpr=Math.min(window.devicePixelRatio||1,2);
-    canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-  }
-  function draw(time){
-    const t=reduced?0:time*.00018;
-    ctx.clearRect(0,0,width,height);
-    const spacing=34;
-    for(let i=-2;i<width/spacing+3;i++){
-      ctx.beginPath();
-      for(let y=0;y<=height+8;y+=4){
-        const x=i*spacing+Math.sin(y*.018+t+i*.34)*10+Math.sin(y*.008-t*1.4)*5;
-        if(y===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
-      }
-      ctx.strokeStyle='rgba(80,80,75,.12)';ctx.lineWidth=.65;ctx.stroke();
-    }
-    for(let i=0;i<22;i++){
-      const x=((i*97+t*34)%(width+30))-15;
-      const y=height*.5+Math.sin(i*1.7+t*2)*height*.34;
-      const radius=1+(i%3)*.35;
-      ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);
-      ctx.fillStyle='rgba(55,55,52,.25)';ctx.fill();
-    }
-    if(!reduced)raf=requestAnimationFrame(draw);
-  }
-  resize();
-  draw(performance.now());
-  window.addEventListener('resize',resize,{passive:true});
-})();
-</script>
 
 </body>
 </html>
