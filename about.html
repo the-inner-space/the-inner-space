@@ -201,17 +201,20 @@ body{background:var(--about-black);color:var(--about-white)}
 <header class="site-header"><div class="wrap head-inner"><a class="brand" href="index.html">THE INNER SPACE<small>A PERSONAL COLLECTION</small></a><nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills &amp; Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html" class="active">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></header>
 <main>
 <section class="about-hero about-code-hero" id="about"><div class="about-code-wrap"><div class="about-person"><img class="about-person-img" src="assets/Stylish Sunglasses Hoodie Portrait.png" alt="Nayeem Islam in a hoodie and sunglasses"></div><div class="about-code-text"><p class="about-code-label">THE INNER SPACE · PERSONAL PORTFOLIO</p><h1 class="about-code-title">Nayeem<br><span>Evan</span></h1><p class="about-code-subtitle">From thoughts to ideas, from curiosity to creation — this is a little space that reflects who I am.</p></div><a class="about-code-scroll" href="#about-start" aria-label="Scroll to read about me"><span>↓</span></a></div></section>
-<section class="about-section" id="about-start">
-  <div class="about-wrap about-intro-grid">
-    <div>
-      <div class="about-section-kicker">ABOUT ME &amp; THIS SPACE</div>
-      <div class="about-index">01</div>
+<section class="about-section about-short-intro" id="about-start">
+  <div class="about-wrap">
+    <div class="short-intro-top">
+      <span class="about-section-kicker">01 / ABOUT ME &amp; THIS SPACE</span>
+      <span class="short-intro-mark">THE INNER SPACE</span>
     </div>
-    <div>
-      <h2>A little about me, and the space I call my own.</h2>
-      <p>I'm Nayeem Evan. I enjoy writing, music, exploring ideas and learning new things. I'm still discovering my interests and finding my own way to express them.</p>
-      <p>The Inner Space is my personal corner of the internet — a place where I bring together my thoughts, writings, interests, projects and the little things that reflect who I am.</p>
+    <div class="short-intro-grid">
+      <h2>A little about<br>who I am.</h2>
+      <div class="short-intro-copy">
+        <p>I'm Nayeem Evan. I enjoy writing, music, exploring ideas and learning new things. I'm still discovering my interests and finding my own way to express them.</p>
+        <p>The Inner Space is my personal corner of the internet — a place where I bring together my thoughts, writings, interests, projects and the little things that reflect who I am.</p>
+      </div>
     </div>
+    <div class="short-intro-bottom"><span>PERSONAL NOTES · IDEAS · CREATIONS</span><span>01 — 01</span></div>
   </div>
 </section>
 </main>
@@ -247,6 +250,20 @@ body{background:var(--about-black);color:var(--about-white)}
 @media(max-width:1024px){.about-code-text{left:-45px!important;margin-top:-8px}}
 @media(max-width:700px){.about-code-text{left:-25px!important;align-self:center!important;margin-top:0}}
 @media(max-width:430px){.about-code-text{left:-18px!important;margin-top:0}}
+</style>
+<style>
+/* Fresh, spacious editorial layout for the short About introduction */
+.about-short-intro{padding:105px 0 145px!important;background:#101010}
+.about-short-intro .about-wrap{width:min(1120px,calc(100% - 64px))}
+.short-intro-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:20px;border-bottom:1px solid #41413e}
+.short-intro-top .about-section-kicker{color:#aaa}
+.short-intro-mark{font:300 9px 'Plus Jakarta Sans',sans-serif;letter-spacing:.2em;color:#777}
+.short-intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:9%;align-items:start;padding:66px 0 78px}
+.about-short-intro .short-intro-grid h2{font:400 clamp(48px,7vw,88px)/1.05 'Cinzel',serif;letter-spacing:-.065em;margin:0;color:#f4f2ed}
+.short-intro-copy{padding-top:9px;max-width:510px}
+.short-intro-copy p{font:300 14px/2.05 'Plus Jakarta Sans',sans-serif;color:#b9b9b3;margin:0 0 22px}
+.short-intro-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #41413e;padding-top:17px;font:300 8px 'Plus Jakarta Sans',sans-serif;letter-spacing:.2em;color:#777}
+@media(max-width:700px){.about-short-intro{padding:75px 0 105px!important}.about-short-intro .about-wrap{width:calc(100% - 38px)}.short-intro-mark{font-size:7px}.short-intro-grid{grid-template-columns:1fr;gap:28px;padding:48px 0 55px}.about-short-intro .short-intro-grid h2{font-size:clamp(43px,11vw,66px)}.short-intro-copy p{font-size:13px}.short-intro-bottom{font-size:7px;letter-spacing:.12em}}
 </style>
 </body>
 </html>
