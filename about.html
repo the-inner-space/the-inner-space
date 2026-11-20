@@ -97,6 +97,13 @@ body{background:var(--about-black);color:var(--about-white)}
 @media(max-width:700px){.about-code-hero{height:calc(100svh - 90px);min-height:570px;max-height:760px}.about-code-wrap{padding:25px 18px 0;grid-template-columns:1fr 1.25fr .2fr;align-items:end}.about-person-img{height:74%;max-width:140%;transform:translateX(-18px)}.about-code-text{left:-42px;padding-bottom:95px}.about-code-label{font-size:7px;letter-spacing:.13em}.about-code-title{font-size:clamp(48px,9vw,72px)}.about-code-subtitle{font-size:8px;max-width:230px}.about-code-scroll{padding-bottom:100px}.about-code-scroll span{width:34px;height:110px;font-size:18px}}
 @media(max-width:430px){.about-code-wrap{padding-inline:12px;grid-template-columns:1fr 1.2fr .18fr}.about-person-img{height:67%;transform:translateX(-14px)}.about-code-text{left:-34px;padding-bottom:90px}.about-code-title{font-size:clamp(42px,10vw,56px)}.about-code-scroll span{width:30px;height:90px}}
 @media(prefers-reduced-motion:reduce){.about-person-img,.about-code-scroll span{animation:none}}
+
+/* Portrait close-up: zoom into the face and crop away the lower body */
+.about-person{overflow:hidden;align-self:stretch}
+.about-person-img{height:190%;max-height:none;max-width:none;flex:none;object-fit:contain;object-position:center top;transform:translate(-20px,300px) scale(1.05);transform-origin:center top;animation:none;mask-image:linear-gradient(to bottom,#000 0%,#000 88%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 88%,transparent 100%)}
+@media(max-width:700px){.about-person{height:100%;min-height:0}.about-person-img{height:190%;transform:translate(-14px,220px) scale(1.05)}}
+@media(max-width:430px){.about-person-img{height:190%;transform:translate(-12px,205px) scale(1.05)}}
+
 </style>
 </head>
 <body>
