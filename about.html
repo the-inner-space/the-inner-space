@@ -182,6 +182,13 @@ body{background:var(--about-black);color:var(--about-white)}
 @media(max-width:1024px){.about-person-img{height:275%!important;transform:translate(-90px,1350px)!important}}
 @media(max-width:700px){.about-person-img{height:245%!important;transform:translate(-55px,1200px)!important}}
 @media(max-width:430px){.about-person-img{height:225%!important;transform:translate(-35px,1080px)!important}}
+\n
+\n\n/* Fix portrait visibility: keep it inside the hero while enlarging it */
+.about-person{overflow:visible}
+.about-person-img{height:125%!important;width:auto!important;max-height:none!important;max-width:none!important;object-fit:contain;object-position:center bottom;position:relative;left:-90px;bottom:0;transform:none!important;animation:none!important}
+@media(max-width:1024px){.about-person-img{height:118%!important;left:-55px}}
+@media(max-width:700px){.about-person-img{height:105%!important;left:-28px;bottom:0}}
+@media(max-width:430px){.about-person-img{height:100%!important;left:-18px;bottom:0}}
 \n</style>
 </head>
 <body>
