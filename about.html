@@ -219,21 +219,7 @@ body{background:var(--about-black);color:var(--about-white)}
 </section>
 </main>
 
-<footer class="site-footer about-footer"><div class="wrap foot-inner"><div><b>THE INNER SPACE</b><br><small>A little universe, still unfolding. · © 2026</small></div><nav class="foot-nav"><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills &amp; Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div><section class="about-footer-scenes" id="about-footer-scenes" aria-label="Animated scenes">
-  <div class="about-footer-scenes-inner">
-    <div class="footer-scene-heading"><span>BEYOND THE WORDS</span><span>ANIMATED MOMENTS · 01—02</span></div>
-    <div class="footer-scene-grid">
-      <article class="footer-scene-card">
-        <canvas class="footer-scene-canvas" id="footer-fight-scene" aria-label="Two anime-inspired characters sparring in a dramatic night scene"></canvas>
-        <div class="footer-scene-caption"><span>01 / THE CLASH</span><span>A MOMENT OF ACTION</span></div>
-      </article>
-      <article class="footer-scene-card">
-        <canvas class="footer-scene-canvas" id="footer-walk-scene" aria-label="A person in a black hoodie walks down a quiet road, with WHO AM I written on the back"></canvas>
-        <div class="footer-scene-caption"><span>02 / THE WALK</span><span>WHO AM I</span></div>
-      </article>
-    </div>
-  </div>
-</section></footer>
+<footer class="site-footer about-footer"><canvas class="footer-motion-canvas" id="footer-motion-canvas" aria-hidden="true"></canvas><div class="wrap foot-inner"><div><b>THE INNER SPACE</b><br><small>A little universe, still unfolding. · © 2026</small></div><nav class="foot-nav"><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills &amp; Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></footer>
 <script>
 (function(){const items=document.querySelectorAll('.about-reveal');if(!('IntersectionObserver'in window)){items.forEach(el=>el.classList.add('visible'));return;}const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}})},{threshold:.12});items.forEach(el=>observer.observe(el));})();
 </script>
@@ -280,124 +266,87 @@ body{background:var(--about-black);color:var(--about-white)}
 .short-intro-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #41413e;padding-top:17px;font:300 8px 'Plus Jakarta Sans',sans-serif;letter-spacing:.2em;color:#777}
 @media(max-width:700px){.about-short-intro{padding:75px 0 105px!important}.about-short-intro .about-wrap{width:calc(100% - 38px)}.short-intro-mark{font-size:7px}.short-intro-grid{grid-template-columns:1fr;gap:28px;padding:48px 0 55px}.about-short-intro .short-intro-grid h2{font-size:clamp(43px,11vw,66px)}.short-intro-copy p{font-size:13px}.short-intro-bottom{font-size:7px;letter-spacing:.12em}}
 </style>
+
+
+
+
+
+
 <style>
-/* Cinematic animated scenes above the About footer */
-.about-footer-scenes{background:#e9e7e1;color:#171717;padding:76px 0 62px;border-top:1px solid #c9c7c1}
-.about-footer-scenes-inner{width:min(1180px,calc(100% - 56px));margin:auto}
-.footer-scene-heading,.footer-scene-caption{display:flex;justify-content:space-between;gap:16px;letter-spacing:.19em;font:300 9px 'Plus Jakarta Sans',sans-serif;color:#555}
-.footer-scene-heading{padding-bottom:18px;border-bottom:1px solid #c9c7c1;margin-bottom:24px}
-.footer-scene-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.footer-scene-card{min-width:0;background:#111;border:1px solid #b9b7b0;overflow:hidden}
-.footer-scene-canvas{display:block;width:100%;height:280px;background:#111}
-.footer-scene-caption{padding:14px 16px;border-top:1px solid #30302e;color:#aaa;font-size:8px}
-@media(max-width:700px){.about-footer-scenes{padding:55px 0 45px}.about-footer-scenes-inner{width:calc(100% - 32px)}.footer-scene-grid{grid-template-columns:1fr;gap:14px}.footer-scene-canvas{height:235px}.footer-scene-heading{font-size:8px}}
+/* A very slim white footer with subtle motion across its full surface */
+.site-footer.about-footer{
+  position:relative!important;isolation:isolate;overflow:hidden;
+  background:#f3f1eb!important;color:#171717!important;
+  padding:5px 0 3px!important;min-height:0!important;
+  border-top:1px solid #d8d6cf;
+}
+.site-footer.about-footer .footer-motion-canvas{
+  position:absolute;inset:0;width:100%;height:100%;z-index:-1;
+  display:block;pointer-events:none;opacity:.72;
+}
+.site-footer.about-footer .foot-inner{
+  position:relative;z-index:1;gap:5px!important;min-height:0;
+  padding-top:2px!important;padding-bottom:3px!important;
+}
+.site-footer.about-footer .foot-inner b{font-size:9px;letter-spacing:.1em}
+.site-footer.about-footer .foot-inner small{font-size:7px;color:#777!important}
+.site-footer.about-footer .foot-nav{
+  display:flex;gap:4px 9px!important;margin-top:0!important;
+}
+.site-footer.about-footer .foot-nav a{
+  font-size:8px!important;color:#555!important;line-height:1.4;
+}
+.site-footer.about-footer .foot-nav a:hover{color:#111!important}
+@media(max-width:650px){
+  .site-footer.about-footer{padding:5px 0 4px!important}
+  .site-footer.about-footer .foot-inner{padding-bottom:2px!important}
+  .site-footer.about-footer .foot-nav{margin-top:4px!important;gap:4px 8px!important}
+  .site-footer.about-footer .foot-nav a{font-size:7px!important}
+  .site-footer.about-footer .foot-inner b{font-size:8px}
+  .site-footer.about-footer .foot-inner small{font-size:6px}
+}
+@media(prefers-reduced-motion:reduce){.site-footer.about-footer .footer-motion-canvas{opacity:.35}}
 </style>
 <script>
 (function(){
-  const fight=document.getElementById('footer-fight-scene');
-  const walk=document.getElementById('footer-walk-scene');
-  if(!fight||!walk)return;
+  const canvas=document.getElementById('footer-motion-canvas');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function setup(canvas){
-    const ctx=canvas.getContext('2d');
-    let w=800,h=300,dpr=1;
-    function resize(){
-      const box=canvas.getBoundingClientRect();
-      dpr=Math.min(window.devicePixelRatio||1,2);
-      canvas.width=Math.max(1,Math.round(box.width*dpr));
-      canvas.height=Math.max(1,Math.round(box.height*dpr));
-      w=800;h=300;ctx.setTransform(canvas.width/w,0,0,canvas.height/h,0,0);
+  let width=1,height=1,dpr=1,raf=0;
+  function resize(){
+    const rect=canvas.parentElement.getBoundingClientRect();
+    width=Math.max(1,rect.width);height=Math.max(1,rect.height);
+    dpr=Math.min(window.devicePixelRatio||1,2);
+    canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function draw(time){
+    const t=reduced?0:time*.00018;
+    ctx.clearRect(0,0,width,height);
+    const spacing=34;
+    for(let i=-2;i<width/spacing+3;i++){
+      ctx.beginPath();
+      for(let y=0;y<=height+8;y+=4){
+        const x=i*spacing+Math.sin(y*.018+t+i*.34)*10+Math.sin(y*.008-t*1.4)*5;
+        if(y===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+      }
+      ctx.strokeStyle='rgba(80,80,75,.12)';ctx.lineWidth=.65;ctx.stroke();
     }
-    resize();window.addEventListener('resize',resize);
-    return {ctx,resize};
+    for(let i=0;i<22;i++){
+      const x=((i*97+t*34)%(width+30))-15;
+      const y=height*.5+Math.sin(i*1.7+t*2)*height*.34;
+      const radius=1+(i%3)*.35;
+      ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);
+      ctx.fillStyle='rgba(55,55,52,.25)';ctx.fill();
+    }
+    if(!reduced)raf=requestAnimationFrame(draw);
   }
-  const f=setup(fight),g=setup(walk);
-  function line(c,x1,y1,x2,y2,width,color){
-    c.beginPath();c.moveTo(x1,y1);c.lineTo(x2,y2);c.lineWidth=width;c.lineCap='round';c.strokeStyle=color;c.stroke();
-  }
-  function fighter(c,x,y,pose,color,glow){
-    c.save();c.translate(x,y);c.lineCap='round';c.lineJoin='round';
-    c.shadowColor=glow;c.shadowBlur=12;
-    c.fillStyle=color;c.strokeStyle=color;
-    c.beginPath();c.arc(0,-76,17,0,Math.PI*2);c.fill();
-    c.beginPath();c.moveTo(-14,-58);c.lineTo(-21,-8);c.lineTo(19,-8);c.lineTo(13,-58);c.closePath();c.fill();
-    const swing=Math.sin(pose)*22;
-    line(c,-9,-10,-19+swing,35,12,color);line(c,10,-10,22-swing,35,12,color);
-    line(c,-12,-48,-35+swing,-25,9,color);line(c,-35+swing,-25,-48+swing,-48,8,color);
-    line(c,12,-48,35-swing,-35,9,color);line(c,35-swing,-35,52-swing,-53,8,color);
-    c.restore();
-  }
-  function drawFight(t){
-    const c=f.ctx;c.clearRect(0,0,800,300);
-    const bg=c.createLinearGradient(0,0,0,300);bg.addColorStop(0,'#11151b');bg.addColorStop(1,'#29282a');c.fillStyle=bg;c.fillRect(0,0,800,300);
-    for(let i=0;i<34;i++){const x=(i*83+20)%800,y=(i*47)%170;c.fillStyle='rgba(220,225,235,.24)';c.fillRect(x,y,2,2)}
-    c.fillStyle='#171719';c.fillRect(0,245,800,55);
-    for(let i=0;i<12;i++)line(c,i*80,245,i*80-35,300,1,'rgba(220,220,220,.08)');
-    const beat=Math.sin(t*2.4),rush=Math.max(0,Math.sin(t*1.2))*.5;
-    fighter(c,300+beat*22+rush*25,225, t*5,'#d9d9d6','#c7d2df');
-    fighter(c,505-beat*20-rush*24,225,-t*5,'#777c84','#e0e3e7');
-    const spark=Math.max(0,Math.sin(t*2.4+1.1));
-    if(spark>.82){c.save();c.translate(405,145);c.rotate(t*3);c.strokeStyle='rgba(255,255,255,.9)';c.lineWidth=3;for(let i=0;i<8;i++){c.rotate(Math.PI/4);line(c,0,0,24+spark*18,0,2,'rgba(255,255,255,.85)')}c.restore()}
-    c.fillStyle='rgba(255,255,255,.06)';c.fillRect(0,0,800,300);
-  }
-  function drawWalk(t){
-    const c=g.ctx;c.clearRect(0,0,800,300);
-    const sky=c.createLinearGradient(0,0,0,300);sky.addColorStop(0,'#16191e');sky.addColorStop(.58,'#35383b');sky.addColorStop(1,'#101112');c.fillStyle=sky;c.fillRect(0,0,800,300);
-    c.fillStyle='rgba(220,220,220,.16)';c.beginPath();c.arc(625,57,22,0,Math.PI*2);c.fill();
-    c.fillStyle='#17191b';c.fillRect(0,135,800,55);
-    for(let i=0;i<9;i++){const x=i*105+12;c.fillStyle='#101214';c.fillRect(x,93+(i%3)*9,35,85);c.fillRect(x-8,85+(i%3)*9,51,12)}
-    c.fillStyle='#252729';c.beginPath();c.moveTo(280,165);c.lineTo(520,165);c.lineTo(800,300);c.lineTo(0,300);c.closePath();c.fill();
-    line(c,400,170,400,300,3,'rgba(220,220,220,.26)');
-    for(let i=0;i<5;i++){const yy=185+i*25;const ww=2+i*3;line(c,400-ww,yy,400+ww,yy,1,'rgba(220,220,220,.24)')}
-    for(let i=0;i<4;i++){const x=80+i*215;c.strokeStyle='rgba(200,200,200,.2)';c.lineWidth=2;line(c,x,65,x,155,2,'#777');c.beginPath();c.arc(x,65,8,Math.PI,Math.PI*2);c.stroke()}
-    c.save();c.translate(400,207+Math.sin(t*5)*2);
-    const step=Math.sin(t*5)*12;
-    c.strokeStyle='#080909';c.lineWidth=17;
-    line(c,-12,40,-17+step,82,16,'#090a0b');line(c,12,40,17-step,82,16,'#090a0b');
-    line(c,-20,-15,-37-step*.45,20,13,'#08090a');line(c,20,-15,37+step*.45,20,13,'#08090a');
-    c.fillStyle='#08090a';c.beginPath();c.moveTo(-25,-28);c.quadraticCurveTo(-29,-56,0,-59);c.quadraticCurveTo(29,-56,25,-28);c.lineTo(20,40);c.quadraticCurveTo(0,49,-20,40);c.closePath();c.fill();
-    c.fillStyle='#050606';c.beginPath();c.arc(0,-68,18,0,Math.PI*2);c.fill();
-    c.fillStyle='#111314';c.beginPath();c.arc(0,-79,21,Math.PI,Math.PI*2);c.fill();
-    c.fillStyle='#d0d0cc';c.font='bold 10px Arial';c.textAlign='center';c.fillText('WHO AM I',0,-8);
-    c.restore();
-    const vignette=c.createRadialGradient(400,145,70,400,145,460);vignette.addColorStop(0,'rgba(0,0,0,0)');vignette.addColorStop(1,'rgba(0,0,0,.55)');c.fillStyle=vignette;c.fillRect(0,0,800,300);
-  }
-  let start=performance.now();
-  function frame(now){
-    const t=reduced?1:(now-start)/1000;
-    drawFight(t);drawWalk(t);
-    if(!reduced)requestAnimationFrame(frame);
-  }
-  requestAnimationFrame(frame);
+  resize();
+  draw(performance.now());
+  window.addEventListener('resize',resize,{passive:true});
 })();
 </script>
-
-<style>
-/* Compact, slim About footer */
-.site-footer.about-footer{padding:10px 0 0!important}
-.site-footer.about-footer .foot-inner{gap:8px!important;min-height:0;padding-top:5px;padding-bottom:8px}
-.site-footer.about-footer .foot-inner b{font-size:11px;letter-spacing:.12em}
-.site-footer.about-footer .foot-inner small{font-size:9px}
-.site-footer.about-footer .foot-nav{gap:7px 11px;margin-top:0}
-.site-footer.about-footer .foot-nav a{font-size:9px}
-.about-footer-scenes{padding:12px 0 10px!important;border-top:1px solid #c9c7c1}
-.about-footer-scenes-inner{width:min(1180px,calc(100% - 40px))}
-.footer-scene-heading{font-size:7px;padding-bottom:6px;margin-bottom:8px}
-.footer-scene-grid{gap:10px}
-.footer-scene-canvas{height:92px!important}
-.footer-scene-caption{padding:5px 8px;font-size:7px}
-@media(max-width:700px){
- .site-footer.about-footer .foot-inner{padding-bottom:8px}
- .site-footer.about-footer .foot-nav{margin-top:7px;gap:6px 10px}
- .about-footer-scenes{padding:10px 0 8px!important}
- .about-footer-scenes-inner{width:calc(100% - 28px)}
- .footer-scene-grid{grid-template-columns:1fr 1fr;gap:7px}
- .footer-scene-canvas{height:72px!important}
- .footer-scene-caption{padding:5px 6px;font-size:6px;letter-spacing:.1em}
- .footer-scene-heading{font-size:6px;letter-spacing:.12em}
-}
-@media(max-width:390px){.footer-scene-grid{grid-template-columns:1fr}.footer-scene-canvas{height:82px!important}}
-</style>
 
 </body>
 </html>
