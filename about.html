@@ -1,1 +1,86 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A personal introduction to the person behind The Inner Space."><meta name="theme-color" content="#f3f1eb"><title>About | The Inner Space</title><link rel="stylesheet" href="style-new.css"></head><body><header class="site-header"><div class="wrap head-inner"><a class="brand" href="index.html">THE INNER SPACE<small>A PERSONAL COLLECTION</small></a><nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills & Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html" class="active">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></header><section class="page-intro"><div class="wrap"><span class="page-no">09 / 12</span><div class="kicker">THE PERSON BEHIND THE PAGES</div><h1>A story still being written.</h1><p>Not a résumé or a perfect introduction. Just a few pages about the person behind this little universe.</p></div></section><main class="wrap content"><div class="about-layout"><img class="about-photo" src="photo_2026-11-18_11-13-45.jpg" alt="Portrait"><div class="about-copy"><div class="kicker">HELLO, I'M NAYEEM</div><h2 class="section-title">A mind that keeps wondering.</h2><p>I'm someone who finds meaning in words, memories, music, small details and the things people often pass by. I enjoy exploring ideas, learning how things work and finding ways to turn thoughts into something real.</p><p>The Inner Space brings together the things I want to remember and share — a place that can grow and change with me.</p><div class="about-note">“This is not a finished portrait. New interests, experiences and ideas will keep adding new chapters.”</div></div></div></main><footer class="site-footer"><div class="wrap foot-inner"><div><b>THE INNER SPACE</b><br><small>A little universe, still unfolding. · © 2026</small></div><nav class="foot-nav"><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills & Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A personal introduction to the person behind The Inner Space.">
+<meta name="theme-color" content="#111">
+<title>About | The Inner Space</title>
+<link rel="stylesheet" href="style-new.css">
+<style>
+:root{--about-black:#101010;--about-white:#f4f2ed;--about-grey:#a7a7a2}
+body{background:var(--about-black);color:var(--about-white)}
+.site-header{background:#101010;border-color:#30302e;color:#f4f2ed}
+.brand small,.nav a{color:#aaa}
+.nav a:hover,.nav a.active{color:#fff;border-color:#eee}
+.about-hero{min-height:690px;position:relative;isolation:isolate;overflow:hidden;background:#101010;display:flex;align-items:center;border-bottom:1px solid #30302e}
+.about-hero:before,.about-hero:after{content:"";position:absolute;z-index:-1;pointer-events:none;filter:blur(35px);opacity:.38}
+.about-hero:before{width:75vw;height:55vw;left:-18%;top:-15%;background:radial-gradient(ellipse at 40% 50%,rgba(210,210,210,.23),transparent 58%),radial-gradient(ellipse at 70% 70%,rgba(130,130,130,.2),transparent 48%);animation:smokeDrift 15s ease-in-out infinite alternate}
+.about-hero:after{width:70vw;height:60vw;right:-22%;bottom:-32%;background:radial-gradient(ellipse at 50% 45%,rgba(220,220,220,.2),transparent 58%),radial-gradient(ellipse at 20% 35%,rgba(110,110,110,.25),transparent 48%);animation:smokeDrift 19s ease-in-out infinite alternate-reverse}
+.smoke-layer{position:absolute;z-index:-1;inset:0;opacity:.22;pointer-events:none;background:repeating-radial-gradient(ellipse at 20% 55%,transparent 0 9%,rgba(220,220,220,.12) 10%,transparent 15% 25%);filter:blur(22px);animation:smokeMove 24s linear infinite}
+.about-hero-inner{width:min(1160px,calc(100% - 56px));margin:auto;position:relative;padding:100px 0 110px;display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+.about-eyebrow{font-size:10px;letter-spacing:.27em;color:#aaa;text-transform:uppercase}
+.about-name{font:400 clamp(76px,14vw,178px)/.88 var(--serif);letter-spacing:-.09em;margin:28px 0 24px;text-transform:uppercase}
+.about-name span{display:block;color:#858580;font-style:italic;font-size:.48em;letter-spacing:-.06em;margin:18px 0 0 9px}
+.about-lead{max-width:460px;color:#c1c1bc;font-size:14px;line-height:1.9}
+.about-hero-meta{display:flex;align-items:center;gap:17px;margin-top:42px;color:#9d9d97;font-size:9px;letter-spacing:.17em;text-transform:uppercase}
+.about-hero-meta i{height:1px;width:42px;background:#777}
+.about-portrait-wrap{position:relative;max-width:390px;margin-left:auto;padding:0 18px 18px 0}
+.about-portrait-wrap:before{content:"";position:absolute;inset:22px 0 0 22px;border:1px solid #777;opacity:.55}
+.about-portrait{width:100%;height:490px;object-fit:cover;object-position:center 25%;filter:grayscale(100%) contrast(1.08) brightness(.82);position:relative;animation:portraitFade 1.3s both}
+.portrait-caption{position:absolute;bottom:0;left:0;background:#101010;padding:10px 14px;font-size:9px;letter-spacing:.16em;color:#c4c4bf}
+.about-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:8px;letter-spacing:.22em;color:#888;text-transform:uppercase}
+.about-scroll:after{content:"";display:block;width:1px;height:32px;background:#777;margin:10px auto 0;animation:scrollLine 1.8s ease-in-out infinite}
+.about-section{padding:105px 0;border-bottom:1px solid #30302e}
+.about-wrap{width:min(1040px,calc(100% - 56px));margin:auto}
+.about-section-kicker{font-size:9px;letter-spacing:.23em;color:#888;text-transform:uppercase}
+.about-section h2{font:400 clamp(34px,5vw,64px)/1.16 var(--serif);letter-spacing:-.055em;margin:20px 0 25px;max-width:760px}
+.about-section p{color:#aaa;max-width:690px;font-size:14px;line-height:2;margin:0 0 17px}
+.about-intro-grid{display:grid;grid-template-columns:.55fr 1.45fr;gap:70px}
+.about-index{font:italic 92px/.9 var(--serif);color:#555}
+.about-manifesto{background:#e9e7e1;color:#171717;padding:100px 0}
+.about-manifesto .about-section-kicker{color:#777}
+.about-manifesto h2{font:400 clamp(34px,5.2vw,68px)/1.25 var(--serif);letter-spacing:-.05em;max-width:900px;margin:25px 0}
+.about-manifesto p{color:#62625d}
+.about-interests{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #383838;margin-top:48px}
+.about-interest{padding:23px 17px 12px 0;border-bottom:1px solid #383838}
+.about-interest small{font-size:9px;letter-spacing:.15em;color:#888}
+.about-interest h3{font:400 21px var(--serif);margin:15px 0 5px}
+.about-interest p{font-size:11px;line-height:1.7;margin:0;color:#999}
+.about-quote{padding:115px 0;text-align:center;background:linear-gradient(180deg,#101010,#191919,#101010)}
+.about-quote blockquote{font:400 clamp(28px,5vw,58px)/1.4 var(--serif);letter-spacing:-.04em;max-width:850px;margin:25px auto;color:#efeee9}
+.about-quote small{font-size:9px;letter-spacing:.2em;color:#888}
+.about-ending{padding:115px 0 125px;text-align:center}
+.about-ending h2{font:400 clamp(42px,7vw,88px)/1.12 var(--serif);letter-spacing:-.065em;max-width:900px;margin:22px auto}
+.about-ending p{color:#999;max-width:520px;margin:0 auto}
+.about-footer{background:#e9e7e1;color:#171717}
+.about-footer .foot-inner small,.about-footer .foot-nav a{color:#666}
+.about-footer .foot-nav a:hover{color:#111}
+.about-reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.about-reveal.visible{opacity:1;transform:none}
+@keyframes smokeDrift{from{transform:translate3d(-4%,0,0) scale(1)}to{transform:translate3d(8%,5%,0) scale(1.2)}}
+@keyframes smokeMove{0%{transform:translateX(-5%) scale(1)}50%{transform:translateX(5%) scale(1.12)}100%{transform:translateX(-5%) scale(1)}}
+@keyframes portraitFade{from{opacity:0;transform:translateY(25px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes scrollLine{0%,100%{transform:scaleY(.55);transform-origin:top;opacity:.4}50%{transform:scaleY(1);transform-origin:top;opacity:1}}
+@media(max-width:800px){.about-hero-inner{grid-template-columns:1fr;gap:45px;padding:80px 0 95px}.about-portrait-wrap{margin:0 auto;width:min(390px,90%)}.about-portrait{height:430px}.about-hero{min-height:0}.about-intro-grid{grid-template-columns:1fr;gap:20px}.about-index{font-size:65px}.about-interests{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.about-hero-inner,.about-wrap{width:calc(100% - 36px)}.about-name{font-size:clamp(68px,19vw,112px)}.about-hero-inner{padding-top:65px}.about-portrait{height:380px}.about-section{padding:75px 0}.about-manifesto{padding:75px 0}.about-interests{grid-template-columns:1fr 1fr}.about-interest{padding:18px 10px 15px 0}.about-quote{padding:80px 0}.about-ending{padding:85px 0}.about-scroll{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.about-reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap head-inner"><a class="brand" href="index.html">THE INNER SPACE<small>A PERSONAL COLLECTION</small></a><nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills &amp; Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html" class="active">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></header>
+<main>
+<section class="about-hero"><div class="smoke-layer"></div><div class="about-hero-inner"><div><div class="about-eyebrow">THE PERSON BEHIND THE PAGES · 09 / 12</div><h1 class="about-name">Nayeem<span>Islam.</span></h1><p class="about-lead">A mind full of thoughts, a heart drawn to words, and a story that is still finding its shape. Welcome to the space behind the name.</p><div class="about-hero-meta"><span>PERSONAL DOCUMENTARY</span><i></i><span>THE INNER SPACE</span></div></div><div class="about-portrait-wrap"><img class="about-portrait" src="photo_2026-11-18_11-13-45.jpg" alt="Portrait of Nayeem"><span class="portrait-caption">01 — A FRAME OF ME</span></div></div><div class="about-scroll">SCROLL TO EXPLORE</div></section>
+<section class="about-section"><div class="about-wrap about-intro-grid about-reveal"><div><div class="about-section-kicker">01 / A LITTLE INTRODUCTION</div><div class="about-index">01</div></div><div><h2>A little about the person behind this space.</h2><p>I'm Nayeem. I find myself drawn to the quiet details of life — words that stay in the mind, music that carries a feeling, memories that return without warning, and ideas that make me curious.</p><p>I don't think a person can be described in a few lines. This page is simply a small introduction to the thoughts, interests and little pieces that make up my world.</p></div></div></section>
+<section class="about-manifesto"><div class="about-wrap about-reveal"><div class="about-section-kicker">02 / BEYOND THE NAME</div><h2>There is always more to a person than what a name can hold.</h2><p>I like observing, wondering and finding meaning in ordinary things. Some thoughts become words; some stay quietly in the background. I'm still discovering what I enjoy, what matters to me and the person I want to become.</p><div class="about-interests"><article class="about-interest"><small>01 — WORDS</small><h3>Writing</h3><p>Thoughts, feelings and lines worth keeping.</p></article><article class="about-interest"><small>02 — SOUND</small><h3>Music</h3><p>Melodies for different moods and moments.</p></article><article class="about-interest"><small>03 — IDEAS</small><h3>Creating</h3><p>Turning imagination into something real.</p></article><article class="about-interest"><small>04 — GROWTH</small><h3>Learning</h3><p>Staying curious and moving forward.</p></article></div></div></section>
+<section class="about-section"><div class="about-wrap about-intro-grid about-reveal"><div><div class="about-section-kicker">03 / MY CREATIVE SIDE</div><div class="about-index">03</div></div><div><h2>I enjoy making a thought take a form of its own.</h2><p>Building The Inner Space is one way I bring different parts of my world together. I enjoy exploring web design, experimenting with layouts, learning new tools and shaping digital spaces that feel personal.</p><p>For me, creating is not always about having everything figured out. Sometimes it begins with curiosity and grows one small experiment at a time.</p></div></div></section>
+<section class="about-quote"><div class="about-wrap about-reveal"><div class="about-section-kicker">04 / A THOUGHT TO KEEP</div><blockquote>“I am not a finished story. I am every thought, every lesson, and every little change along the way.”</blockquote><small>A NOTE FROM THE INNER SPACE</small></div></section>
+<section class="about-section"><div class="about-wrap about-intro-grid about-reveal"><div><div class="about-section-kicker">05 / DREAMS &amp; AMBITIONS</div><div class="about-index">05</div></div><div><h2>Still becoming. Still finding the way.</h2><p>I want to keep learning, keep creating and build things that carry a little of my own perspective. I don't have every chapter planned, and perhaps that is part of the journey.</p><p>What matters is to keep moving, stay open to new experiences and become someone I can be proud of.</p></div></div></section>
+<section class="about-ending"><div class="about-wrap about-reveal"><div class="about-section-kicker">THE STORY CONTINUES</div><h2>This is only one page of a life still unfolding.</h2><p>Thank you for taking a moment to look beyond the pages and into the person behind them.</p></div></section>
+</main>
+<footer class="site-footer about-footer"><div class="wrap foot-inner"><div><b>THE INNER SPACE</b><br><small>A little universe, still unfolding. · © 2026</small></div><nav class="foot-nav"><a href="journey.html">My Journey</a><a href="thoughts.html">Personal Thoughts</a><a href="skills.html">Skills &amp; Expertise</a><a href="projects.html">My Projects</a><a href="bookshelf.html">Bookshelf</a><a href="quotes.html">Quotes</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav></div></footer>
+<script>
+(function(){const items=document.querySelectorAll('.about-reveal');if(!('IntersectionObserver'in window)){items.forEach(el=>el.classList.add('visible'));return;}const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}})},{threshold:.12});items.forEach(el=>observer.observe(el));})();
+</script>
+</body>
+</html>
