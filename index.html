@@ -154,6 +154,94 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
 @media(max-width:760px){.home-footer{padding:58px 23px 22px}.footer-main{grid-template-columns:1fr auto;gap:30px;padding-bottom:38px}.footer-identity{grid-column:1/-1}.footer-links{grid-column:1;grid-row:2;align-items:flex-start}.back-to-top{grid-column:2;grid-row:2}.footer-orbit{right:-120px;top:-100px;width:240px;height:240px}.footer-bottom{font-size:8px;letter-spacing:.7px;flex-wrap:wrap;gap:10px}}
 @media(prefers-reduced-motion:reduce){.footer-orbit,.footer-bottom i{animation:none}.footer-identity{animation:none}.footer-brand,.footer-links a,.footer-links a span,.back-to-top{transition:none}}
 
+
+/* New lower homepage: cinematic editorial layout, no cards or boxed panels */
+.new-home-lower{background:#090909;color:#f2f1ed;overflow:hidden}
+.new-lower-wrap{width:min(1120px,calc(100% - 9vw));margin:0 auto}
+.new-kicker{font:700 9px var(--sans);letter-spacing:2.5px;color:#858585;text-transform:uppercase}
+.new-kicker span{color:#eee;margin-right:9px}
+.new-opening{padding:125px 0 75px;background:radial-gradient(ellipse at 85% 22%,rgba(255,255,255,.065),transparent 35%),#090909}
+.new-opening-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:8%;align-items:end;padding:58px 0 75px}
+.new-display{font:500 clamp(76px,12vw,150px)/.78 var(--serif);letter-spacing:-.065em;color:#f5f4f0}
+.new-display em,.new-meaning-copy h2 em,.new-pages-heading h2 em,.new-final h2 em{font-weight:500;color:#858581}
+.new-opening-note{display:flex;align-items:flex-start;gap:20px;padding-bottom:8px;max-width:370px}
+.new-vertical-rule{display:block;width:1px;height:95px;flex:none;background:linear-gradient(#eee,transparent)}
+.new-opening-note p,.new-meaning-copy>p:not(.new-kicker){font-size:12px;line-height:2.1;color:#a4a4a0}
+.new-opening-note a{display:inline-flex;gap:28px;align-items:center;margin-top:25px;font-size:9px;letter-spacing:1.8px;color:#eee}
+.new-opening-note a span,.new-final-bottom a span{font-size:17px;transition:transform .25s}
+.new-opening-note a:hover span,.new-final-bottom a:hover span{transform:translate(4px,-4px)}
+.new-bottom-note{display:flex;justify-content:space-between;border-top:1px solid #292929;padding-top:15px;color:#666;font-size:8px;letter-spacing:1.8px}
+.new-marquee{overflow:hidden;padding:25px 0;border-top:1px solid #242424;border-bottom:1px solid #242424;background:#0d0d0d}
+.new-marquee-track{display:flex;align-items:center;gap:35px;width:max-content;white-space:nowrap;animation:newMarquee 35s linear infinite}
+.new-marquee-track span{font:500 26px var(--serif);letter-spacing:2px;color:#bdbdb8}
+.new-marquee-track i{font-style:normal;font-size:13px;color:#777}
+@keyframes newMarquee{to{transform:translateX(-50%)}}
+.new-meaning{padding:120px 0;background:#e9e7e1;color:#171715}
+.new-meaning-grid{display:grid;grid-template-columns:1fr 1fr;gap:11%;align-items:center}
+.new-meaning-art{position:relative;height:400px;display:grid;place-items:center;isolation:isolate}
+.new-meaning-art:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle,rgba(20,20,18,.12),transparent 68%);filter:blur(9px)}
+.new-meaning-art span{font:500 210px/.8 var(--serif);color:#292925;z-index:2;animation:newLetterFloat 6s ease-in-out infinite}
+.new-meaning-art small{position:absolute;bottom:28px;font-size:8px;letter-spacing:3px;color:#777}
+.new-ripple{position:absolute;border:1px solid rgba(30,30,27,.28);border-radius:50%;width:150px;height:150px;animation:newRipple 6s ease-out infinite}
+.ripple-two{animation-delay:2s}.ripple-three{animation-delay:4s}
+@keyframes newRipple{0%{transform:scale(.55);opacity:0}25%{opacity:.7}100%{transform:scale(2.4);opacity:0}}
+@keyframes newLetterFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.new-meaning-copy .new-kicker{color:#73736d}
+.new-meaning-copy .new-kicker span{color:#292925}
+.new-meaning-copy h2{font:500 clamp(40px,5vw,66px)/1.04 var(--serif);letter-spacing:-.05em;margin:25px 0 26px;color:#171715}
+.new-meaning-copy>p:not(.new-kicker){color:#65655f;max-width:470px;margin:0 0 16px}
+.new-pages{padding:120px 0 130px;background:#090909}
+.new-pages-heading{display:flex;align-items:end;justify-content:space-between;gap:35px;margin-bottom:60px}
+.new-pages-heading h2{font:500 clamp(48px,7vw,86px)/.95 var(--serif);letter-spacing:-.06em;margin-top:24px}
+.new-pages-heading>p{max-width:245px;color:#8d8d88;font-size:11px;line-height:1.9;padding-bottom:7px}
+.new-page-list{border-top:1px solid #41413d}
+.new-page-row{display:grid;grid-template-columns:65px 1fr 210px 35px;align-items:center;gap:18px;min-height:78px;border-bottom:1px solid #30302d;transition:padding .3s,background .3s}
+.new-page-row:hover{padding:0 15px;background:linear-gradient(90deg,rgba(255,255,255,.055),transparent)}
+.new-page-no{font-size:9px;letter-spacing:1px;color:#777}
+.new-page-name{font:500 clamp(22px,3vw,31px) var(--serif);color:#e8e7e2;transition:transform .3s,color .3s}
+.new-page-row:hover .new-page-name{transform:translateX(7px);color:#fff}
+.new-page-desc{font-size:9px;letter-spacing:1px;color:#777}
+.new-page-arrow{font-size:19px;text-align:right;color:#aaa;transition:transform .3s}
+.new-page-row:hover .new-page-arrow{transform:translate(4px,-4px);color:#fff}
+.new-quote{position:relative;isolation:isolate;overflow:hidden;padding:110px 0 120px;text-align:center;background:#050505}
+.new-quote-stars{position:absolute;inset:0;z-index:-1;opacity:.55;background-image:radial-gradient(1px 1px at 12% 30%,#fff 99%,transparent),radial-gradient(1px 1px at 72% 22%,#aaa 99%,transparent),radial-gradient(1px 1px at 84% 74%,#fff 99%,transparent),radial-gradient(1px 1px at 35% 82%,#aaa 99%,transparent);background-size:190px 130px;animation:newStars 28s linear infinite}
+@keyframes newStars{to{background-position:190px 130px}}
+.new-quote-inner{max-width:900px}
+.new-quote-inner .new-kicker{text-align:center}
+.new-quote-symbol{font:italic 70px/.7 var(--serif);color:#777;margin:35px 0 16px}
+.new-quote blockquote{font:italic 500 clamp(31px,5vw,58px)/1.3 var(--serif);color:#e9e8e3;max-width:850px;margin:0 auto}
+.new-quote-credit{margin-top:28px;font-size:8px;letter-spacing:2.4px;color:#73736e}
+.new-final{padding:115px 0 125px;background:radial-gradient(ellipse at 80% 80%,rgba(255,255,255,.055),transparent 38%),#0c0c0c;border-top:1px solid #242424}
+.new-final h2{font:500 clamp(68px,10vw,120px)/.86 var(--serif);letter-spacing:-.065em;margin:35px 0 42px}
+.new-final-bottom{display:flex;align-items:end;justify-content:space-between;gap:30px}
+.new-final-bottom p{max-width:410px;color:#92928d;font-size:11px;line-height:2}
+.new-final-bottom a{display:inline-flex;align-items:center;gap:28px;border-bottom:1px solid #777;padding:0 0 12px;font-size:9px;letter-spacing:2px}
+.reveal-line{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal-line.is-visible{opacity:1;transform:none}
+@media(max-width:760px){
+ .new-lower-wrap{width:calc(100% - 44px)}
+ .new-opening{padding:85px 0 55px}
+ .new-opening-grid{grid-template-columns:1fr;gap:38px;padding:42px 0 52px}
+ .new-display{font-size:clamp(72px,17vw,115px)}
+ .new-opening-note{max-width:420px;margin-left:5px}
+ .new-bottom-note{font-size:7px;letter-spacing:1px;gap:15px}
+ .new-marquee{padding:19px 0}.new-marquee-track{gap:24px}.new-marquee-track span{font-size:21px}
+ .new-meaning{padding:80px 0}
+ .new-meaning-grid{grid-template-columns:1fr;gap:35px}
+ .new-meaning-art{height:260px}.new-meaning-art span{font-size:160px}
+ .new-pages{padding:82px 0 90px}
+ .new-pages-heading{display:block;margin-bottom:38px}
+ .new-pages-heading h2{font-size:clamp(48px,12vw,70px)}
+ .new-pages-heading>p{margin-top:22px}
+ .new-page-row{grid-template-columns:32px 1fr 24px;gap:10px;min-height:70px}
+ .new-page-name{font-size:clamp(20px,5.5vw,27px)}
+ .new-page-desc{display:none}
+ .new-quote{padding:82px 0 90px}
+ .new-final{padding:85px 0 95px}
+ .new-final h2{font-size:clamp(68px,15vw,94px)}
+ .new-final-bottom{align-items:flex-start;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){.new-marquee-track,.new-meaning-art span,.new-ripple,.new-quote-stars{animation:none!important}.reveal-line{opacity:1;transform:none;transition:none}}
 </style>
 <style>
 /* Warm golden glow for the homepage social links */
@@ -284,52 +372,52 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
 </main>
 
 
-<div class="home-lower">
-<section class="lower-wrap lower-intro">
-  <div><p class="lower-index">01 / A NOTE FROM WITHIN</p></div>
-  <div><h2>Not everything needs to be explained. <em>Some things just need a place to exist.</em></h2>
-    <div class="lower-intro-copy"><p>The Inner Space is a personal collection of thoughts, words, interests and things I am creating. It is not meant to be a finished picture of a person. It is a space that can change, grow and take a different shape with time.</p><p>Some pages hold things I have written. Some show what I am learning or building. Others are simply here because a book, a sentence, or an idea stayed with me. Each part is a small piece of a much bigger story.</p></div>
+<div class="home-lower new-home-lower">
+<section class="new-opening">
+  <div class="new-lower-wrap">
+    <p class="new-kicker reveal-line"><span>01</span> — BEYOND THE FIRST IMPRESSION</p>
+    <div class="new-opening-grid">
+      <h2 class="new-display reveal-line">There is<br>more <em>within.</em></h2>
+      <div class="new-opening-note reveal-line"><span class="new-vertical-rule"></span><p>A website can be more than a collection of pages. It can be a living record of thoughts, discoveries, unfinished ideas and everything that makes a person who they are.</p><a href="about.html">STEP INSIDE <span>↗</span></a></div>
+    </div>
+    <div class="new-bottom-note"><span>THE INNER SPACE</span><span>AN OPEN-ENDED PERSONAL ARCHIVE</span></div>
   </div>
 </section>
-<section class="lower-wrap lower-manifesto">
-  <div class="lower-manifesto-visual" aria-label="The letter I as a symbol of inner space"><span class="lower-visual-letter">I</span><span class="lower-visual-caption">A PERSONAL SPACE · STILL UNFOLDING</span></div>
-  <div class="lower-manifesto-copy"><p class="section-kicker">02 / WHY THIS SPACE EXISTS</p><h2>A little room to think, create and become.</h2><p>There are things that are difficult to fit into a short introduction: changing interests, unfinished ideas, memories, questions and quiet ambitions. This website gives those things somewhere to live.</p><p>It brings different sides of my world together without asking them to be the same. You can read, explore, discover a project or simply spend a moment here.</p><a href="about.html">A LITTLE MORE ABOUT ME <span>↗</span></a></div>
+
+<section class="new-marquee" aria-label="Thoughts, writing, creating, becoming">
+  <div class="new-marquee-track"><span>THINK</span><i>✳</i><span>WRITE</span><i>✳</i><span>CREATE</span><i>✳</i><span>DISCOVER</span><i>✳</i><span>BECOME</span><i>✳</i><span>THINK</span><i>✳</i><span>WRITE</span><i>✳</i><span>CREATE</span><i>✳</i><span>DISCOVER</span><i>✳</i><span>BECOME</span><i>✳</i></div>
 </section>
-<div class="lower-divider"></div>
-<section class="lower-wrap lower-values">
-  <div class="lower-section-head"><div><p class="lower-index">03 / WHAT YOU MAY FIND</p><h2>Different interests.<br><em>One personal space.</em></h2></div><p>Every section has its own character. Together, they make this website feel like a collection rather than a single page.</p></div>
-  <div class="lower-values-grid">
-    <article class="lower-value"><small>01 — WORDS</small><h3>Thoughts &amp; writing</h3><p>Personal reflections, lines, observations and words collected along the way.</p></article>
-    <article class="lower-value"><small>02 — DISCOVERY</small><h3>Books &amp; quotes</h3><p>Books, meaningful passages and short pieces of writing worth returning to.</p></article>
-    <article class="lower-value"><small>03 — MAKING</small><h3>Projects &amp; ideas</h3><p>Experiments, digital creations and the process of turning an idea into something real.</p></article>
-    <article class="lower-value"><small>04 — LEARNING</small><h3>Skills &amp; practice</h3><p>Things I am exploring, tools I am learning and progress that happens one step at a time.</p></article>
-    <article class="lower-value"><small>05 — JOURNEY</small><h3>Stories &amp; growth</h3><p>A changing record of experiences, interests and the person I am becoming.</p></article>
-    <article class="lower-value"><small>06 — CONNECTION</small><h3>People &amp; conversation</h3><p>A simple way to reach out, share an idea or start a thoughtful conversation.</p></article>
+
+<section class="new-meaning">
+  <div class="new-lower-wrap new-meaning-grid">
+    <div class="new-meaning-art" aria-hidden="true"><div class="new-ripple ripple-one"></div><div class="new-ripple ripple-two"></div><div class="new-ripple ripple-three"></div><span>IS</span><small>INNER / SPACE</small></div>
+    <div class="new-meaning-copy reveal-line"><p class="new-kicker"><span>02</span> — A SPACE THAT KEEPS CHANGING</p><h2>Not a finished story.<br><em>A work in progress.</em></h2><p>Some days are made of words. Some are made of ideas, music, learning or small attempts at building something new. This space gives all of them a place — without forcing them into one definition.</p><p>Look around slowly. You may find a thought, a project, a page or simply a feeling that stays with you.</p></div>
   </div>
 </section>
-<section class="lower-path">
-  <div class="lower-wrap">
-    <div class="lower-path-head"><div><p class="lower-index">04 / EXPLORE THE INNER SPACE</p><h2>Take a different<br>path through the pages.</h2></div><p>You do not have to follow a particular order. Start wherever something catches your attention, and let curiosity lead the way.</p></div>
-    <div class="lower-path-grid">
-      <a class="lower-path-card" href="journey.html"><small>01 / THE STORY</small><strong>My Journey</strong><span>↗</span></a>
-      <a class="lower-path-card" href="thoughts.html"><small>02 / THE MIND</small><strong>Personal Thoughts</strong><span>↗</span></a>
-      <a class="lower-path-card" href="skills.html"><small>03 / THE PRACTICE</small><strong>Skills &amp; Expertise</strong><span>↗</span></a>
-      <a class="lower-path-card" href="projects.html"><small>04 / THE WORK</small><strong>My Projects</strong><span>↗</span></a>
-      <a class="lower-path-card" href="bookshelf.html"><small>05 / THE SHELF</small><strong>Bookshelf</strong><span>↗</span></a>
-      <a class="lower-path-card" href="quotes.html"><small>06 / THE WORDS</small><strong>Quotes</strong><span>↗</span></a>
-      <a class="lower-path-card" href="portfolio.html"><small>07 / THE COLLECTION</small><strong>Portfolio</strong><span>↗</span></a>
-      <a class="lower-path-card" href="faq.html"><small>08 / THE ANSWERS</small><strong>FAQ</strong><span>↗</span></a>
+
+<section class="new-pages">
+  <div class="new-lower-wrap">
+    <div class="new-pages-heading reveal-line"><div><p class="new-kicker"><span>03</span> — WANDER THROUGH</p><h2>Choose your<br><em>own direction.</em></h2></div><p>No fixed route. No particular order. Follow whatever catches your attention.</p></div>
+    <div class="new-page-list">
+      <a class="new-page-row" href="journey.html"><span class="new-page-no">01</span><span class="new-page-name">My Journey</span><span class="new-page-desc">The path so far</span><span class="new-page-arrow">↗</span></a>
+      <a class="new-page-row" href="thoughts.html"><span class="new-page-no">02</span><span class="new-page-name">Personal Thoughts</span><span class="new-page-desc">Words from within</span><span class="new-page-arrow">↗</span></a>
+      <a class="new-page-row" href="skills.html"><span class="new-page-no">03</span><span class="new-page-name">Skills &amp; Expertise</span><span class="new-page-desc">Learning by doing</span><span class="new-page-arrow">↗</span></a>
+      <a class="new-page-row" href="projects.html"><span class="new-page-no">04</span><span class="new-page-name">My Projects</span><span class="new-page-desc">Ideas made visible</span><span class="new-page-arrow">↗</span></a>
+      <a class="new-page-row" href="bookshelf.html"><span class="new-page-no">05</span><span class="new-page-name">Bookshelf</span><span class="new-page-desc">Between the pages</span><span class="new-page-arrow">↗</span></a>
+      <a class="new-page-row" href="quotes.html"><span class="new-page-no">06</span><span class="new-page-name">Quotes</span><span class="new-page-desc">Lines worth keeping</span><span class="new-page-arrow">↗</span></a>
+      <a class="new-page-row" href="portfolio.html"><span class="new-page-no">07</span><span class="new-page-name">Portfolio</span><span class="new-page-desc">A collection of work</span><span class="new-page-arrow">↗</span></a>
+      <a class="new-page-row" href="faq.html"><span class="new-page-no">08</span><span class="new-page-name">FAQ</span><span class="new-page-desc">A few answers</span><span class="new-page-arrow">↗</span></a>
     </div>
   </div>
 </section>
-<section class="lower-wrap lower-letter">
-  <p class="lower-index">05 / A THOUGHT TO LEAVE WITH</p>
-  <blockquote>“A person is more than the things they show. There is always a quieter world within.”</blockquote>
-  <p>THE INNER SPACE · A PERSONAL COLLECTION</p>
+
+<section class="new-quote">
+  <div class="new-quote-stars" aria-hidden="true"></div>
+  <div class="new-lower-wrap new-quote-inner reveal-line"><p class="new-kicker"><span>04</span> — A SMALL REMINDER</p><div class="new-quote-symbol">“</div><blockquote>We are all carrying entire worlds that nobody else can see.</blockquote><p class="new-quote-credit">A THOUGHT FROM THE INNER SPACE</p></div>
 </section>
-<section class="lower-wrap lower-end">
-  <div><p class="lower-index">06 / BEFORE YOU GO</p><h2>Stay for a thought.<br>Leave with your own.</h2><p>Thank you for spending a little time in this corner of my world. If something here made you curious, feel free to explore another page or get in touch.</p></div>
-  <a href="contact.html">LET'S CONNECT&nbsp; ↗</a>
+
+<section class="new-final">
+  <div class="new-lower-wrap new-final-inner reveal-line"><p class="new-kicker"><span>05</span> — BEFORE YOU LEAVE</p><h2>Every visit<br>leaves <em>a trace.</em></h2><div class="new-final-bottom"><p>Thank you for stepping into my little corner of the internet. If something here made you pause, think or feel curious, I'd be glad to hear from you.</p><a href="contact.html">LET'S TALK <span>↗</span></a></div></div>
 </section>
 </div>
 <footer class="home-footer">
@@ -356,6 +444,16 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
 const menuButton=document.querySelector(".menu-toggle");const nav=document.querySelector(".nav");
 menuButton.addEventListener("click",()=>{const isOpen=nav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen));});
 nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{nav.classList.remove("open");menuButton.setAttribute("aria-expanded","false");}));
+</script>
+<script>
+(function(){
+ const nodes=document.querySelectorAll('.reveal-line');
+ if(!('IntersectionObserver' in window)){nodes.forEach(n=>n.classList.add('is-visible'));return;}
+ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+   if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}
+ }),{threshold:.14});
+ nodes.forEach(node=>observer.observe(node));
+})();
 </script>
 </body></html>
 
