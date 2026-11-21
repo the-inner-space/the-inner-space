@@ -273,17 +273,17 @@ body{background:var(--about-black);color:var(--about-white)}
 
 
 <style>
-/* Full-width animated artwork contained inside the slim white footer */
-.site-footer.about-footer{position:relative!important;isolation:isolate;overflow:hidden;background:#f3f1eb!important;color:#171717!important;padding:5px 0 3px!important;min-height:0!important;border-top:1px solid #d8d6cf}
-.site-footer.about-footer .footer-motion-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;pointer-events:none;opacity:.9}
-.site-footer.about-footer .foot-inner{position:relative;z-index:1;gap:5px!important;min-height:0;padding-top:2px!important;padding-bottom:3px!important}
+/* Human animation stage inside the About footer */
+.site-footer.about-footer{position:relative!important;isolation:isolate;overflow:hidden;background:#f3f1eb!important;color:#171717!important;padding:0!important;min-height:230px!important;border-top:1px solid #d8d6cf}
+.site-footer.about-footer .footer-motion-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;pointer-events:none;opacity:1}
+.site-footer.about-footer .foot-inner{position:relative;z-index:1;gap:5px!important;min-height:0;padding:10px 0 8px!important;align-self:flex-end}
 .site-footer.about-footer .foot-inner b{font-size:9px;letter-spacing:.1em}
 .site-footer.about-footer .foot-inner small{font-size:7px;color:#555!important}
 .site-footer.about-footer .foot-nav{display:flex;gap:4px 9px!important;margin-top:0!important}
 .site-footer.about-footer .foot-nav a{font-size:8px!important;color:#444!important;line-height:1.4}
 .site-footer.about-footer .foot-nav a:hover{color:#111!important}
-@media(max-width:650px){.site-footer.about-footer{padding:5px 0 4px!important}.site-footer.about-footer .foot-inner{padding-bottom:2px!important}.site-footer.about-footer .foot-nav{margin-top:4px!important;gap:4px 8px!important}.site-footer.about-footer .foot-nav a{font-size:7px!important}.site-footer.about-footer .foot-inner b{font-size:8px}.site-footer.about-footer .foot-inner small{font-size:6px}}
-@media(prefers-reduced-motion:reduce){.site-footer.about-footer .footer-motion-canvas{opacity:.5}}
+@media(max-width:650px){.site-footer.about-footer{min-height:190px!important}.site-footer.about-footer .foot-inner{padding:8px 0 7px!important}.site-footer.about-footer .foot-nav{margin-top:4px!important;gap:4px 8px!important}.site-footer.about-footer .foot-nav a{font-size:7px!important}.site-footer.about-footer .foot-inner b{font-size:8px}.site-footer.about-footer .foot-inner small{font-size:6px}}
+@media(prefers-reduced-motion:reduce){.site-footer.about-footer .footer-motion-canvas{opacity:1}}
 </style>
 
 <script>
@@ -292,7 +292,7 @@ body{background:var(--about-black);color:var(--about-white)}
   if(!canvas)return;
   const ctx=canvas.getContext('2d');
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let w=1,h=1,dpr=1,raf=0;
+  let w=1,h=1,dpr=1;
   function resize(){
     const r=canvas.parentElement.getBoundingClientRect();
     w=Math.max(1,r.width);h=Math.max(1,r.height);
@@ -300,32 +300,62 @@ body{background:var(--about-black);color:var(--about-white)}
     canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
     ctx.setTransform(dpr,0,0,dpr,0,0);
   }
+  function person(x,base,s,phase,hoodie,label,alpha){
+    ctx.save();ctx.translate(x,base);ctx.scale(s,s);ctx.globalAlpha=alpha;
+    const swing=Math.sin(phase),lift=Math.abs(Math.cos(phase))*2;
+    const ink=ctx.createLinearGradient(-20,-110,25,0);
+    ink.addColorStop(0,'#777773');ink.addColorStop(.45,'#333330');ink.addColorStop(1,'#111110');
+    ctx.fillStyle=ink;ctx.strokeStyle='#191918';ctx.lineCap='round';ctx.lineJoin='round';
+    // legs, with a natural alternating walking stride
+    ctx.lineWidth=9;
+    ctx.beginPath();ctx.moveTo(-5,-39);ctx.quadraticCurveTo(-11+swing*8,-22,-12+swing*18,-lift);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(5,-39);ctx.quadraticCurveTo(12-swing*8,-22,12-swing*18,-lift);ctx.stroke();
+    // shoes
+    ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(-12+swing*18,-lift);ctx.lineTo(-21+swing*18,1);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(12-swing*18,-lift);ctx.lineTo(21-swing*18,1);ctx.stroke();
+    // torso and shoulders
+    ctx.fillStyle=ink;ctx.beginPath();ctx.moveTo(-13,-91);ctx.quadraticCurveTo(-23,-87,-22,-68);ctx.lineTo(-15,-38);ctx.quadraticCurveTo(0,-32,15,-38);ctx.lineTo(22,-68);ctx.quadraticCurveTo(23,-87,13,-91);ctx.quadraticCurveTo(0,-98,-13,-91);ctx.fill();
+    // hood shape, back-facing figure
+    if(hoodie){ctx.fillStyle='#292927';ctx.beginPath();ctx.moveTo(-11,-92);ctx.quadraticCurveTo(-15,-111,0,-114);ctx.quadraticCurveTo(15,-111,11,-92);ctx.quadraticCurveTo(0,-84,-11,-92);ctx.fill();ctx.strokeStyle='#858580';ctx.lineWidth=1.2;ctx.beginPath();ctx.arc(0,-101,9,0,Math.PI);ctx.stroke();}
+    // arms swing naturally
+    ctx.strokeStyle='#292927';ctx.lineWidth=7;
+    ctx.beginPath();ctx.moveTo(-17,-83);ctx.quadraticCurveTo(-27,-65,-22-swing*9,-47);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(17,-83);ctx.quadraticCurveTo(27,-65,22+swing*9,-47);ctx.stroke();
+    // hands
+    ctx.fillStyle='#5a5a55';ctx.beginPath();ctx.arc(-22-swing*9,-45,3.2,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.arc(22+swing*9,-45,3.2,0,Math.PI*2);ctx.fill();
+    if(label){ctx.fillStyle='#e9e7e1';ctx.textAlign='center';ctx.font='bold 7px Arial,sans-serif';ctx.fillText('WHO AM I',0,-65);}
+    // subtle rim light
+    ctx.strokeStyle='rgba(255,255,255,.18)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(-14,-87);ctx.quadraticCurveTo(-21,-80,-17,-66);ctx.stroke();
+    ctx.restore();
+  }
   function draw(ms){
-    const t=reduced?0:ms*.00035;
+    const t=reduced?0:ms*.001;
     ctx.clearRect(0,0,w,h);
-    const mid=h*.5;
-    for(let layer=0;layer<5;layer++){
-      ctx.beginPath();
-      for(let x=0;x<=w+4;x+=3){
-        const y=mid+Math.sin(x*.009+t+layer*.65)*(h*.17)+Math.sin(x*.021-t*1.4+layer)*h*.08;
-        if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
-      }
-      ctx.strokeStyle='rgba(45,45,42,'+(0.14+layer*.025)+')';
-      ctx.lineWidth=layer===2?1.15:.65;ctx.stroke();
+    const ground=h-18;
+    // soft cinematic horizon and road
+    const glow=ctx.createRadialGradient(w*.52,ground-45,3,w*.52,ground-45,w*.55);
+    glow.addColorStop(0,'rgba(90,90,84,.18)');glow.addColorStop(1,'rgba(90,90,84,0)');
+    ctx.fillStyle=glow;ctx.fillRect(0,0,w,h);
+    ctx.strokeStyle='rgba(45,45,42,.17)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(0,ground+1);ctx.lineTo(w,ground+1);ctx.stroke();
+    // distant people moving along the horizon
+    const n=Math.max(5,Math.floor(w/150));
+    for(let i=0;i<n;i++){
+      const x=((i*(w/n)+t*(18+i%3*7))%(w+80))-35;
+      person(x,ground,0.42+(i%3)*.08,t*2+i*1.4,false,false,.52);
     }
-    const count=Math.max(18,Math.floor(w/25));
-    for(let i=0;i<count;i++){
-      const x=((i*67+t*95)%(w+20))-10;
-      const y=mid+Math.sin(i*.83+t*2.1)*h*.28;
-      const pulse=.7+.5*Math.sin(t*3+i);
-      ctx.beginPath();ctx.arc(x,y,(i%4===0?1.8:1)*pulse,0,Math.PI*2);
-      ctx.fillStyle='rgba(35,35,32,.48)';ctx.fill();
-    }
-    if(!reduced)raf=requestAnimationFrame(draw);
+    // prominent back-facing hoodie figure on the right, with readable message
+    const heroX=w*.77;
+    person(heroX,ground+1,1.42,t*2.3,true,true,.98);
+    // quiet graphic detail
+    ctx.fillStyle='rgba(45,45,42,.48)';ctx.font='9px Arial,sans-serif';ctx.textAlign='left';
+    ctx.fillText('A JOURNEY IN MOTION',18,22);
+    ctx.textAlign='right';ctx.fillText('THE INNER SPACE',w-18,22);
+    if(!reduced)requestAnimationFrame(draw);
   }
   resize();draw(performance.now());
   window.addEventListener('resize',resize,{passive:true});
-  if('ResizeObserver'in window){new ResizeObserver(resize).observe(canvas.parentElement);}
+  if('ResizeObserver'in window)new ResizeObserver(resize).observe(canvas.parentElement);
 })();
 </script>\n</body>
 </html>
