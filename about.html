@@ -300,57 +300,48 @@ body{background:var(--about-black);color:var(--about-white)}
     canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
     ctx.setTransform(dpr,0,0,dpr,0,0);
   }
-  function person(x,base,s,phase,hoodie,label,alpha){
-    ctx.save();ctx.translate(x,base);ctx.scale(s,s);ctx.globalAlpha=alpha;
-    const swing=Math.sin(phase),lift=Math.abs(Math.cos(phase))*2;
-    const ink=ctx.createLinearGradient(-20,-110,25,0);
-    ink.addColorStop(0,'#777773');ink.addColorStop(.45,'#333330');ink.addColorStop(1,'#111110');
-    ctx.fillStyle=ink;ctx.strokeStyle='#191918';ctx.lineCap='round';ctx.lineJoin='round';
-    // legs, with a natural alternating walking stride
-    ctx.lineWidth=9;
-    ctx.beginPath();ctx.moveTo(-5,-39);ctx.quadraticCurveTo(-11+swing*8,-22,-12+swing*18,-lift);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(5,-39);ctx.quadraticCurveTo(12-swing*8,-22,12-swing*18,-lift);ctx.stroke();
-    // shoes
-    ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(-12+swing*18,-lift);ctx.lineTo(-21+swing*18,1);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(12-swing*18,-lift);ctx.lineTo(21-swing*18,1);ctx.stroke();
-    // torso and shoulders
-    ctx.fillStyle=ink;ctx.beginPath();ctx.moveTo(-13,-91);ctx.quadraticCurveTo(-23,-87,-22,-68);ctx.lineTo(-15,-38);ctx.quadraticCurveTo(0,-32,15,-38);ctx.lineTo(22,-68);ctx.quadraticCurveTo(23,-87,13,-91);ctx.quadraticCurveTo(0,-98,-13,-91);ctx.fill();
-    // hood shape, back-facing figure
-    if(hoodie){ctx.fillStyle='#292927';ctx.beginPath();ctx.moveTo(-11,-92);ctx.quadraticCurveTo(-15,-111,0,-114);ctx.quadraticCurveTo(15,-111,11,-92);ctx.quadraticCurveTo(0,-84,-11,-92);ctx.fill();ctx.strokeStyle='#858580';ctx.lineWidth=1.2;ctx.beginPath();ctx.arc(0,-101,9,0,Math.PI);ctx.stroke();}
-    // arms swing naturally
-    ctx.strokeStyle='#292927';ctx.lineWidth=7;
-    ctx.beginPath();ctx.moveTo(-17,-83);ctx.quadraticCurveTo(-27,-65,-22-swing*9,-47);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(17,-83);ctx.quadraticCurveTo(27,-65,22+swing*9,-47);ctx.stroke();
-    // hands
-    ctx.fillStyle='#5a5a55';ctx.beginPath();ctx.arc(-22-swing*9,-45,3.2,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.arc(22+swing*9,-45,3.2,0,Math.PI*2);ctx.fill();
-    if(label){ctx.fillStyle='#e9e7e1';ctx.textAlign='center';ctx.font='bold 7px Arial,sans-serif';ctx.fillText('WHO AM I',0,-65);}
-    // subtle rim light
-    ctx.strokeStyle='rgba(255,255,255,.18)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(-14,-87);ctx.quadraticCurveTo(-21,-80,-17,-66);ctx.stroke();
+  function drawPerson(x,base,t){
+    const stride=Math.sin(t*5),lift=Math.abs(Math.cos(t*5))*2;
+    ctx.save();ctx.translate(x,base);
+    const shadow=ctx.createRadialGradient(0,0,2,0,0,48);
+    shadow.addColorStop(0,'rgba(0,0,0,.2)');shadow.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=shadow;ctx.fillRect(-55,-4,110,10);
+    ctx.strokeStyle='#252522';ctx.lineCap='round';ctx.lineWidth=6;
+    ctx.beginPath();ctx.moveTo(-4,-31);ctx.quadraticCurveTo(-8+stride*5,-16,-10+stride*10,-lift);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(4,-31);ctx.quadraticCurveTo(8-stride*5,-16,10-stride*10,-lift);ctx.stroke();
+    ctx.lineWidth=4;
+    ctx.beginPath();ctx.moveTo(-10+stride*10,-lift);ctx.lineTo(-18+stride*10,0);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(10-stride*10,-lift);ctx.lineTo(19-stride*10,0);ctx.stroke();
+    const coat=ctx.createLinearGradient(-15,-83,16,-25);
+    coat.addColorStop(0,'#555550');coat.addColorStop(.48,'#242421');coat.addColorStop(1,'#111110');
+    ctx.fillStyle=coat;ctx.beginPath();ctx.moveTo(-9,-79);ctx.quadraticCurveTo(-19,-77,-17,-61);
+    ctx.lineTo(-12,-31);ctx.quadraticCurveTo(0,-27,12,-31);ctx.lineTo(17,-61);
+    ctx.quadraticCurveTo(19,-77,9,-79);ctx.quadraticCurveTo(0,-84,-9,-79);ctx.fill();
+    ctx.fillStyle='#292926';ctx.beginPath();ctx.arc(0,-83,10,Math.PI,Math.PI*2);
+    ctx.quadraticCurveTo(13,-72,0,-72);ctx.quadraticCurveTo(-13,-72,-10,-83);ctx.fill();
+    ctx.strokeStyle='#292926';ctx.lineWidth=6;
+    ctx.beginPath();ctx.moveTo(-14,-70);ctx.quadraticCurveTo(-23,-54,-19-stride*5,-42);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(14,-70);ctx.quadraticCurveTo(23,-54,19+stride*5,-42);ctx.stroke();
+    ctx.fillStyle='#e9e7e1';ctx.textAlign='center';ctx.font='bold 6px Arial,sans-serif';ctx.fillText('WHO AM I',0,-52);
     ctx.restore();
   }
   function draw(ms){
-    const t=reduced?0:ms*.001;
+    const t=reduced?0:ms/1000;
     ctx.clearRect(0,0,w,h);
-    const ground=h-9;
-    // soft cinematic horizon and road
-    const glow=ctx.createRadialGradient(w*.52,ground-45,3,w*.52,ground-45,w*.55);
-    glow.addColorStop(0,'rgba(90,90,84,.18)');glow.addColorStop(1,'rgba(90,90,84,0)');
-    ctx.fillStyle=glow;ctx.fillRect(0,0,w,h);
-    ctx.strokeStyle='rgba(45,45,42,.17)';ctx.lineWidth=1;
-    ctx.beginPath();ctx.moveTo(0,ground+1);ctx.lineTo(w,ground+1);ctx.stroke();
-    // distant people moving along the horizon
-    const n=Math.max(5,Math.floor(w/150));
-    for(let i=0;i<n;i++){
-      const x=((i*(w/n)+t*(18+i%3*7))%(w+80))-35;
-      person(x,ground,0.42+(i%3)*.08,t*2+i*1.4,false,false,.52);
-    }
-    // prominent back-facing hoodie figure on the right, with readable message
-    const heroX=w*.77;
-    person(heroX,ground+1,.78,t*2.3,true,true,.98);
-    // quiet graphic detail
-    ctx.fillStyle='rgba(45,45,42,.48)';ctx.font='9px Arial,sans-serif';ctx.textAlign='left';
-    ctx.fillText('A JOURNEY IN MOTION',18,22);
-    ctx.textAlign='right';ctx.fillText('THE INNER SPACE',w-18,22);
+    const ground=h-8;
+    const light=ctx.createLinearGradient(0,0,0,h);
+    light.addColorStop(0,'rgba(255,255,255,0)');light.addColorStop(.72,'rgba(95,95,88,.025)');light.addColorStop(1,'rgba(50,50,46,.10)');
+    ctx.fillStyle=light;ctx.fillRect(0,0,w,h);
+    const beam=ctx.createRadialGradient(w*.72,ground-38,1,w*.72,ground-38,Math.max(80,w*.23));
+    beam.addColorStop(0,'rgba(105,105,98,.19)');beam.addColorStop(1,'rgba(105,105,98,0)');
+    ctx.fillStyle=beam;ctx.fillRect(0,0,w,h);
+    ctx.strokeStyle='rgba(35,35,32,.2)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(0,ground);ctx.lineTo(w,ground);ctx.stroke();
+    const travel=w+70;
+    const x=reduced?w*.72:((w*.22+t*15)%(travel+1))-35;
+    drawPerson(x,ground,t);
+    ctx.strokeStyle='rgba(50,50,46,.22)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(18,15);ctx.lineTo(42,15);ctx.moveTo(w-42,15);ctx.lineTo(w-18,15);ctx.stroke();
     if(!reduced)requestAnimationFrame(draw);
   }
   resize();draw(performance.now());
