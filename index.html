@@ -242,6 +242,70 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
  .new-final-bottom{align-items:flex-start;flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){.new-marquee-track,.new-meaning-art span,.new-ripple,.new-quote-stars{animation:none!important}.reveal-line{opacity:1;transform:none;transition:none}}
+
+/* THE INNER SPACE — cinematic lower homepage */
+.inner-home-story{background:#080808;color:#f3f1eb;overflow:hidden}
+.ih-wrap{width:min(1160px,calc(100% - 11vw));margin:0 auto}
+.ih-opening{padding:clamp(88px,12vw,165px) 0 90px;background:radial-gradient(ellipse at 80% 30%,rgba(255,255,255,.075),transparent 38%),#090909}
+.ih-kicker{font:9px/1.5 var(--sans);letter-spacing:.27em;color:#a8a8a8}
+.ih-opening-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:8vw;align-items:end;margin:48px 0 82px}
+.ih-opening h2,.ih-feature h2,.ih-duo h2{font:400 clamp(48px,7.8vw,104px)/.96 var(--serif);letter-spacing:-.045em;margin:0}
+.ih-opening h2 em,.ih-feature h2 em,.ih-duo h2 em{font-style:italic;color:#aaa}
+.ih-opening-copy{max-width:390px;padding-bottom:8px}
+.ih-opening-copy p,.ih-feature-text>p:not(.ih-kicker),.ih-duo-note{font:14px/2 var(--sans);color:#b8b8b8}
+.ih-rule{border-top:1px solid #383838;padding-top:14px;display:flex;justify-content:space-between;font:9px var(--sans);letter-spacing:.18em;color:#888}
+.ih-feature{padding:50px 0 145px;background:#0b0b0b}
+.ih-feature-grid{display:grid;grid-template-columns:1fr .8fr;gap:10vw;align-items:center}
+.ih-feature-image{position:relative;overflow:hidden;background:#171717}
+.ih-image-tall{height:clamp(390px,53vw,650px)}
+.ih-feature-image img,.ih-image-card img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter 1s}
+.ih-feature-image:hover img,.ih-image-card:hover img{transform:scale(1.045);filter:grayscale(.35)}
+.ih-image-caption{position:absolute;bottom:18px;left:20px;font:8px var(--sans);letter-spacing:.18em;color:white;text-shadow:0 1px 8px #000}
+.ih-feature-text{padding:25px 0}.ih-feature-text h2{font-size:clamp(43px,6vw,78px);margin:27px 0}
+.ih-feature-text>p:not(.ih-kicker){max-width:390px}.ih-index{display:block;margin-top:42px;font:8px var(--sans);letter-spacing:.2em;color:#858585}
+.ih-duo{padding:115px 0 135px;background:#efeee9;color:#171717}
+.ih-duo-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:55px}.ih-duo-heading h2{font-size:clamp(46px,6vw,78px)}
+.ih-duo-heading .ih-kicker{color:#777}
+.ih-image-pair{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.ih-image-card{margin:0;overflow:hidden;background:#e2e0da}.ih-card-one{margin-top:0}.ih-card-two{margin-top:110px}
+.ih-image-card img{height:clamp(260px,37vw,480px)}
+.ih-image-card figcaption{padding:20px 22px 24px;display:flex;flex-direction:column;gap:9px}
+.ih-image-card figcaption span{font:8px var(--sans);letter-spacing:.2em;color:#777}
+.ih-image-card figcaption b{font:400 clamp(20px,2.5vw,30px) var(--serif)}
+.ih-duo-note{max-width:470px;margin:70px 0 0 auto;color:#555}
+.ih-statement{padding:120px 0 130px;background:#050505;text-align:center;position:relative;overflow:hidden}
+.ih-statement:before{content:"";position:absolute;width:520px;height:300px;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(255,255,255,.09),transparent 68%);pointer-events:none}
+.ih-statement-mark{font:100px/.6 var(--serif);color:#777}
+.ih-statement blockquote{position:relative;max-width:850px;margin:28px auto;font:italic clamp(30px,4.5vw,58px)/1.2 var(--serif);color:#eee}
+.ih-statement p{font:8px var(--sans);letter-spacing:.22em;color:#858585}
+.ih-film{background:#050505;color:#f3f1eb;padding:34px 0 28px;overflow:hidden}
+.ih-film-top,.ih-film-bottom{width:min(1320px,calc(100% - 7vw));margin:0 auto;display:flex;justify-content:space-between;gap:20px;font:8px var(--sans);letter-spacing:.19em;color:#9a9a9a}
+.ih-film-mosaic{height:clamp(340px,54vw,650px);position:relative;margin:25px auto 22px;width:min(1320px,calc(100% - 7vw));overflow:hidden;background:#090909;isolation:isolate}
+.ih-film-tile{position:absolute;width:50%;height:50%;overflow:hidden;opacity:0;filter:grayscale(1) contrast(1.1);border:1px solid rgba(255,255,255,.14);transition:opacity .9s,transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.ih-film-tile video{width:100%;height:100%;object-fit:cover;display:block;opacity:.78}
+.ih-film-tile:after{content:"";position:absolute;inset:0;background:linear-gradient(130deg,rgba(0,0,0,.3),transparent 70%)}
+.ih-film-tile span{position:absolute;z-index:2;left:20px;bottom:17px;font:8px var(--sans);letter-spacing:.22em;color:#fff}
+.ih-film-a{left:0;top:0;transform:translate(-40%,-40%) scale(.7)}.ih-film-b{right:0;top:0;transform:translate(40%,-40%) scale(.7)}
+.ih-film-c{left:0;bottom:0;transform:translate(-40%,40%) scale(.7)}.ih-film-d{right:0;bottom:0;transform:translate(40%,40%) scale(.7)}
+.ih-film-e{left:50%;top:50%;width:32%;height:32%;transform:translate(-50%,-50%) scale(.4);z-index:3}
+.ih-film.is-playing .ih-film-tile{opacity:1;transform:translate(0,0) scale(1)}
+.ih-film.is-playing .ih-film-e{transform:translate(-50%,-50%) scale(1)}
+.ih-film-title{position:absolute;inset:0;z-index:5;display:grid;place-items:center;pointer-events:none;opacity:0;transition:opacity 1s 1.1s}
+.ih-film.is-playing .ih-film-title{opacity:1}
+.ih-film-title>div{text-align:center;padding:clamp(18px,3vw,34px) clamp(24px,5vw,60px);background:rgba(0,0,0,.68);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.35);box-shadow:0 15px 70px #000}
+.ih-film-title small,.ih-film-title i{display:block;font:8px var(--sans);letter-spacing:.32em;color:#d0d0d0}
+.ih-film-title strong{display:block;font:400 clamp(27px,6.5vw,78px)/1.05 var(--serif);letter-spacing:-.035em;margin:12px 0}
+.ih-film-title i{font-style:normal}
+.ih-footer{background:#080808!important;border-top:1px solid #292929!important;padding:35px max(5.5vw,22px) 18px!important}
+.ih-footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:25px}
+.ih-footer-inner p{font:11px var(--sans);color:#999}
+.ih-footer .footer-brand{font:400 25px var(--serif);color:#eee}
+.ih-footer .back-to-top{color:#aaa}
+.ih-footer .footer-bottom{border-top:1px solid #292929;color:#777}
+.ih-reveal{opacity:0;transform:translateY(48px);transition:opacity 1s ease,transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.ih-reveal.ih-visible{opacity:1;transform:translateY(0)}
+@media(max-width:760px){.ih-wrap{width:calc(100% - 42px)}.ih-opening{padding:85px 0 65px}.ih-opening-grid,.ih-feature-grid{grid-template-columns:1fr;gap:32px;margin:35px 0 58px}.ih-opening h2{font-size:clamp(47px,13vw,72px)}.ih-feature{padding:25px 0 90px}.ih-image-tall{height:105vw;max-height:560px}.ih-feature-text h2{font-size:58px}.ih-duo{padding:82px 0 95px}.ih-duo-heading{display:block}.ih-duo-heading h2{margin-top:24px}.ih-image-pair{gap:14px}.ih-card-two{margin-top:55px}.ih-image-card img{height:58vw}.ih-image-card figcaption{padding:13px}.ih-image-card figcaption b{font-size:19px}.ih-duo-note{margin-top:45px}.ih-statement{padding:90px 0}.ih-film-mosaic{height:430px}.ih-film-tile{width:50%;height:50%}.ih-film-e{width:42%;height:30%}.ih-film-top,.ih-film-bottom{font-size:6px;letter-spacing:.1em}.ih-film-title strong{font-size:clamp(25px,8vw,44px)}.ih-footer-inner{align-items:flex-start;flex-direction:column;gap:12px}.ih-footer-inner p{margin:0}.ih-footer .footer-bottom{gap:10px;font-size:7px}}
+@media(prefers-reduced-motion:reduce){.ih-reveal,.ih-film-tile,.ih-film-title{transition:none!important}.ih-reveal{opacity:1;transform:none}}
 </style>
 <style>
 /* Warm golden glow for the homepage social links */
@@ -546,75 +610,72 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
 </main>
 
 
-<div class="home-lower editorial-lower">
-  <section class="editorial-intro">
-    <div class="editorial-wrap">
-      <div class="editorial-index"><span>01</span><span>THE SPACE BEYOND THE SCREEN</span></div>
-      <div class="editorial-intro-grid">
-        <h2>A little world<br>inside <em>my own.</em></h2>
-        <div class="editorial-intro-copy">
-          <p>Not everything about a person fits into a photograph, a name or a short introduction.</p>
-          <p>This space gathers the things that make me — thoughts, words, ideas, projects and the things I am still discovering.</p>
-          <a href="about.html" class="editorial-link">GET TO KNOW ME <span>↗</span></a>
+<div class="inner-home-story">
+  <section class="ih-opening ih-reveal">
+    <div class="ih-wrap">
+      <p class="ih-kicker">A SPACE TO FEEL · THINK · CREATE</p>
+      <div class="ih-opening-grid">
+        <h2>Not just a website.<br><em>A world within.</em></h2>
+        <div class="ih-opening-copy">
+          <p>Some things are too personal to fit inside an introduction. Some thoughts need a place of their own.</p>
+          <p>The Inner Space is where fragments of imagination, quiet reflections and unfinished ideas find a shape.</p>
         </div>
       </div>
-      <div class="editorial-bottomline"><span>THE INNER SPACE</span><span>AN ONGOING PERSONAL ARCHIVE · 2026</span></div>
+      <div class="ih-rule"><span>01 / AN INNER UNIVERSE</span><span>SCROLL TO EXPLORE ↓</span></div>
     </div>
   </section>
 
-  <section class="editorial-directory">
-    <div class="editorial-wrap">
-      <div class="editorial-directory-head">
-        <div><div class="editorial-index"><span>02</span><span>FIND YOUR WAY</span></div><h2>Explore the<br><em>different sides.</em></h2></div>
-        <p>Every page holds a different part of this space. Start wherever you feel curious.</p>
+  <section class="ih-feature ih-reveal">
+    <div class="ih-wrap ih-feature-grid">
+      <div class="ih-feature-image ih-image-tall">
+        <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1400&q=85" alt="Quiet landscape beneath a soft morning sky" loading="lazy">
+        <span class="ih-image-caption">01 — THE QUIET BETWEEN THOUGHTS</span>
       </div>
-      <div class="editorial-directory-list">
-        <a href="journey.html"><span class="ed-no">01</span><span class="ed-name">My Journey</span><span class="ed-detail">A path still unfolding</span><span class="ed-arrow">↗</span></a>
-        <a href="thoughts.html"><span class="ed-no">02</span><span class="ed-name">Personal Thoughts</span><span class="ed-detail">Words, feelings and reflections</span><span class="ed-arrow">↗</span></a>
-        <a href="skills.html"><span class="ed-no">03</span><span class="ed-name">Skills &amp; Expertise</span><span class="ed-detail">Things I learn and practise</span><span class="ed-arrow">↗</span></a>
-        <a href="projects.html"><span class="ed-no">04</span><span class="ed-name">My Projects</span><span class="ed-detail">Ideas taking shape</span><span class="ed-arrow">↗</span></a>
-        <a href="bookshelf.html"><span class="ed-no">05</span><span class="ed-name">Bookshelf</span><span class="ed-detail">Stories and pages I keep</span><span class="ed-arrow">↗</span></a>
-        <a href="quotes.html"><span class="ed-no">06</span><span class="ed-name">Quotes</span><span class="ed-detail">Lines that stay with me</span><span class="ed-arrow">↗</span></a>
-        <a href="portfolio.html"><span class="ed-no">07</span><span class="ed-name">Portfolio</span><span class="ed-detail">A selection of my work</span><span class="ed-arrow">↗</span></a>
-        <a href="faq.html"><span class="ed-no">08</span><span class="ed-name">FAQ</span><span class="ed-detail">A few things you may wonder</span><span class="ed-arrow">↗</span></a>
+      <div class="ih-feature-text">
+        <p class="ih-kicker">A PLACE FOR THE UNFINISHED</p>
+        <h2>Every thought<br>leaves a <em>trace.</em></h2>
+        <p>Words can hold a feeling long after the moment has passed. Here, thoughts are allowed to wander, change, grow and become something unexpected.</p>
+        <span class="ih-index">A PERSONAL COLLECTION OF MOMENTS</span>
       </div>
     </div>
   </section>
 
-  <section class="editorial-quote">
-    <div class="editorial-wrap editorial-quote-inner">
-      <div class="editorial-index"><span>03</span><span>A THOUGHT TO KEEP</span></div>
-      <span class="editorial-quote-mark">“</span>
-      <blockquote>Somewhere between who I was and who I am becoming, there is a story still being written.</blockquote>
-      <span class="editorial-quote-credit">— A NOTE FROM THE INNER SPACE</span>
+  <section class="ih-duo ih-reveal">
+    <div class="ih-wrap">
+      <div class="ih-duo-heading"><p class="ih-kicker">A WORLD STILL TAKING SHAPE</p><h2>Made of many<br><em>little universes.</em></h2></div>
+      <div class="ih-image-pair">
+        <figure class="ih-image-card ih-card-one"><img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1200&q=85" alt="Open book resting in a thoughtful quiet space" loading="lazy"><figcaption><span>WORDS &amp; MEMORY</span><b>Somewhere, a sentence stays.</b></figcaption></figure>
+        <figure class="ih-image-card ih-card-two"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85" alt="Creative technology and intricate details" loading="lazy"><figcaption><span>IDEAS &amp; CREATION</span><b>Curiosity becomes a beginning.</b></figcaption></figure>
+      </div>
+      <p class="ih-duo-note">A little poetry. A little wonder. A little bit of everything that makes a person more than what the world first sees.</p>
     </div>
   </section>
 
-  <section class="editorial-contact">
-    <div class="editorial-wrap editorial-contact-inner">
-      <div><div class="editorial-index"><span>04</span><span>WHEN YOU REACH THE END</span></div><h2>Stay a little.<br><em>Say hello.</em></h2></div>
-      <div class="editorial-contact-copy"><p>Thank you for spending a moment here. If a thought, a page or an idea brought you this far, I would be happy to hear from you.</p><a href="contact.html" class="editorial-link">CONTACT ME <span>↗</span></a></div>
+  <section class="ih-statement ih-reveal">
+    <div class="ih-wrap">
+      <span class="ih-statement-mark">“</span>
+      <blockquote>Somewhere between silence and imagination, a whole universe comes alive.</blockquote>
+      <p>THE INNER SPACE — A PERSONAL WORLD BY NAYEEM EVAN</p>
     </div>
+  </section>
+
+  <section class="ih-film" id="inner-space-film">
+    <div class="ih-film-top"><span>THE INNER SPACE PRESENTS</span><span>A WORLD BEYOND THE FIRST LOOK · 2026</span></div>
+    <div class="ih-film-mosaic" aria-label="Moving visual introduction to The Inner Space">
+      <div class="ih-film-tile ih-film-a"><video muted playsinline loop preload="none"><source src="https://videos.pexels.com/video-files/13522169/13522169-uhd_3840_2160_25fps.mp4" type="video/mp4"></video><span>THOUGHT</span></div>
+      <div class="ih-film-tile ih-film-b"><video muted playsinline loop preload="none"><source src="https://videos.pexels.com/video-files/4974883/4974883-hd_1920_1080_25fps.mp4" type="video/mp4"></video><span>IMAGINATION</span></div>
+      <div class="ih-film-tile ih-film-c"><video muted playsinline loop preload="none"><source src="https://videos.pexels.com/video-files/38698434/16438804_3840_2160_50fps.mp4" type="video/mp4"></video><span>DISCOVERY</span></div>
+      <div class="ih-film-tile ih-film-d"><video muted playsinline loop preload="none"><source src="https://videos.pexels.com/video-files/38725025/16451600_3840_2160_50fps.mp4" type="video/mp4"></video><span>CREATION</span></div>
+      <div class="ih-film-tile ih-film-e"><video muted playsinline loop preload="none"><source src="https://videos.pexels.com/video-files/8779927/8779927-uhd_4096_2160_25fps.mp4" type="video/mp4"></video><span>THE UNKNOWN</span></div>
+      <div class="ih-film-title"><div><small>WELCOME TO</small><strong>THE INNER SPACE</strong><i>A UNIVERSE OF MY OWN.</i></div></div>
+    </div>
+    <div class="ih-film-bottom"><span>THOUGHTS · WORDS · IDEAS · IMAGINATION</span><span>ENDLESSLY IN PROGRESS</span></div>
   </section>
 </div>
-<footer class="home-footer">
+<footer class="home-footer ih-footer">
   <div class="footer-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
-  <div class="footer-main">
-    <div class="footer-identity">
-      <a class="footer-brand" href="index.html">THE INNER SPACE<span class="footer-dot">.</span></a>
-      <p class="footer-tagline">A quiet universe of thoughts, words &amp; imagination.</p>
-    </div>
-    <nav class="footer-links" aria-label="Footer navigation">
-      <a href="about.html">About <span>↗</span></a>
-      <a href="contact.html">Contact <span>↗</span></a>
-      <a href="privacy.html">Privacy <span>↗</span></a>
-    </nav>
-    <a class="back-to-top" href="#home" aria-label="Back to top">BACK TO TOP <span>↑</span></a>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Nayeem. All thoughts reserved.</span>
-    <span>MADE OF THOUGHTS <i>✳</i></span>
-  </div>
+  <div class="ih-footer-inner"><a class="footer-brand" href="#home">THE INNER SPACE<span class="footer-dot">.</span></a><p>A quiet universe of thoughts, words &amp; imagination.</p><a class="back-to-top" href="#home">BACK TO TOP ↑</a></div>
+  <div class="footer-bottom"><span>© 2026 Nayeem Evan. All thoughts reserved.</span><span>MADE OF THOUGHTS ✳</span></div>
 </footer>
 
 <script>
@@ -635,6 +696,27 @@ nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{nav.c
 
 
 
+
+<script>
+(function(){
+ const reveal=document.querySelectorAll('.ih-reveal');
+ if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('ih-visible');io.unobserve(e.target)}}),{threshold:.12});
+  reveal.forEach(el=>io.observe(el));
+ }else reveal.forEach(el=>el.classList.add('ih-visible'));
+ const film=document.querySelector('#inner-space-film');
+ if(film && 'IntersectionObserver' in window){
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{
+   if(e.isIntersecting){
+    film.classList.add('is-playing');
+    film.querySelectorAll('video').forEach(v=>{v.preload='auto';const play=v.play();if(play&&play.catch)play.catch(()=>{});});
+    io.disconnect();
+   }
+  }),{threshold:.25});
+  io.observe(film);
+ }
+})();
+</script>
 </body></html>
 
 <style>
