@@ -179,6 +179,67 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
 }
 @media(prefers-reduced-motion:reduce){.side-social a{animation:none}}
 </style>
+
+<style>
+/* New extended homepage content — hero above remains untouched */
+.home-lower{background:#080808;color:#f2f1ed;overflow:hidden}
+.lower-wrap{width:min(1160px,calc(100% - 9vw));margin:auto}
+.lower-intro{padding:112px 0 105px;display:grid;grid-template-columns:.75fr 1.25fr;gap:9vw;align-items:start;border-bottom:1px solid rgba(255,255,255,.14)}
+.lower-index{font-size:9px;letter-spacing:2.5px;color:#888;text-transform:uppercase}
+.lower-intro h2{font:500 clamp(38px,5.3vw,68px)/1.05 var(--serif);letter-spacing:-1.8px;max-width:760px}
+.lower-intro h2 em{color:#aaa;font-weight:500}
+.lower-intro-copy{max-width:620px;margin-top:28px;color:#aaa;font-size:13px;line-height:2.05}
+.lower-intro-copy p+p{margin-top:15px}
+.lower-manifesto{padding:92px 0 100px;display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}
+.lower-manifesto-visual{min-height:350px;position:relative;display:grid;place-items:center;border:1px solid rgba(255,255,255,.13);background:radial-gradient(ellipse at center,rgba(255,255,255,.09),transparent 62%),#0c0c0c;overflow:hidden}
+.lower-manifesto-visual:before,.lower-manifesto-visual:after{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(255,255,255,.13);border-radius:50%;animation:lowerOrbit 28s linear infinite}
+.lower-manifesto-visual:after{width:190px;height:190px;border-style:dashed;animation-direction:reverse;animation-duration:35s}
+.lower-visual-letter{font:italic 190px/.8 var(--serif);color:#eee;text-shadow:0 0 55px rgba(255,255,255,.16)}
+.lower-visual-caption{position:absolute;left:22px;bottom:18px;color:#777;font-size:8px;letter-spacing:2px}
+.lower-manifesto-copy .section-kicker{font-size:9px;letter-spacing:2.4px;color:#888;margin-bottom:18px}
+.lower-manifesto-copy h2{font:500 clamp(32px,4vw,49px)/1.12 var(--serif);margin-bottom:22px}
+.lower-manifesto-copy p{font-size:13px;line-height:2;color:#999;margin-bottom:14px;max-width:500px}
+.lower-manifesto-copy a{display:inline-flex;gap:20px;align-items:center;margin-top:14px;padding-bottom:8px;border-bottom:1px solid #777;font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
+.lower-manifesto-copy a span{font-size:17px;transition:transform .25s}
+.lower-manifesto-copy a:hover span{transform:translate(4px,-3px)}
+.lower-divider{height:1px;background:rgba(255,255,255,.13)}
+.lower-values{padding:92px 0 105px}
+.lower-section-head{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:38px}
+.lower-section-head h2{font:500 clamp(35px,4.8vw,58px)/1.08 var(--serif);max-width:600px}
+.lower-section-head p{font-size:11px;line-height:1.9;color:#888;max-width:270px}
+.lower-values-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.15);border-left:1px solid rgba(255,255,255,.15)}
+.lower-value{min-height:220px;padding:27px 25px;border-right:1px solid rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.15);transition:background .3s}
+.lower-value:hover{background:#111}
+.lower-value small{font-size:9px;letter-spacing:2px;color:#777}
+.lower-value h3{font:500 27px var(--serif);margin:35px 0 12px}
+.lower-value p{font-size:11px;line-height:1.9;color:#999;max-width:290px}
+.lower-path{padding:88px 0 100px;background:#eeede8;color:#111}
+.lower-path .lower-index{color:#777}
+.lower-path-head{display:grid;grid-template-columns:1fr .7fr;gap:40px;align-items:end;margin-bottom:42px}
+.lower-path-head h2{font:500 clamp(36px,5vw,62px)/1.05 var(--serif);letter-spacing:-1px}
+.lower-path-head p{font-size:12px;line-height:1.9;color:#666;max-width:360px}
+.lower-path-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#c9c7c0;border:1px solid #c9c7c0}
+.lower-path-card{min-height:180px;padding:22px;background:#eeede8;display:flex;flex-direction:column;justify-content:space-between;transition:background .25s}
+.lower-path-card:hover{background:#fff}
+.lower-path-card small{font-size:9px;letter-spacing:1.5px;color:#888}
+.lower-path-card strong{font:500 23px var(--serif);font-weight:500}
+.lower-path-card span{font-size:17px;align-self:flex-end;transition:transform .25s}
+.lower-path-card:hover span{transform:translate(4px,-4px)}
+.lower-letter{padding:100px 0 108px;text-align:center;position:relative}
+.lower-letter:before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(580px,90vw);height:280px;background:radial-gradient(ellipse,rgba(255,255,255,.07),transparent 70%);pointer-events:none}
+.lower-letter .lower-index{margin-bottom:24px}
+.lower-letter blockquote{position:relative;max-width:900px;margin:auto;font:italic 500 clamp(28px,4.4vw,53px)/1.3 var(--serif);color:#e8e7e2}
+.lower-letter p{position:relative;margin-top:23px;font-size:9px;letter-spacing:2.2px;color:#777}
+.lower-end{padding:60px 0 90px;border-top:1px solid rgba(255,255,255,.13);display:flex;align-items:center;justify-content:space-between;gap:35px}
+.lower-end h2{font:500 clamp(33px,4.5vw,54px)/1.08 var(--serif);max-width:620px}
+.lower-end p{font-size:12px;line-height:1.9;color:#999;max-width:320px;margin-top:13px}
+.lower-end a{flex-shrink:0;border:1px solid #aaa;border-radius:30px;padding:14px 21px;font-size:10px;letter-spacing:1px;transition:.25s}
+.lower-end a:hover{background:#f5f5f3;color:#111}
+@keyframes lowerOrbit{to{transform:rotate(360deg)}}
+@media(max-width:800px){.lower-intro{grid-template-columns:1fr;gap:25px;padding:78px 0}.lower-manifesto{grid-template-columns:1fr;gap:35px;padding:70px 0}.lower-manifesto-visual{min-height:280px}.lower-values{padding:72px 0}.lower-values-grid{grid-template-columns:1fr 1fr}.lower-path{padding:72px 0}.lower-path-head{grid-template-columns:1fr;gap:18px}.lower-path-grid{grid-template-columns:1fr 1fr}.lower-letter{padding:75px 0}.lower-end{align-items:flex-start;flex-direction:column;padding:52px 0 70px}}
+@media(max-width:480px){.lower-wrap{width:calc(100% - 42px)}.lower-intro{padding:65px 0}.lower-manifesto-visual{min-height:230px}.lower-visual-letter{font-size:145px}.lower-values-grid{grid-template-columns:1fr}.lower-value{min-height:170px}.lower-value h3{margin:25px 0 9px}.lower-path-grid{grid-template-columns:1fr 1fr}.lower-path-card{min-height:145px;padding:16px}.lower-path-card strong{font-size:19px}.lower-letter{padding:65px 0}.lower-end a{align-self:flex-start}}
+@media(prefers-reduced-motion:reduce){.lower-manifesto-visual:before,.lower-manifesto-visual:after{animation:none}}
+</style>
 </head>
 <body>
 <main class="hero" id="home">
@@ -222,35 +283,55 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
 <div class="scroll-note">Scroll</div>
 </main>
 
-<section class="home-section">
-  <div class="space-intro">
-    <div>
-      <p class="section-kicker">A little about this place</p>
-      <h2 class="section-heading">A space for thoughts, <em>ideas</em> and everything in between.</h2>
-    </div>
-    <p class="space-copy">The Inner Space is my personal corner of the internet — a place to collect what inspires me, share what I am learning, and keep the things I do not want to forget. Take your time and explore what lives within these pages.</p>
-  </div>
-</section>
 
-<section class="quote-section">
-  <div class="quote-mark">“</div>
-  <p class="home-quote">Somewhere between what we think and what we create, we discover who we are.</p>
-  <p class="quote-caption">A thought from The Inner Space</p>
-</section>
-<section class="home-section explore-section">
-  <div class="explore-top">
-    <div><p class="section-kicker">Find your way around</p><h2 class="section-heading">Explore the <em>space.</em></h2></div>
-    <p>Different corners, different thoughts. Choose a page and stay a while.</p>
-  </div>
-  <div class="explore-grid">
-    <a class="explore-card" href="journey.html"><span class="card-number">01 / THE STORY</span><span class="card-title">My Journey</span><span class="card-bottom">The path so far <span class="card-arrow">↗</span></span></a>
-    <a class="explore-card" href="thoughts.html"><span class="card-number">02 / THE MIND</span><span class="card-title">Personal Thoughts</span><span class="card-bottom">Notes from within <span class="card-arrow">↗</span></span></a>
-    <a class="explore-card" href="projects.html"><span class="card-number">03 / THE WORK</span><span class="card-title">Projects</span><span class="card-bottom">Things I create <span class="card-arrow">↗</span></span></a>
-    <a class="explore-card" href="bookshelf.html"><span class="card-number">04 / THE SHELF</span><span class="card-title">Bookshelf</span><span class="card-bottom">Words worth keeping <span class="card-arrow">↗</span></span></a>
-    <a class="explore-card" href="quotes.html"><span class="card-number">05 / THE WORDS</span><span class="card-title">Quotes</span><span class="card-bottom">Lines that stay <span class="card-arrow">↗</span></span></a>
-    <a class="explore-card" href="about.html"><span class="card-number">06 / THE PERSON</span><span class="card-title">About Me</span><span class="card-bottom">A little more about me <span class="card-arrow">↗</span></span></a>
+<div class="home-lower">
+<section class="lower-wrap lower-intro">
+  <div><p class="lower-index">01 / A NOTE FROM WITHIN</p></div>
+  <div><h2>Not everything needs to be explained. <em>Some things just need a place to exist.</em></h2>
+    <div class="lower-intro-copy"><p>The Inner Space is a personal collection of thoughts, words, interests and things I am creating. It is not meant to be a finished picture of a person. It is a space that can change, grow and take a different shape with time.</p><p>Some pages hold things I have written. Some show what I am learning or building. Others are simply here because a book, a sentence, or an idea stayed with me. Each part is a small piece of a much bigger story.</p></div>
   </div>
 </section>
+<section class="lower-wrap lower-manifesto">
+  <div class="lower-manifesto-visual" aria-label="The letter I as a symbol of inner space"><span class="lower-visual-letter">I</span><span class="lower-visual-caption">A PERSONAL SPACE · STILL UNFOLDING</span></div>
+  <div class="lower-manifesto-copy"><p class="section-kicker">02 / WHY THIS SPACE EXISTS</p><h2>A little room to think, create and become.</h2><p>There are things that are difficult to fit into a short introduction: changing interests, unfinished ideas, memories, questions and quiet ambitions. This website gives those things somewhere to live.</p><p>It brings different sides of my world together without asking them to be the same. You can read, explore, discover a project or simply spend a moment here.</p><a href="about.html">A LITTLE MORE ABOUT ME <span>↗</span></a></div>
+</section>
+<div class="lower-divider"></div>
+<section class="lower-wrap lower-values">
+  <div class="lower-section-head"><div><p class="lower-index">03 / WHAT YOU MAY FIND</p><h2>Different interests.<br><em>One personal space.</em></h2></div><p>Every section has its own character. Together, they make this website feel like a collection rather than a single page.</p></div>
+  <div class="lower-values-grid">
+    <article class="lower-value"><small>01 — WORDS</small><h3>Thoughts &amp; writing</h3><p>Personal reflections, lines, observations and words collected along the way.</p></article>
+    <article class="lower-value"><small>02 — DISCOVERY</small><h3>Books &amp; quotes</h3><p>Books, meaningful passages and short pieces of writing worth returning to.</p></article>
+    <article class="lower-value"><small>03 — MAKING</small><h3>Projects &amp; ideas</h3><p>Experiments, digital creations and the process of turning an idea into something real.</p></article>
+    <article class="lower-value"><small>04 — LEARNING</small><h3>Skills &amp; practice</h3><p>Things I am exploring, tools I am learning and progress that happens one step at a time.</p></article>
+    <article class="lower-value"><small>05 — JOURNEY</small><h3>Stories &amp; growth</h3><p>A changing record of experiences, interests and the person I am becoming.</p></article>
+    <article class="lower-value"><small>06 — CONNECTION</small><h3>People &amp; conversation</h3><p>A simple way to reach out, share an idea or start a thoughtful conversation.</p></article>
+  </div>
+</section>
+<section class="lower-path">
+  <div class="lower-wrap">
+    <div class="lower-path-head"><div><p class="lower-index">04 / EXPLORE THE INNER SPACE</p><h2>Take a different<br>path through the pages.</h2></div><p>You do not have to follow a particular order. Start wherever something catches your attention, and let curiosity lead the way.</p></div>
+    <div class="lower-path-grid">
+      <a class="lower-path-card" href="journey.html"><small>01 / THE STORY</small><strong>My Journey</strong><span>↗</span></a>
+      <a class="lower-path-card" href="thoughts.html"><small>02 / THE MIND</small><strong>Personal Thoughts</strong><span>↗</span></a>
+      <a class="lower-path-card" href="skills.html"><small>03 / THE PRACTICE</small><strong>Skills &amp; Expertise</strong><span>↗</span></a>
+      <a class="lower-path-card" href="projects.html"><small>04 / THE WORK</small><strong>My Projects</strong><span>↗</span></a>
+      <a class="lower-path-card" href="bookshelf.html"><small>05 / THE SHELF</small><strong>Bookshelf</strong><span>↗</span></a>
+      <a class="lower-path-card" href="quotes.html"><small>06 / THE WORDS</small><strong>Quotes</strong><span>↗</span></a>
+      <a class="lower-path-card" href="portfolio.html"><small>07 / THE COLLECTION</small><strong>Portfolio</strong><span>↗</span></a>
+      <a class="lower-path-card" href="faq.html"><small>08 / THE ANSWERS</small><strong>FAQ</strong><span>↗</span></a>
+    </div>
+  </div>
+</section>
+<section class="lower-wrap lower-letter">
+  <p class="lower-index">05 / A THOUGHT TO LEAVE WITH</p>
+  <blockquote>“A person is more than the things they show. There is always a quieter world within.”</blockquote>
+  <p>THE INNER SPACE · A PERSONAL COLLECTION</p>
+</section>
+<section class="lower-wrap lower-end">
+  <div><p class="lower-index">06 / BEFORE YOU GO</p><h2>Stay for a thought.<br>Leave with your own.</h2><p>Thank you for spending a little time in this corner of my world. If something here made you curious, feel free to explore another page or get in touch.</p></div>
+  <a href="contact.html">LET'S CONNECT&nbsp; ↗</a>
+</section>
+</div>
 <footer class="home-footer">
   <div class="footer-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
   <div class="footer-main">
