@@ -274,7 +274,7 @@ body{background:var(--about-black);color:var(--about-white)}
 
 <style>
 /* Human animation stage inside the About footer */
-.site-footer.about-footer{position:relative!important;isolation:isolate;overflow:hidden;background:#f3f1eb!important;color:#171717!important;padding:0!important;min-height:150px!important;height:150px!important;border-top:1px solid #d8d6cf}
+.site-footer.about-footer{position:relative!important;isolation:isolate;overflow:hidden;background:#f3f1eb!important;color:#171717!important;padding:0!important;min-height:105px!important;height:105px!important;border-top:1px solid #d8d6cf}
 .site-footer.about-footer .footer-motion-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;pointer-events:none;opacity:1}
 .site-footer.about-footer .foot-inner{position:relative;z-index:1;gap:5px!important;min-height:0;padding:10px 0 8px!important;align-self:flex-end}
 .site-footer.about-footer .foot-inner b{font-size:9px;letter-spacing:.1em}
@@ -282,7 +282,7 @@ body{background:var(--about-black);color:var(--about-white)}
 .site-footer.about-footer .foot-nav{display:flex;gap:4px 9px!important;margin-top:0!important}
 .site-footer.about-footer .foot-nav a{font-size:8px!important;color:#444!important;line-height:1.4}
 .site-footer.about-footer .foot-nav a:hover{color:#111!important}
-@media(max-width:650px){.site-footer.about-footer{min-height:125px!important;height:125px!important}.site-footer.about-footer .foot-inner{padding:8px 0 7px!important}.site-footer.about-footer .foot-nav{margin-top:4px!important;gap:4px 8px!important}.site-footer.about-footer .foot-nav a{font-size:7px!important}.site-footer.about-footer .foot-inner b{font-size:8px}.site-footer.about-footer .foot-inner small{font-size:6px}}
+@media(max-width:650px){.site-footer.about-footer{min-height:88px!important;height:88px!important}.site-footer.about-footer .foot-inner{padding:8px 0 7px!important}.site-footer.about-footer .foot-nav{margin-top:4px!important;gap:4px 8px!important}.site-footer.about-footer .foot-nav a{font-size:7px!important}.site-footer.about-footer .foot-inner b{font-size:8px}.site-footer.about-footer .foot-inner small{font-size:6px}}
 @media(prefers-reduced-motion:reduce){.site-footer.about-footer .footer-motion-canvas{opacity:1}}
 </style>
 
@@ -331,7 +331,7 @@ body{background:var(--about-black);color:var(--about-white)}
   function draw(ms){
     const t=reduced?0:ms*.001;
     ctx.clearRect(0,0,w,h);
-    const ground=h-13;
+    const ground=h-9;
     // soft cinematic horizon and road
     const glow=ctx.createRadialGradient(w*.52,ground-45,3,w*.52,ground-45,w*.55);
     glow.addColorStop(0,'rgba(90,90,84,.18)');glow.addColorStop(1,'rgba(90,90,84,0)');
@@ -346,7 +346,7 @@ body{background:var(--about-black);color:var(--about-white)}
     }
     // prominent back-facing hoodie figure on the right, with readable message
     const heroX=w*.77;
-    person(heroX,ground+1,1.05,t*2.3,true,true,.98);
+    person(heroX,ground+1,.78,t*2.3,true,true,.98);
     // quiet graphic detail
     ctx.fillStyle='rgba(45,45,42,.48)';ctx.font='9px Arial,sans-serif';ctx.textAlign='left';
     ctx.fillText('A JOURNEY IN MOTION',18,22);
