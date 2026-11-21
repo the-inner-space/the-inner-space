@@ -306,6 +306,64 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
 .ih-reveal.ih-visible{opacity:1;transform:translateY(0)}
 @media(max-width:760px){.ih-wrap{width:calc(100% - 42px)}.ih-opening{padding:85px 0 65px}.ih-opening-grid,.ih-feature-grid{grid-template-columns:1fr;gap:32px;margin:35px 0 58px}.ih-opening h2{font-size:clamp(47px,13vw,72px)}.ih-feature{padding:25px 0 90px}.ih-image-tall{height:105vw;max-height:560px}.ih-feature-text h2{font-size:58px}.ih-duo{padding:82px 0 95px}.ih-duo-heading{display:block}.ih-duo-heading h2{margin-top:24px}.ih-image-pair{gap:14px}.ih-card-two{margin-top:55px}.ih-image-card img{height:58vw}.ih-image-card figcaption{padding:13px}.ih-image-card figcaption b{font-size:19px}.ih-duo-note{margin-top:45px}.ih-statement{padding:90px 0}.ih-film-mosaic{height:430px}.ih-film-tile{width:50%;height:50%}.ih-film-e{width:42%;height:30%}.ih-film-top,.ih-film-bottom{font-size:6px;letter-spacing:.1em}.ih-film-title strong{font-size:clamp(25px,8vw,44px)}.ih-footer-inner{align-items:flex-start;flex-direction:column;gap:12px}.ih-footer-inner p{margin:0}.ih-footer .footer-bottom{gap:10px;font-size:7px}}
 @media(prefers-reduced-motion:reduce){.ih-reveal,.ih-film-tile,.ih-film-title{transition:none!important}.ih-reveal{opacity:1;transform:none}}
+
+/* Bangla ticker beneath the untouched hero */
+.ih-bangla-ticker{height:43px;display:flex;align-items:center;overflow:hidden;background:#111;border-top:1px solid #292929;border-bottom:1px solid #292929;white-space:nowrap}
+.ih-ticker-track{display:flex;align-items:center;gap:35px;width:max-content;animation:ihTickerMove 34s linear infinite}
+.ih-ticker-track span{font:12px/1.5 var(--sans);letter-spacing:.04em;color:#d0d0d0}
+.ih-ticker-track i{font-style:normal;color:#777;font-size:12px}
+@keyframes ihTickerMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ih-ticker-track{padding-left:4vw}
+.ih-cinema{padding:100px 0 115px;background:linear-gradient(180deg,#0a0a0a,#050505)}
+.ih-cinema-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:6vw;align-items:center}
+.ih-cinema-copy h2,.ih-pages-head h2{font:400 clamp(45px,6.4vw,78px)/.98 var(--serif);letter-spacing:-.04em;margin:25px 0}
+.ih-cinema-copy h2 em,.ih-pages-head h2 em{color:#aaa}
+.ih-cinema-copy>p:not(.ih-kicker){font:13px/2.1 var(--sans);color:#aaa;max-width:350px}
+.ih-cinema-copy .ih-index{display:block;margin-top:34px;font:8px var(--sans);letter-spacing:.2em;color:#777}
+.ih-cinema-frame{border:1px solid rgba(255,255,255,.24);background:#090909;padding:12px;box-shadow:0 25px 80px rgba(0,0,0,.45)}
+.ih-cinema-heading{display:flex;flex-direction:column;align-items:center;gap:6px;padding:17px 10px 20px;text-align:center}
+.ih-cinema-heading span,.ih-cinema-foot,.ih-cinema-caption{font:8px var(--sans);letter-spacing:.2em;color:#aaa}
+.ih-cinema-heading strong{font:500 clamp(25px,4vw,48px)/1.1 var(--serif);letter-spacing:.03em;color:#f2f2f2}
+.ih-cinema-visual{height:clamp(300px,38vw,480px);position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 35%,#292929,#080808 70%)}
+.ih-cinema-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.48);opacity:.75;transform:scale(1.06);transition:transform 8s ease}
+.ih-cinema.is-visible .ih-cinema-video{transform:scale(1)}
+.ih-cinema-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.25) 55%,#050505)}
+.ih-looking-boy{position:absolute;bottom:-2%;left:50%;width:min(42%,250px);height:83%;transform:translateX(-50%);display:flex;align-items:flex-end;justify-content:center;filter:drop-shadow(0 0 22px rgba(255,255,255,.1));animation:ihBoyRise 1.5s .2s both}
+.ih-looking-boy svg{height:100%;width:100%;overflow:visible}
+@keyframes ihBoyRise{from{opacity:0;translate:0 35px}to{opacity:1;translate:0 0}}
+.ih-cinema-caption{position:absolute;bottom:15px;left:17px;right:17px;display:flex;justify-content:space-between;color:#d0d0d0}
+.ih-cinema-foot{display:flex;justify-content:space-between;gap:12px;padding:15px 3px 3px;font-size:7px}
+.ih-pages{padding:110px 0 125px;background:#090909;border-top:1px solid #222}
+.ih-pages-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:48px}
+.ih-pages-head h2{margin-bottom:0}
+.ih-pages-head>p{max-width:330px;font:13px/2 var(--sans);color:#aaa}
+.ih-pages-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ih-page-card{min-height:170px;padding:22px 22px 18px;border:1px solid #292929;background:linear-gradient(145deg,#141414,#090909);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;transition:transform .35s,border-color .35s,background .35s}
+.ih-page-card:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 15%,rgba(255,255,255,.075),transparent 75%);transform:translateX(-110%);transition:transform .8s}
+.ih-page-card:hover{transform:translateY(-5px);border-color:#777;background:linear-gradient(145deg,#1c1c1c,#0b0b0b)}
+.ih-page-card:hover:before{transform:translateX(110%)}
+.ih-page-card>span{font:8px var(--sans);letter-spacing:.18em;color:#777}
+.ih-page-card strong{font:500 clamp(21px,2.3vw,29px) var(--serif);color:#eee;font-weight:500}
+.ih-page-card small{display:flex;justify-content:space-between;gap:10px;font:10px var(--sans);color:#999}
+.ih-page-card small b{font-size:15px;color:#ddd;font-weight:400;transition:transform .25s}
+.ih-page-card:hover small b{transform:translate(3px,-3px)}
+@media(max-width:760px){
+ .ih-bangla-ticker{height:39px}.ih-ticker-track span{font-size:11px}
+ .ih-cinema{padding:72px 0 80px}.ih-cinema-layout{grid-template-columns:1fr;gap:35px}
+ .ih-cinema-copy h2,.ih-pages-head h2{font-size:clamp(43px,11vw,64px)}
+ .ih-cinema-visual{height:clamp(290px,78vw,420px)}
+ .ih-looking-boy{width:54%;height:83%}
+ .ih-pages{padding:76px 0 85px}
+ .ih-pages-head{display:block;margin-bottom:30px}
+ .ih-pages-head>p{margin-top:22px}
+ .ih-pages-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .ih-page-card{min-height:145px;padding:17px 14px}
+ .ih-page-card strong{font-size:20px}
+ .ih-page-card small{font-size:9px}
+}
+@media(max-width:430px){.ih-pages-grid{grid-template-columns:1fr 1fr}.ih-page-card{min-height:138px;padding:15px 12px}.ih-page-card strong{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.ih-ticker-track,.ih-looking-boy{animation:none!important}.ih-page-card:before{display:none}}
+
 </style>
 <style>
 /* Warm golden glow for the homepage social links */
@@ -610,6 +668,9 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
 </main>
 
 
+
+<div class="ih-bangla-ticker" aria-label="The Inner Space সম্পর্কে"><div class="ih-ticker-track"><span>দ্য ইনার স্পেস — ভাবনা, অনুভূতি, শব্দ আর কল্পনার নিজস্ব এক জগৎ</span><i>✳</i><span>এখানে প্রতিটি ভাবনার আছে নিজস্ব একটি ঠিকানা</span><i>✳</i><span>দ্য ইনার স্পেস — নিজের ভেতরের পৃথিবীকে আবিষ্কার করার এক ছোট্ট প্রচেষ্টা</span><i>✳</i></div></div>
+
 <div class="inner-home-story">
   <section class="ih-opening ih-reveal">
     <div class="ih-wrap">
@@ -625,29 +686,59 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
     </div>
   </section>
 
-  <section class="ih-feature ih-reveal">
-    <div class="ih-wrap ih-feature-grid">
-      <div class="ih-feature-image ih-image-tall">
-        <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1400&q=85" alt="Quiet landscape beneath a soft morning sky" loading="lazy">
-        <span class="ih-image-caption">01 — THE QUIET BETWEEN THOUGHTS</span>
+  <section class="ih-cinema ih-reveal" id="inner-space-cinema">
+    <div class="ih-wrap ih-cinema-layout">
+      <div class="ih-cinema-copy">
+        <p class="ih-kicker">A WORLD BEHIND THE WORDS</p>
+        <h2>একটি নামের<br>ভেতরে <em>এক পৃথিবী।</em></h2>
+        <p>ভাবনা, লেখা, শেখা, সৃষ্টি আর নিজের মতো করে পৃথিবীকে দেখার গল্প—এই জায়গাগুলো মিলেই The Inner Space। প্রতিটি পেজ এই জগতের আলাদা একটি জানালা।</p>
+        <span class="ih-index">SCROLL · EXPLORE · DISCOVER</span>
       </div>
-      <div class="ih-feature-text">
-        <p class="ih-kicker">A PLACE FOR THE UNFINISHED</p>
-        <h2>Every thought<br>leaves a <em>trace.</em></h2>
-        <p>Words can hold a feeling long after the moment has passed. Here, thoughts are allowed to wander, change, grow and become something unexpected.</p>
-        <span class="ih-index">A PERSONAL COLLECTION OF MOMENTS</span>
+      <div class="ih-cinema-frame">
+        <div class="ih-cinema-heading"><span>AN INTRODUCTION TO</span><strong>THE INNER SPACE</strong></div>
+        <div class="ih-cinema-visual">
+          <video class="ih-cinema-video" muted playsinline loop preload="none" aria-label="Cinematic moving background">
+            <source src="https://videos.pexels.com/video-files/13522169/13522169-uhd_3840_2160_25fps.mp4" type="video/mp4">
+          </video>
+          <div class="ih-cinema-shade"></div>
+          <div class="ih-looking-boy" aria-hidden="true">
+            <svg viewBox="0 0 240 390" role="img" aria-label="A boy standing and looking upward">
+              <defs><linearGradient id="boyGlow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d8d8d8"/><stop offset="1" stop-color="#555"/></linearGradient></defs>
+              <ellipse cx="120" cy="374" rx="67" ry="10" fill="#aaa" opacity=".18"/>
+              <path d="M105 72 Q82 52 94 25 Q105 1 135 12 Q157 22 148 55 Q144 72 129 82Z" fill="#090909"/>
+              <path d="M94 39 Q82 22 101 8 Q128 -7 147 15 Q157 29 145 47 Q137 25 116 24 Q106 38 94 39Z" fill="#171717"/>
+              <path d="M101 75 Q119 63 140 77 L164 104 L153 204 L87 204 L76 112Z" fill="#151515" stroke="#aaa" stroke-opacity=".26" stroke-width="2"/>
+              <path d="M99 81 L69 105 L47 177 Q44 190 57 194 Q69 197 75 183 L105 129Z" fill="#111" stroke="#999" stroke-opacity=".2"/>
+              <path d="M141 81 L171 105 L193 177 Q196 190 183 194 Q171 197 165 183 L135 129Z" fill="#111" stroke="#999" stroke-opacity=".2"/>
+              <path d="M88 195 L153 195 L163 300 L144 365 L116 365 L119 269 L105 365 L77 365 L78 297Z" fill="#101010" stroke="#aaa" stroke-opacity=".2" stroke-width="2"/>
+              <path d="M77 358 L113 358 L112 378 L58 378 Q52 371 61 365Z M141 358 L164 358 L187 377 Q187 383 176 383 L129 380Z" fill="#050505"/>
+              <path d="M103 80 Q120 98 143 80" fill="none" stroke="url(#boyGlow)" stroke-opacity=".25" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="ih-cinema-caption"><span>BEYOND THE ORDINARY</span><span>01 — 2026</span></div>
+        </div>
+        <div class="ih-cinema-foot"><span>THOUGHTS · WORDS · IDEAS</span><span>AN INNER UNIVERSE ↗</span></div>
       </div>
     </div>
   </section>
 
-  <section class="ih-duo ih-reveal">
+  <section class="ih-pages ih-reveal" id="explore-pages">
     <div class="ih-wrap">
-      <div class="ih-duo-heading"><p class="ih-kicker">A WORLD STILL TAKING SHAPE</p><h2>Made of many<br><em>little universes.</em></h2></div>
-      <div class="ih-image-pair">
-        <figure class="ih-image-card ih-card-one"><img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1200&q=85" alt="Open book resting in a thoughtful quiet space" loading="lazy"><figcaption><span>WORDS &amp; MEMORY</span><b>Somewhere, a sentence stays.</b></figcaption></figure>
-        <figure class="ih-image-card ih-card-two"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85" alt="Creative technology and intricate details" loading="lazy"><figcaption><span>IDEAS &amp; CREATION</span><b>Curiosity becomes a beginning.</b></figcaption></figure>
+      <div class="ih-pages-head">
+        <div><p class="ih-kicker">STEP INSIDE · FIND YOUR CORNER</p><h2>Explore the<br><em>different worlds.</em></h2></div>
+        <p>একটি ওয়েবসাইটের ভেতরে অনেকগুলো আলাদা জগৎ। প্রতিটি পেজে আছে নতুন কিছু দেখার, পড়ার কিংবা জানার সুযোগ।</p>
       </div>
-      <p class="ih-duo-note">A little poetry. A little wonder. A little bit of everything that makes a person more than what the world first sees.</p>
+      <div class="ih-pages-grid">
+        <a class="ih-page-card" href="journey.html"><span>01 / THE STORY</span><strong>My Journey</strong><small>পথচলার গল্প ও অভিজ্ঞতা <b>↗</b></small></a>
+        <a class="ih-page-card" href="thoughts.html"><span>02 / THE MIND</span><strong>Personal Thoughts</strong><small>মনের ভেতর জমে থাকা কথা <b>↗</b></small></a>
+        <a class="ih-page-card" href="skills.html"><span>03 / THE CRAFT</span><strong>Skills &amp; Expertise</strong><small>শেখা, দক্ষতা ও আগ্রহ <b>↗</b></small></a>
+        <a class="ih-page-card" href="projects.html"><span>04 / THE WORK</span><strong>My Projects</strong><small>ভাবনা থেকে তৈরি কাজ <b>↗</b></small></a>
+        <a class="ih-page-card" href="bookshelf.html"><span>05 / THE LIBRARY</span><strong>Bookshelf</strong><small>বই, পাতা ও পাঠের জগৎ <b>↗</b></small></a>
+        <a class="ih-page-card" href="quotes.html"><span>06 / THE LINES</span><strong>Quotes</strong><small>মনে থেকে যাওয়া কিছু লাইন <b>↗</b></small></a>
+        <a class="ih-page-card" href="about.html"><span>07 / THE PERSON</span><strong>About</strong><small>এই জায়গার পেছনের মানুষটি <b>↗</b></small></a>
+        <a class="ih-page-card" href="portfolio.html"><span>08 / THE COLLECTION</span><strong>Portfolio</strong><small>কাজ ও সৃষ্টির সংকলন <b>↗</b></small></a>
+        <a class="ih-page-card" href="faq.html"><span>09 / THE ANSWERS</span><strong>FAQ</strong><small>জানতে চাওয়া কিছু প্রশ্ন <b>↗</b></small></a>
+      </div>
     </div>
   </section>
 
@@ -704,6 +795,8 @@ nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{nav.c
   const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('ih-visible');io.unobserve(e.target)}}),{threshold:.12});
   reveal.forEach(el=>io.observe(el));
  }else reveal.forEach(el=>el.classList.add('ih-visible'));
+ const cinema=document.querySelector('#inner-space-cinema');
+ if(cinema && 'IntersectionObserver' in window){const cIo=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){const v=cinema.querySelector('video');if(v){v.preload='auto';const p=v.play();if(p&&p.catch)p.catch(()=>{});}cIo.disconnect();}}),{threshold:.25});cIo.observe(cinema);}
  const film=document.querySelector('#inner-space-film');
  if(film && 'IntersectionObserver' in window){
   const io=new IntersectionObserver(entries=>entries.forEach(e=>{
