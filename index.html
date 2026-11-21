@@ -425,6 +425,83 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
 }
 
 </style>
+<style>
+/* Clean editorial homepage lower half — monochrome, calm and spacious */
+.editorial-lower{background:#090909;color:#f2f1ed}
+.editorial-wrap{width:min(1080px,calc(100% - 12vw));margin:0 auto}
+.editorial-index{display:flex;align-items:center;gap:14px;color:#858585;font:500 9px/1.4 var(--sans);letter-spacing:2.2px}
+.editorial-index span:first-child{color:#eee;font-size:10px;letter-spacing:1px}
+.editorial-intro{padding:112px 0 48px;background:#0b0b0b}
+.editorial-intro-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:9vw;align-items:end;padding:66px 0 94px}
+.editorial-intro h2,.editorial-directory h2,.editorial-contact h2{font:500 clamp(48px,7vw,88px)/.98 var(--serif);letter-spacing:-2px}
+.editorial-intro h2 em,.editorial-directory h2 em,.editorial-contact h2 em{font-weight:500;color:#999}
+.editorial-intro-copy{max-width:360px;padding-bottom:5px}
+.editorial-intro-copy p,.editorial-contact-copy p{font:400 13px/2 var(--sans);color:#aaa;margin-bottom:13px}
+.editorial-link{display:inline-flex;align-items:center;gap:24px;margin-top:18px;padding-bottom:9px;border-bottom:1px solid #777;color:#f1f1ed;font:600 9px var(--sans);letter-spacing:2px;transition:gap .25s,border-color .25s}
+.editorial-link:hover{gap:34px;border-color:#fff}
+.editorial-link span{font-size:15px}
+.editorial-bottomline{display:flex;justify-content:space-between;gap:20px;padding-top:17px;border-top:1px solid #292929;color:#777;font:9px var(--sans);letter-spacing:1.7px}
+.editorial-directory{padding:105px 0 112px;background:#111}
+.editorial-directory-head{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:54px}
+.editorial-directory-head h2{margin-top:34px}
+.editorial-directory-head>p{max-width:260px;color:#999;font:12px/1.9 var(--sans);padding-bottom:5px}
+.editorial-directory-list{border-top:1px solid #383838}
+.editorial-directory-list a{display:grid;grid-template-columns:52px 1fr 250px 24px;align-items:center;gap:20px;min-height:76px;border-bottom:1px solid #303030;transition:padding .3s,background .3s}
+.editorial-directory-list a:hover{padding:0 16px;background:#191919}
+.ed-no{font:10px var(--sans);color:#777;letter-spacing:1px}
+.ed-name{font:500 clamp(20px,2.4vw,27px) var(--serif);color:#eee}
+.ed-detail{font:10px var(--sans);letter-spacing:.4px;color:#888}
+.ed-arrow{font-size:17px;color:#aaa;transition:transform .25s,color .25s}
+.editorial-directory-list a:hover .ed-arrow{transform:translate(3px,-3px);color:#fff}
+.editorial-quote{padding:100px 0 105px;background:#080808;border-top:1px solid #202020;border-bottom:1px solid #202020}
+.editorial-quote-inner{max-width:850px}
+.editorial-quote-mark{display:block;margin:43px 0 8px;color:#777;font:italic 74px/.7 var(--serif)}
+.editorial-quote blockquote{max-width:780px;font:italic 500 clamp(32px,5vw,58px)/1.2 var(--serif);letter-spacing:-.7px;color:#e9e8e4}
+.editorial-quote-credit{display:block;margin-top:28px;color:#777;font:9px var(--sans);letter-spacing:2px}
+.editorial-contact{padding:100px 0 108px;background:#101010}
+.editorial-contact-inner{display:grid;grid-template-columns:1fr .7fr;gap:9vw;align-items:end}
+.editorial-contact h2{margin-top:34px}
+.editorial-contact-copy{max-width:360px;padding-bottom:5px}
+.home-footer{padding:26px max(6vw,calc((100vw - 1080px)/2)) 18px!important;background:#080808!important;border-top:1px solid #292929!important;color:#777!important}
+.home-footer:before,.home-footer:after{display:none!important}
+.footer-orbit{display:none!important}
+.footer-main{grid-template-columns:1fr auto auto!important;gap:36px!important;padding-bottom:20px!important}
+.footer-brand{font-size:21px!important;color:#eee!important}
+.footer-dot{color:#aaa!important}
+.footer-tagline{font-size:9px!important;color:#777!important}
+.footer-links{flex-direction:row!important;gap:22px!important}
+.footer-links a{font-size:9px!important;color:#999!important;letter-spacing:1px!important}
+.footer-links a span{display:none}
+.back-to-top{font-size:8px!important;color:#999!important}
+.footer-bottom{padding-top:12px!important;border-top:1px solid #292929!important;color:#666!important;font-size:8px!important}
+.footer-bottom i{color:#aaa!important}
+@media(max-width:760px){
+ .editorial-wrap{width:calc(100% - 44px)}
+ .editorial-intro{padding:76px 0 35px}
+ .editorial-intro-grid{grid-template-columns:1fr;gap:28px;padding:45px 0 58px}
+ .editorial-intro h2,.editorial-directory h2,.editorial-contact h2{font-size:clamp(47px,12vw,68px)}
+ .editorial-intro-copy{max-width:420px}
+ .editorial-bottomline{font-size:7px;letter-spacing:1px}
+ .editorial-directory{padding:76px 0 80px}
+ .editorial-directory-head{display:block;margin-bottom:34px}
+ .editorial-directory-head h2{margin-top:27px}
+ .editorial-directory-head>p{margin-top:22px}
+ .editorial-directory-list a{grid-template-columns:28px 1fr 20px;gap:10px;min-height:68px}
+ .ed-name{font-size:21px}
+ .ed-detail{display:none}
+ .editorial-quote{padding:76px 0 80px}
+ .editorial-quote-mark{margin-top:38px;font-size:60px}
+ .editorial-quote blockquote{font-size:clamp(31px,8vw,43px)}
+ .editorial-contact{padding:76px 0 80px}
+ .editorial-contact-inner{grid-template-columns:1fr;gap:28px}
+ .home-footer{padding:24px 22px 16px!important}
+ .footer-main{grid-template-columns:1fr auto!important;gap:18px!important}
+ .footer-identity{grid-column:1/-1}
+ .footer-links{flex-wrap:wrap;gap:17px!important}
+ .footer-bottom{gap:8px!important}
+}
+@media(prefers-reduced-motion:reduce){.editorial-directory-list a,.editorial-link{transition:none!important}}
+</style>
 </head>
 <body>
 <main class="hero" id="home">
@@ -469,53 +546,56 @@ transform:rotate(-32deg) scale(1.12);filter:blur(22px);animation:diagonalSmoke 1
 </main>
 
 
-<div class="home-lower new-home-lower">
-<section class="new-opening">
-  <div class="new-lower-wrap">
-    <p class="new-kicker reveal-line"><span>01</span> — BEYOND THE FIRST IMPRESSION</p>
-    <div class="new-opening-grid">
-      <h2 class="new-display reveal-line">There is<br>more <em>within.</em></h2>
-      <div class="new-opening-note reveal-line"><span class="new-vertical-rule"></span><p>A website can be more than a collection of pages. It can be a living record of thoughts, discoveries, unfinished ideas and everything that makes a person who they are.</p><a href="about.html">STEP INSIDE <span>↗</span></a></div>
+<div class="home-lower editorial-lower">
+  <section class="editorial-intro">
+    <div class="editorial-wrap">
+      <div class="editorial-index"><span>01</span><span>THE SPACE BEYOND THE SCREEN</span></div>
+      <div class="editorial-intro-grid">
+        <h2>A little world<br>inside <em>my own.</em></h2>
+        <div class="editorial-intro-copy">
+          <p>Not everything about a person fits into a photograph, a name or a short introduction.</p>
+          <p>This space gathers the things that make me — thoughts, words, ideas, projects and the things I am still discovering.</p>
+          <a href="about.html" class="editorial-link">GET TO KNOW ME <span>↗</span></a>
+        </div>
+      </div>
+      <div class="editorial-bottomline"><span>THE INNER SPACE</span><span>AN ONGOING PERSONAL ARCHIVE · 2026</span></div>
     </div>
-    <div class="new-bottom-note"><span>THE INNER SPACE</span><span>AN OPEN-ENDED PERSONAL ARCHIVE</span></div>
-  </div>
-</section>
+  </section>
 
-<section class="new-marquee" aria-label="Thoughts, writing, creating, becoming">
-  <div class="new-marquee-track"><span>THINK</span><i>✳</i><span>WRITE</span><i>✳</i><span>CREATE</span><i>✳</i><span>DISCOVER</span><i>✳</i><span>BECOME</span><i>✳</i><span>THINK</span><i>✳</i><span>WRITE</span><i>✳</i><span>CREATE</span><i>✳</i><span>DISCOVER</span><i>✳</i><span>BECOME</span><i>✳</i></div>
-</section>
-
-<section class="new-meaning">
-  <div class="new-lower-wrap new-meaning-grid">
-    <div class="new-meaning-art" aria-hidden="true"><div class="new-ripple ripple-one"></div><div class="new-ripple ripple-two"></div><div class="new-ripple ripple-three"></div><span>IS</span><small>INNER / SPACE</small></div>
-    <div class="new-meaning-copy reveal-line"><p class="new-kicker"><span>02</span> — A SPACE THAT KEEPS CHANGING</p><h2>Not a finished story.<br><em>A work in progress.</em></h2><p>Some days are made of words. Some are made of ideas, music, learning or small attempts at building something new. This space gives all of them a place — without forcing them into one definition.</p><p>Look around slowly. You may find a thought, a project, a page or simply a feeling that stays with you.</p></div>
-  </div>
-</section>
-
-<section class="new-pages">
-  <div class="new-lower-wrap">
-    <div class="new-pages-heading reveal-line"><div><p class="new-kicker"><span>03</span> — WANDER THROUGH</p><h2>Choose your<br><em>own direction.</em></h2></div><p>No fixed route. No particular order. Follow whatever catches your attention.</p></div>
-    <div class="new-page-list">
-      <a class="new-page-row" href="journey.html"><span class="new-page-no">01</span><span class="new-page-name">My Journey</span><span class="new-page-desc">The path so far</span><span class="new-page-arrow">↗</span></a>
-      <a class="new-page-row" href="thoughts.html"><span class="new-page-no">02</span><span class="new-page-name">Personal Thoughts</span><span class="new-page-desc">Words from within</span><span class="new-page-arrow">↗</span></a>
-      <a class="new-page-row" href="skills.html"><span class="new-page-no">03</span><span class="new-page-name">Skills &amp; Expertise</span><span class="new-page-desc">Learning by doing</span><span class="new-page-arrow">↗</span></a>
-      <a class="new-page-row" href="projects.html"><span class="new-page-no">04</span><span class="new-page-name">My Projects</span><span class="new-page-desc">Ideas made visible</span><span class="new-page-arrow">↗</span></a>
-      <a class="new-page-row" href="bookshelf.html"><span class="new-page-no">05</span><span class="new-page-name">Bookshelf</span><span class="new-page-desc">Between the pages</span><span class="new-page-arrow">↗</span></a>
-      <a class="new-page-row" href="quotes.html"><span class="new-page-no">06</span><span class="new-page-name">Quotes</span><span class="new-page-desc">Lines worth keeping</span><span class="new-page-arrow">↗</span></a>
-      <a class="new-page-row" href="portfolio.html"><span class="new-page-no">07</span><span class="new-page-name">Portfolio</span><span class="new-page-desc">A collection of work</span><span class="new-page-arrow">↗</span></a>
-      <a class="new-page-row" href="faq.html"><span class="new-page-no">08</span><span class="new-page-name">FAQ</span><span class="new-page-desc">A few answers</span><span class="new-page-arrow">↗</span></a>
+  <section class="editorial-directory">
+    <div class="editorial-wrap">
+      <div class="editorial-directory-head">
+        <div><div class="editorial-index"><span>02</span><span>FIND YOUR WAY</span></div><h2>Explore the<br><em>different sides.</em></h2></div>
+        <p>Every page holds a different part of this space. Start wherever you feel curious.</p>
+      </div>
+      <div class="editorial-directory-list">
+        <a href="journey.html"><span class="ed-no">01</span><span class="ed-name">My Journey</span><span class="ed-detail">A path still unfolding</span><span class="ed-arrow">↗</span></a>
+        <a href="thoughts.html"><span class="ed-no">02</span><span class="ed-name">Personal Thoughts</span><span class="ed-detail">Words, feelings and reflections</span><span class="ed-arrow">↗</span></a>
+        <a href="skills.html"><span class="ed-no">03</span><span class="ed-name">Skills &amp; Expertise</span><span class="ed-detail">Things I learn and practise</span><span class="ed-arrow">↗</span></a>
+        <a href="projects.html"><span class="ed-no">04</span><span class="ed-name">My Projects</span><span class="ed-detail">Ideas taking shape</span><span class="ed-arrow">↗</span></a>
+        <a href="bookshelf.html"><span class="ed-no">05</span><span class="ed-name">Bookshelf</span><span class="ed-detail">Stories and pages I keep</span><span class="ed-arrow">↗</span></a>
+        <a href="quotes.html"><span class="ed-no">06</span><span class="ed-name">Quotes</span><span class="ed-detail">Lines that stay with me</span><span class="ed-arrow">↗</span></a>
+        <a href="portfolio.html"><span class="ed-no">07</span><span class="ed-name">Portfolio</span><span class="ed-detail">A selection of my work</span><span class="ed-arrow">↗</span></a>
+        <a href="faq.html"><span class="ed-no">08</span><span class="ed-name">FAQ</span><span class="ed-detail">A few things you may wonder</span><span class="ed-arrow">↗</span></a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="new-quote">
-  <div class="new-quote-stars" aria-hidden="true"></div>
-  <div class="new-lower-wrap new-quote-inner reveal-line"><p class="new-kicker"><span>04</span> — A SMALL REMINDER</p><div class="new-quote-symbol">“</div><blockquote>We are all carrying entire worlds that nobody else can see.</blockquote><p class="new-quote-credit">A THOUGHT FROM THE INNER SPACE</p></div>
-</section>
+  <section class="editorial-quote">
+    <div class="editorial-wrap editorial-quote-inner">
+      <div class="editorial-index"><span>03</span><span>A THOUGHT TO KEEP</span></div>
+      <span class="editorial-quote-mark">“</span>
+      <blockquote>Somewhere between who I was and who I am becoming, there is a story still being written.</blockquote>
+      <span class="editorial-quote-credit">— A NOTE FROM THE INNER SPACE</span>
+    </div>
+  </section>
 
-<section class="new-final">
-  <div class="new-lower-wrap new-final-inner reveal-line"><p class="new-kicker"><span>05</span> — BEFORE YOU LEAVE</p><h2>Every visit<br>leaves <em>a trace.</em></h2><div class="new-final-bottom"><p>Thank you for stepping into my little corner of the internet. If something here made you pause, think or feel curious, I'd be glad to hear from you.</p><a href="contact.html">LET'S TALK <span>↗</span></a></div></div>
-</section>
+  <section class="editorial-contact">
+    <div class="editorial-wrap editorial-contact-inner">
+      <div><div class="editorial-index"><span>04</span><span>WHEN YOU REACH THE END</span></div><h2>Stay a little.<br><em>Say hello.</em></h2></div>
+      <div class="editorial-contact-copy"><p>Thank you for spending a moment here. If a thought, a page or an idea brought you this far, I would be happy to hear from you.</p><a href="contact.html" class="editorial-link">CONTACT ME <span>↗</span></a></div>
+    </div>
+  </section>
 </div>
 <footer class="home-footer">
   <div class="footer-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -553,71 +633,7 @@ nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{nav.c
 })();
 </script>
 
-<script>
-/* Demo 3 interactive motion: visible particle network, pointer parallax and 3D tilt */
-(()=>{
- const world=document.querySelector('.new-home-lower');
- if(!world)return;
- const canvas=world.querySelector('.motion-depth-canvas')||document.createElement('canvas');
- canvas.className='motion-depth-canvas';canvas.setAttribute('aria-hidden','true');
- if(!canvas.parentNode)world.prepend(canvas);
- const ctx=canvas.getContext('2d');if(!ctx)return;
- let w=0,h=0,dpr=1,points=[],raf=0,mx=0,my=0,scroll=0;
- const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- const mobile=()=>window.innerWidth<700;
- function resize(){
-   w=world.clientWidth;h=world.scrollHeight;dpr=Math.min(window.devicePixelRatio||1,1.5);
-   canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
-   canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);
-   const n=mobile()?95:175;
-   points=Array.from({length:n},()=>({x:Math.random()*w,y:Math.random()*h,z:Math.random(),r:Math.random()*1.6+.55,s:Math.random()*.35+.12,phase:Math.random()*6.28}));
- }
- function move(e){
-   const r=world.getBoundingClientRect();
-   mx=(e.clientX-r.left-r.width/2);my=(e.clientY-r.top-r.height/2);
-   world.style.setProperty('--pointer-x',mx.toFixed(1));
-   world.style.setProperty('--pointer-y',my.toFixed(1));
-   const rows=world.querySelectorAll('.new-page-row');
-   rows.forEach(row=>{
-     const b=row.getBoundingClientRect(),cx=b.left+b.width/2,cy=b.top+b.height/2;
-     const dx=(e.clientX-cx)/Math.max(1,b.width),dy=(e.clientY-cy)/Math.max(1,b.height);
-     row.style.setProperty('--tilt-x',(-dy*5).toFixed(2)+'deg');
-     row.style.setProperty('--tilt-y',(dx*6).toFixed(2)+'deg');
-   });
- }
- function draw(t){
-   ctx.clearRect(0,0,w,h);
-   const time=reduced?0:t*.00012,shift=scroll*.12;
-   const projected=points.map(p=>{
-     const z=.35+p.z*.65,scale=.55+z*.65;
-     const drift=reduced?0:Math.sin(time*2+p.phase)*12;
-     const x=p.x+mx*.018*z+drift;
-     const y=((p.y-shift*(.2+p.z*.4))%(h+30)+h+30)%(h+30)-15+my*.012*z;
-     return {...p,x,y,z,scale};
-   });
-   for(let i=0;i<projected.length;i++){
-     const a=projected[i];
-     for(let j=i+1;j<projected.length;j++){
-       const b=projected[j],dx=a.x-b.x,dy=a.y-b.y,dist=Math.hypot(dx,dy);
-       if(dist<mobile()?0:0){} 
-       if(dist<(mobile()?72:105)){
-         const alpha=(1-dist/(mobile()?72:105))*.22*Math.min(a.z,b.z);
-         ctx.strokeStyle='rgba(210,220,235,'+alpha+')';ctx.lineWidth=.65;
-         ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
-       }
-     }
-     ctx.beginPath();ctx.arc(a.x,a.y,a.r*a.scale,0,Math.PI*2);
-     ctx.fillStyle='rgba(242,245,255,'+(.25+a.z*.55)+')';ctx.shadowBlur=8;ctx.shadowColor='rgba(220,230,255,.45)';ctx.fill();ctx.shadowBlur=0;
-   }
-   if(!reduced)raf=requestAnimationFrame(draw);
- }
- resize();
- if(!reduced){raf=requestAnimationFrame(draw);world.addEventListener('pointermove',move,{passive:true});world.addEventListener('pointerleave',()=>{mx=0;my=0;world.style.setProperty('--pointer-x','0');world.style.setProperty('--pointer-y','0')});}
- window.addEventListener('scroll',()=>{scroll=window.scrollY},{passive:true});
- window.addEventListener('resize',resize,{passive:true});
- if('ResizeObserver'in window)new ResizeObserver(resize).observe(world);
-})();
-</script>
+
 
 </body></html>
 
